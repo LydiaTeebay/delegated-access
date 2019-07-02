@@ -8,3 +8,42 @@
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
+
+// taken from manage nhs login
+
+.nhsuk-button-red {
+	background-color: $color_nhsuk-red;
+	box-shadow: 0 4px 0 #5d0903;
+}
+
+.nhsuk-button-red:hover, .nhsuk-button-red:focus {
+	background-color: #a5190e;
+}
+
+.nhsuk-hint-list li, .nhsuk-hint-list li span.nhsuk-hint {
+	margin-bottom: 8px;
+}
+
+.nhsuk-header__navigation-item--for-mobile {
+  display: none;
+}
+
+.body-email {
+	background-color: #d8dde0;
+}
+
+.email-width {
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.email-width .nhsuk-width-container {
+	max-width: 550px;
+}
+
+.body-email .nhsuk-footer .nhsuk-width-container{
+	display: none;
+}
+
+// taken from manage nhs login

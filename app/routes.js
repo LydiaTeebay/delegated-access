@@ -11,11 +11,11 @@ router.post('/nhs-login', function (req, res) {
     // Check whether the variable matches a condition
     if (nhsNumber == "Yes"){
       // Send user to next page
-      res.redirect('/nhs-logging-in')
+      res.redirect('/login/nhs-logging-in')
     }
     else {
       // Send user to ineligible page
-      res.redirect('/nhs-logging-in')
+      res.redirect('/login/nhs-logging-in')
     }
 })
 
@@ -27,11 +27,11 @@ router.post('/login-as', function (req, res) {
     // Check whether the variable matches a condition
     if (proxy == "Yourself"){
       // Send user to next page
-      res.redirect('/service-page-logged-in')
+      res.redirect('/service/service-page-logged-in')
     }
     else {
       // Send user to ineligible page
-      res.redirect('/service-page-consent')
+      res.redirect('/service/service-page-consent')
     }
 })
 
