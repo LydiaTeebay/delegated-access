@@ -11,6 +11,15 @@
   Content page example - NHS.UK prototype kit
 {% endblock %}
 
+<!-- if the user is logging in as another person then display the banner -->
+{# {% if data.currentUser !== data.delegateUser %} #}
+
+  {% block proxy %}
+    <div class="proxy">You are logged in as {{ data.delegateUser }}</div>
+  {% endblock %}
+{# {% endif %} #}
+
+
 <!-- Breadcrumb goes inside the beforeContent block -->
 <!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
 {% block beforeContent %}
@@ -28,11 +37,11 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
+    
       <!-- Change the page title here -->
       <h1>MyHealth</h1>
-      <p>logging in as David - consent is required</p>
-      <mark>create an interuption card</mark>
 
+      
 {#
       {{ button({
         "text": "Continue with NHS login",

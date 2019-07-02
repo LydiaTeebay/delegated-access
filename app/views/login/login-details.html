@@ -1,0 +1,57 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+     <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+    <h1>[usual onboarding process]</h1>
+    email + password
+    and post
+
+    <form action="/login/login-details" method="post">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Enter your NHS login details
+            </h1>
+          </legend>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email-address">
+              Email address
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="email-address" name="email-address" value="{{ data['email-address'] }}" type="text">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="password">
+              Password
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="password" name="password" value="{{ data['password'] }}" type="text">
+          </div>
+        </fieldset>
+        <button class="nhsuk-button">Continue</button>
+      </form>
+    
+    </div>
+  </div>
+
+    </div>  
+
+  </div>
+{% endblock %}
