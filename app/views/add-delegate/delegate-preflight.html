@@ -1,0 +1,69 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  6 of 32
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>
+        Adding a person to Service
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
+      <mark>This should be an interruption card</mark>
+      {% from 'care-card/macro.njk' import careCard %}
+
+{{ careCard({
+  "type": "non-urgent",
+  "heading": "Before you start:",
+  "HTML": "
+  <p>You will need at least 3 of the following bits of information about the person that you are adding:</p>
+  <ul>
+    <li>name</li>
+    <li>date of birth</li>
+    <li>NHS number</a></li>
+    <li>post code</li>
+  </ul>
+  <p>You will also need to provide a contact email for the person.</p>
+  <p>When you are ready, click continue to start adding the person to your account</p>
+  "
+}) }}
+
+{% from 'button/macro.njk' import button %}
+
+{{ button({
+  "text": "Continue",
+  "href": "/add-delegate/delegate-info"
+}) }}
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

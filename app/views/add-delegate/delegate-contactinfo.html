@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  7 of 32
+  8 of 32
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -35,59 +35,24 @@
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-      <h2>Please add information about the person</h2>
+      <h2>Please enter the contact information for your chosen person. This is where we will send the secure link so that they can gain access to [service name] on your behalf.</h2>
       {% from 'input/macro.njk' import input %}
 
 {{ input({
   "label": {
-    "text": "First name"
+    "text": "Email address"
   },
   "id": "input-example",
-  "name": "test-name"
+  "name": "test-name",
+  "type": "email"
 }) }}
 
-
-{{ input({
-  "label": {
-    "text": "Last name"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "Date of birth"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "NHS number"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "Postcode"
-  },
-  "id": "input-example",
-  "name": "postcode",
-  "autocomplete": "postal-code"
-}) }}
 
 {% from 'button/macro.njk' import button %}
 
 {{ button({
   "text": "Continue",
-  "href": "/lt-3"
+  "href": "/add-delegate/delegate-summary"
 }) }}
 
       <!-- End of content -->
