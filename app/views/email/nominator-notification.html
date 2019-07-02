@@ -1,0 +1,24 @@
+{% extends 'layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  Invited to Helm
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        You have invited [name] to act on your behalf for [service]
+      </h1>
+
+      <p>To get access to your information they will need to accept the invitation and then sign in with their NHS login. If they do not have an NHS login they will need to set one up.</p>
+      <p><a href="#" class="nhsuk-button">Add another person</a></p>
+      <p>If nothing happens when you click the button, try this link instead. You might need to copy and paste it into an internet browser:</p>
+      <p><a href="#">#</a></p>
+      <p>If you did not do this, or you think it was in error, please contact [email].</p>
+
+    </div>
+  </div>
+
+{% endblock %}
