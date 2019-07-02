@@ -29,14 +29,17 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page title here -->
-      <h1>
-        Delegated Access
-      </h1>
+      <h1>MyHealth</h1>
 
+      {{ button({
+        "text": "Continue with NHS login",
+        "href": "/nhs-login"
+      }) }}
+{#
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
       <p class="nhsuk-body-l">
-        This page example includes a selection of styles and components available to the prototype kit.
+        Start the flow here
       </p>
       
       <p>
@@ -44,13 +47,22 @@
         <a href="https://beta.nhs.uk/service-manual/styles-components-patterns">NHS digital service manual</a>.
       </p>
 
+      {{ button({
+  "text": "Start flow as Sean",
+  "href": "/index"
+}) }}
+
+{{ button({
+  "text": "Start flow as David"
+}) }}
+<!--
       <figure class="nhsuk-image">
         <img class="nhsuk-image__img" src="/images/placeholder-image-16-9.jpg" alt="A 16:9 image placeholder">
         <figcaption class="nhsuk-image__caption">
           Image example
         </figcaption>
       </figure>
-
+-->
       <h2>Level heading two</h2>
 
       {{ list({
@@ -119,7 +131,7 @@
       }) }}
 
       <!-- End of content -->
-
+#}
     </div>  
 
   </div>
