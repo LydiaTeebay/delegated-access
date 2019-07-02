@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  7 of 32
+  10 of 32
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -30,64 +30,35 @@
 
       <!-- Change the page title here -->
       <h1>
-        Adding a person to Service
+        Success!
       </h1>
-
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-      <h2>Please add information about the person</h2>
-      {% from 'input/macro.njk' import input %}
-
-{{ input({
-  "label": {
-    "text": "First name"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "Last name"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "Date of birth"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "NHS number"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "Postcode"
-  },
-  "id": "input-example",
-  "name": "postcode",
-  "autocomplete": "postal-code"
-}) }}
+      <p>We have emailed [name] at [email] with a secure link. They will need to click on this link to confirm that they agree to being added to your account. If they do not already have one, they will need to set up an NHS login.</p>
 
 {% from 'button/macro.njk' import button %}
 
 {{ button({
-  "text": "Continue",
-  "href": "/lt-3"
+  "text": "Continue to service",
+  "href": "/service/service-page-logged-in"
+}) }}
+<br>
+{{ button({
+  "text": "Continue and add another person",
+  "href": "/add-delegate/delegate-preflight"
+}) }}
+
+{% from 'action-link/macro.njk' import actionLink %}
+
+{{ actionLink({
+  "text": "View email sent to Sean",
+  "href": "/email/nominator-notification"
+}) }}
+
+
+{{ actionLink({
+  "text": "View email sent to David",
+  "href": "/email/nominatee-invite"
 }) }}
 
       <!-- End of content -->

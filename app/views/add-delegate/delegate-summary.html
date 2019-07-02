@@ -1,0 +1,147 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  9 of 32
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>
+        Adding a person to Service
+      </h1>
+<mark>Need to figure out how to drag this information in.</mark>
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
+      <h2>Summary</h2>
+      {% from "summary-list/macro.njk" import summaryList %}
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Dave Smith"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-delegate/delegate-info",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "5 January 1978"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-delegate/delegate-info",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "NHS Number"
+            },
+            value: {
+              html: "123 456 7890"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-delegate/delegate-info",
+                  text: "Change",
+                  visuallyHiddenText: "NHS number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Postcode"
+            },
+            value: {
+              html: "AB1 2CD"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-delegate/delegate-info",
+                  text: "Change",
+                  visuallyHiddenText: "Postcode"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Contact details"
+            },
+            value: {
+              html: '<p>david.smith@example.com</p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-delegate/delegate-contactinfo",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+<p>You are adding [name] to your [service name] account. This gives them access to act on your behalf within [service]. For example, they will now be able to [book appointments for you], and [see your medical records].</p>
+<p>You can revoke this access on the account management page.</p>
+
+{% from 'button/macro.njk' import button %}
+
+{{ button({
+  "text": "Continue",
+  "href": "/add-delegate/success"
+}) }}
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

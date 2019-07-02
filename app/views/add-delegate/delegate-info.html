@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  6 of 32
+  7 of 32
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -35,30 +35,59 @@
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-      <mark>This should be an interruption card</mark>
-      {% from 'care-card/macro.njk' import careCard %}
+      <h2>Please add information about the person</h2>
+      {% from 'input/macro.njk' import input %}
 
-{{ careCard({
-  "type": "non-urgent",
-  "heading": "Before you start:",
-  "HTML": "
-  <p>You will need at least 3 of the following bits of information about the person that you are adding:</p>
-  <ul>
-    <li>name</li>
-    <li>date of birth</li>
-    <li>NHS number</a></li>
-    <li>post code</li>
-  </ul>
-  <p>You will also need to provide a contact email for the person.</p>
-  <p>When you are ready, click continue to start adding the person to your account</p>
-  "
+{{ input({
+  "label": {
+    "text": "First name"
+  },
+  "id": "input-example",
+  "name": "test-name"
+}) }}
+
+
+{{ input({
+  "label": {
+    "text": "Last name"
+  },
+  "id": "input-example",
+  "name": "test-name"
+}) }}
+
+
+{{ input({
+  "label": {
+    "text": "Date of birth"
+  },
+  "id": "input-example",
+  "name": "test-name"
+}) }}
+
+
+{{ input({
+  "label": {
+    "text": "NHS number"
+  },
+  "id": "input-example",
+  "name": "test-name"
+}) }}
+
+
+{{ input({
+  "label": {
+    "text": "Postcode"
+  },
+  "id": "input-example",
+  "name": "postcode",
+  "autocomplete": "postal-code"
 }) }}
 
 {% from 'button/macro.njk' import button %}
 
 {{ button({
   "text": "Continue",
-  "href": "/lt-2"
+  "href": "/add-delegate/delegate-contactinfo"
 }) }}
 
       <!-- End of content -->
