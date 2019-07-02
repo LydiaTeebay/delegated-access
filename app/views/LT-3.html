@@ -1,0 +1,98 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  7 of 32
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>
+        Adding a person to Service
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
+      <h2>Please add information about the person</h2>
+      {% from 'input/macro.njk' import input %}
+
+{{ input({
+  "label": {
+    "text": "First name"
+  },
+  "id": "input-example",
+  "name": "test-name"
+}) }}
+
+
+{{ input({
+  "label": {
+    "text": "Last name"
+  },
+  "id": "input-example",
+  "name": "test-name"
+}) }}
+
+
+{{ input({
+  "label": {
+    "text": "Date of birth"
+  },
+  "id": "input-example",
+  "name": "test-name"
+}) }}
+
+
+{{ input({
+  "label": {
+    "text": "NHS number"
+  },
+  "id": "input-example",
+  "name": "test-name"
+}) }}
+
+
+{{ input({
+  "label": {
+    "text": "Postcode"
+  },
+  "id": "input-example",
+  "name": "postcode",
+  "autocomplete": "postal-code"
+}) }}
+
+{% from 'button/macro.njk' import button %}
+
+{{ button({
+  "text": "Continue",
+  "href": "/"
+}) }}
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
