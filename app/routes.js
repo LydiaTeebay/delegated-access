@@ -4,6 +4,7 @@ const router = express.Router();
 
 // add scenarios here - change session data
 router.get('/john-nominates-david', function (req, res) {
+    req.session.data = {}
     req.session.data['currentUser'] = 'David';
     req.session.data['delegateUser'] = 'John';
     req.session.data['service'] = 'myHealth';
@@ -12,11 +13,10 @@ router.get('/john-nominates-david', function (req, res) {
     res.render('email/nominatee-invite');
 })
 
-router.get('/john-adds-david-as-delegate', function (req, res) {
+router.get('/john-adds-david-as-delegator', function (req, res) {
+    req.session.data = {}
     req.session.data['currentUser'] = 'John';
-    //req.session.data['delegateUser'] = 'John';
     req.session.data['service'] = 'myHealth';
-    //req.session.data['serviceConsent'] = false;
     req.session.data['hasLogin'] = true;
     res.render('add-delegate/delegate-preflight');
 })
@@ -70,7 +70,7 @@ router.post('/service/service-consent', function(req, res) {
 
 })
 
-router.post('/add-delegate/delegate-info', function(req, res) {
+router.post('/add-delegate/delegate-name', function(req, res) {
     res.redirect('/add-delegate/delegate-nhs-no-1');
 })
 
@@ -81,15 +81,23 @@ router.post('/add-delegate/delegate-nhs-no-1', function(req, res) {
     if (hasNHSNumber === 'yes') {
         res.redirect('/add-delegate/delegate-nhs-no-2');
     } else {
-        res.redirect('/add-delegate/delegate-contactinfo');
+        res.redirect('/add-delegate/delegate-dob');
     }
 })
 
-router.post('/add-delegate/delegate-nhs-no-2', function(req, res) {
-    res.redirect('/add-delegate/delegate-summary')
+router.post('/add-delegate/delegate-dob', function(req, res) {
+    res.redirect('/add-delegate/delegate-postcode');
 })
 
-router.post('/add-delegate/delegate-contactinfo', function(req, res) {
+router.post('/add-delegate/delegate-postcode', function(req, res) {
+    res.redirect('/add-delegate/delegate-email')
+})
+
+router.post('/add-delegate/delegate-nhs-no-2', function(req, res) {
+    res.redirect('/add-delegate/delegate-email')
+})
+
+router.post('/add-delegate/delegate-email', function(req, res) {
     res.redirect('/add-delegate/delegate-summary');
 })
 
