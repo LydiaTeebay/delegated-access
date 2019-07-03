@@ -3,32 +3,25 @@ const express = require('express');
 const router = express.Router();
 
 // add scenarios here - change session data
-router.get('/sean-nominates-david', function (req, res) {
+router.get('/john-nominates-david', function (req, res) {
     req.session.data['currentUser'] = 'David';
-    req.session.data['delegateUser'] = 'Sean';
+    req.session.data['delegateUser'] = 'John';
     req.session.data['service'] = 'myHealth';
     req.session.data['serviceConsent'] = false;
     req.session.data['hasLogin'] = true;
+
     res.render('email/nominatee-invite');
 })
 
 // Add your routes here - above the module.exports line
 router.post('/nhs-login', function (req, res) {
 
-    //console.log(req.session.data);
-    //req.session.data['user'] = 'andrew';
-    //console.log(req.session.data);
-
-    // Make a variable and give it the value from 'know-nhs-number'
     var nhsNumber = req.session.data['nhs-login'];
     
-    // Check whether the variable matches a condition
     if (nhsNumber == "Yes"){
-      // Send user to next page
       res.redirect('/login/login-details')
     }
     else {
-      // Send user to ineligible page
       res.redirect('/login/login-details')
     }
 })
@@ -85,13 +78,5 @@ router.post('/login-as', function (req, res) {
     }
 })
 
-
-router.post('/add-delegate/delegate-contactinfo', function(req, res) {
-console.log (req.session.data)
-    // user agrees to the consent
-    // and then accesses the service as the nominate
-   res.redirect('/add-delegate/delegate-summary');
-
-})
 
 module.exports = router;

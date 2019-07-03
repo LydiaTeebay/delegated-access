@@ -2,8 +2,8 @@ module.exports = {
 
     // Insert values here
     /*
-    'currentUser' : 'Sean',
-    'delegateUser' : 'Sean',
+    'currentUser' : 'John',
+    'delegateUser' : 'John',
     'service' : 'myHealth',
     'serviceConsent' : false,
     'hasLogin' : false
