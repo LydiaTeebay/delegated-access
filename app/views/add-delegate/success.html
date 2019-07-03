@@ -11,15 +11,6 @@
   10 of 32
 {% endblock %}
 
-<!-- Breadcrumb goes inside the beforeContent block -->
-<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
-{% block beforeContent %}
-  {{ breadcrumb({
-    href: "/",
-    text: "Home"
-  }) }}
-{% endblock %}
-
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
@@ -30,38 +21,22 @@
 
       <!-- Change the page title here -->
       <h1>
-        Success!
+        Email has been sent
       </h1>
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-      <p>We have emailed [name] at [email] with a secure link. They will need to click on this link to confirm that they agree to being added to your account. If they do not already have one, they will need to set up an NHS login.</p>
 
-{% from 'button/macro.njk' import button %}
+      <p>We have sent an email to {{ data.firstName }} {{ data.lastName }} at {{ data.contactEmailAddress }} with a secure link. They will need to open this link to confirm they agree to enter {{ data.service }} and act on your behalf.</p>
+      
+      <a href="/" role="button" draggable="false" class="nhsuk-button">
+        Continue to {{ data.service }}
+      </a>
 
-{{ button({
-  "text": "Continue to service",
-  "href": "/service/service-page-logged-in"
-}) }}
-<br>
-{{ button({
-  "text": "Continue and add another person",
-  "href": "/add-delegate/delegate-preflight"
-}) }}
+      <p><a href="">Add someone else to act on your behalf (link to screen 6)</a></p>
 
-{% from 'action-link/macro.njk' import actionLink %}
+      <hr>
 
-{{ actionLink({
-  "text": "View email sent to John",
-  "href": "/email/nominator-notification"
-}) }}
+      <a href="/email/nominator-notification">View email sent to John</a><br>
+      <a href="/email/nominatee-invite">View email sent to David</a>
 
-
-{{ actionLink({
-  "text": "View email sent to David",
-  "href": "/email/nominatee-invite"
-}) }}
-
-      <!-- End of content -->
 
     </div>  
 

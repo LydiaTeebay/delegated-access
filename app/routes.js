@@ -9,8 +9,16 @@ router.get('/john-nominates-david', function (req, res) {
     req.session.data['service'] = 'myHealth';
     req.session.data['serviceConsent'] = false;
     req.session.data['hasLogin'] = true;
-
     res.render('email/nominatee-invite');
+})
+
+router.get('/john-adds-david-as-delegate', function (req, res) {
+    req.session.data['currentUser'] = 'John';
+    //req.session.data['delegateUser'] = 'John';
+    req.session.data['service'] = 'myHealth';
+    //req.session.data['serviceConsent'] = false;
+    req.session.data['hasLogin'] = true;
+    res.render('add-delegate/delegate-preflight');
 })
 
 // Add your routes here - above the module.exports line
@@ -64,6 +72,25 @@ router.post('/service/service-consent', function(req, res) {
 
 router.post('/add-delegate/delegate-info', function(req, res) {
     res.redirect('/add-delegate/delegate-nhs-no-1');
+})
+
+router.post('/add-delegate/delegate-nhs-no-1', function(req, res) {
+    
+    var hasNHSNumber = req.session.data['hasNHSNumber'];
+
+    if (hasNHSNumber === 'yes') {
+        res.redirect('/add-delegate/delegate-nhs-no-2');
+    } else {
+        res.redirect('/add-delegate/delegate-contactinfo');
+    }
+})
+
+router.post('/add-delegate/delegate-nhs-no-2', function(req, res) {
+    res.redirect('/add-delegate/delegate-summary')
+})
+
+router.post('/add-delegate/delegate-contactinfo', function(req, res) {
+    res.redirect('/add-delegate/delegate-summary');
 })
 
 router.post('/login-as', function (req, res) {

@@ -11,15 +11,6 @@
   9 of 32
 {% endblock %}
 
-<!-- Breadcrumb goes inside the beforeContent block -->
-<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
-{% block beforeContent %}
-  {{ breadcrumb({
-    href: "/",
-    text: "Home"
-  }) }}
-{% endblock %}
-
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
@@ -30,118 +21,89 @@
 
       <!-- Change the page title here -->
       <h1>
-        Adding a person to Service
+        Summary
       </h1>
-<mark>Need to figure out how to drag this information in.</mark>
-<div>        {{ data.ContactEmailAddress }}
-</div>
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-      <h2>Summary</h2>
-      {% from "summary-list/macro.njk" import summaryList %}
 
-      {{ summaryList({
-        rows: [
-          {
-            key: {
-              text: "Name"
-            },
-            value: {
-              text: "Dave Smith"
-            },
-            actions: {
-              items: [
-                {
-                  href: "/add-delegate/delegate-info",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Date of birth"
-            },
-            value: {
-              text: "5 January 1978"
-            },
-            actions: {
-              items: [
-                {
-                  href: "/add-delegate/delegate-info",
-                  text: "Change",
-                  visuallyHiddenText: "date of birth"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "NHS Number"
-            },
-            value: {
-              html: "123 456 7890"
-            },
-            actions: {
-              items: [
-                {
-                  href: "/add-delegate/delegate-info",
-                  text: "Change",
-                  visuallyHiddenText: "NHS number"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Postcode"
-            },
-            value: {
-              html: "AB1 2CD"
-            },
-            actions: {
-              items: [
-                {
-                  href: "/add-delegate/delegate-info",
-                  text: "Change",
-                  visuallyHiddenText: "Postcode"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Contact details"
-            },
-            value: {
-              html: '{{ data.ContactEmailAddress }}'
-            },
-            actions: {
-              items: [
-                {
-                  href: "/add-delegate/delegate-contactinfo",
-                  text: "Change",
-                  visuallyHiddenText: "contact details"
-                }
-              ]
-            }
-          }
-        ]
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Service:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.service }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change
+                <span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Person who can act on your behalf:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.firstName }} {{ data.lastName }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change
+                <span class="nhsuk-u-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Date of birth:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.dobDay }} {{ data.dobMonth }} {{ data.dobYear }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change
+                <span class="nhsuk-u-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            NHS number:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.nhsnumber }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change
+                <span class="nhsuk-u-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Email address:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.ContactEmailAddress }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change
+                <span class="nhsuk-u-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <p>You are allowing {{ data.firstName }} {{ data.lastName }} to enter your {{ data.service }} account. This means they can act on your behalf and see your information within {{ data.service }}. For example, they may be able to see your medical records.</p>
+      <p>You can cancel this at any time on your account management page.</p>
+
+      {{ button({
+        "text": "Continue",
+        "href": "/add-delegate/success"
       }) }}
-
-
-<p>You are adding [name] to your [service name] account. This gives them access to act on your behalf within [service]. For example, they will now be able to [book appointments for you], and [see your medical records].</p>
-<p>You can revoke this access on the account management page.</p>
-
-{% from 'button/macro.njk' import button %}
-
-{{ button({
-  "text": "Continue",
-  "href": "/add-delegate/success"
-}) }}
-
-      <!-- End of content -->
 
     </div>  
 

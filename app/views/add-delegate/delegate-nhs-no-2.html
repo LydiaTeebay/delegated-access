@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  8 of 32
+  7 of 32
 {% endblock %}
 
 <!-- Your page content goes inside the content block -->
@@ -16,32 +16,29 @@
 {% block content %}
 
   <div class="nhsuk-grid-row">
-
     <div class="nhsuk-grid-column-two-thirds">
-
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-
-      <form action="/add-delegate/delegate-contactinfo" method="post">
+      <form action="/add-delegate/delegate-nhs-no-2" method="post">
+      <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              Tell us the {{ data.firstName }}'s email address
+              What is {{ data.firstName }}'s NHS number?
             </h1>
           </legend>
+          <span class="nhsuk-hint" id="example-hint">
+            <p>Their NHS number is a 10 digit number, for example 485 777 3456</p>
+          </span>
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="ContactEmailAddress">
-              Email address
-            </label>
-            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="ContactEmailAddress" name="ContactEmailAddress" value="{{ data['ContactEmailAddress'] }}" type="text">
+            <!--<label class="nhsuk-label" for="input-example">
+              National Insurance number
+            </label>-->
+            <input class="nhsuk-input" id="nhsnumber" name="nhsnumber" type="number">
           </div>
+            
         </fieldset>
-        <button class="nhsuk-button">Continue</button>
+      </div>
+      <button class="nhsuk-button">Continue</button>
       </form>
-
-      <!-- End of content -->
-
     </div>  
-
   </div>
 {% endblock %}
