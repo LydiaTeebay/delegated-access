@@ -11,88 +11,71 @@
   7 of 32
 {% endblock %}
 
-<!-- Breadcrumb goes inside the beforeContent block -->
-<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
-{% block beforeContent %}
-  {{ breadcrumb({
-    href: "/",
-    text: "Home"
-  }) }}
-{% endblock %}
-
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
   <div class="nhsuk-grid-row">
-
     <div class="nhsuk-grid-column-two-thirds">
-
-      <!-- Change the page title here -->
-      <h1>
-        Adding a person to Service
-      </h1>
-
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-      <h2>Please add information about the person</h2>
-      {% from 'input/macro.njk' import input %}
-
-{{ input({
-  "label": {
-    "text": "First name"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "Last name"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "Date of birth"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "NHS number"
-  },
-  "id": "input-example",
-  "name": "test-name"
-}) }}
-
-
-{{ input({
-  "label": {
-    "text": "Postcode"
-  },
-  "id": "input-example",
-  "name": "postcode",
-  "autocomplete": "postal-code"
-}) }}
-
-{% from 'button/macro.njk' import button %}
-
-{{ button({
-  "text": "Continue",
-  "href": "/add-delegate/delegate-contactinfo"
-}) }}
-
-      <!-- End of content -->
-
+      <form action="/add-delegate/delegate-info" method="post">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Tell us the person’s name and date of birth
+            </h1>
+          </legend>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="firstName">
+              First name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="firstName" name="firstName" value="{{ data['firstName'] }}" type="text">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="lastName">
+              Last name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="lastName" name="lastName" value="{{ data['lastName'] }}" type="text">
+          </div>
+          <!--
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob-hint" role="group">
+              <legend class="nhsuk-fieldset__legend">
+                Date of birth
+              </legend>
+              <span class="nhsuk-hint" id="dob-hint">
+                For example, 31 3 1980
+              </span>
+              <div class="nhsuk-date-input" id="dob">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          -->
+        </fieldset>
+        <button class="nhsuk-button">Continue</button>
+      </form>
     </div>  
-
   </div>
 {% endblock %}

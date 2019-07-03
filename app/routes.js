@@ -62,6 +62,10 @@ router.post('/service/service-consent', function(req, res) {
 
 })
 
+router.post('/add-delegate/delegate-info', function(req, res) {
+    res.redirect('/add-delegate/delegate-nhs-no-1');
+})
+
 router.post('/login-as', function (req, res) {
 
     // Make a variable and give it the value from 'know-nhs-number'

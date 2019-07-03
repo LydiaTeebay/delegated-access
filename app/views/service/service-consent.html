@@ -27,42 +27,19 @@
 {% block content %}
 
   <div class="nhsuk-grid-row">
-
     <div class="nhsuk-grid-column-two-thirds">
-
-      <!-- Change the page title here -->
-      <!--<mark>not sure if data can be passed into the components</mark>-->
-
-      <form action="/service/service-consent" method="post">
-        <div class="nhsuk-form-group">
-          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h1 class="nhsuk-fieldset__heading">
-                Give consent {{ data.service }}
-              </h1>
-            </legend>
-            <span class="nhsuk-hint" id="example-hint">
-              By agreeing you will be able to log in as {{ data.currentUser }}
-            </span>
-            <div class="nhsuk-radios">
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  Yes I give consent
-                </label>
-              </div>
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no" checked>
-                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                  No, I do not consent
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </form>  
+      <h1>Agree to share you NHS login information</h1>
+      <p>Your NHS login is<br>david.smith@gmail.com</p>
+      <p>To continue, you need to agree to share your NHS login information.</p>
+      <p>'myHealth' will use your:</p>
+      <ul>
+        <li>first name</li>
+        <li>last name</li>
+      </ul>
+      <p>Before you agree, you should read their terms of use and privacy policy to check how they will use your information.</p>
+      {{ button({
+        "text": "Agree and continue"
+      }) }} 
     </div>
   </div>  
-
-
 {% endblock %}

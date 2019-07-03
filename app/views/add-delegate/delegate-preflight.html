@@ -11,15 +11,6 @@
   6 of 32
 {% endblock %}
 
-<!-- Breadcrumb goes inside the beforeContent block -->
-<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
-{% block beforeContent %}
-  {{ breadcrumb({
-    href: "/",
-    text: "Home"
-  }) }}
-{% endblock %}
-
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
@@ -29,39 +20,37 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page title here -->
-      <h1>
-        Adding a person to Service
-      </h1>
+      <h1>Allow someone to enter {{ data.service }} on your behalf</h1>
+      <h2>Before you start</h2>
+     
+      <p>To allow someone else to act on your behalf, you will need to tell us their:</p>
+      <ul>
+        <li>name</li>
+        <li>date of birth</li>
+        <li>email address</li>
+      </ul>
+      <p>It may help us find this person quicker if you can also tell us their NHS number.</p>
 
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-      <mark>This should be an interruption card</mark>
-      {% from 'care-card/macro.njk' import careCard %}
-
-{{ careCard({
-  "type": "non-urgent",
-  "heading": "Before you start:",
-  "HTML": "
-  <p>You will need at least 3 of the following bits of information about the person that you are adding:</p>
+      {{ details({
+        "text": "Where can I find my NHS number?",
+        "HTML": "
+        <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
+  <p>You can find your NHS number on any document sent to you by the NHS. This may include:</p>
   <ul>
-    <li>name</li>
-    <li>date of birth</li>
-    <li>NHS number</a></li>
-    <li>post code</li>
+    <li>prescriptions</li>
+    <li>test results</li>
+    <li>hospital referral letters</li>
+    <li>appointment letters</li>
+    <li>your NHS medical card</li>
   </ul>
-  <p>You will also need to provide a contact email for the person.</p>
-  <p>When you are ready, click continue to start adding the person to your account</p>
+  <p>Ask your GP practice for help if you can't find your NHS number.</p>
   "
 }) }}
 
-{% from 'button/macro.njk' import button %}
-
-{{ button({
-  "text": "Continue",
-  "href": "/add-delegate/delegate-info"
-}) }}
-
-      <!-- End of content -->
+      {{ button({
+        "text": "Continue",
+        "href": "/add-delegate/delegate-info"
+      }) }}
 
     </div>  
 
