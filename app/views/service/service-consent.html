@@ -13,12 +13,14 @@
 
 <!-- Breadcrumb goes inside the beforeContent block -->
 <!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{#
 {% block beforeContent %}
   {{ breadcrumb({
     href: "/",
     text: "Home"
   }) }}
 {% endblock %}
+#}
 
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
@@ -29,58 +31,38 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page title here -->
-      <h1>Consent to act as delegate for {{ data.delegateUser }} on {{ data.service }}</h1>
-      <mark>not sure if data can be passed into the components</mark>
+      <!--<mark>not sure if data can be passed into the components</mark>-->
+
       <form action="/service/service-consent" method="post">
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Give consent {{ data.service }}
+              </h1>
+            </legend>
+            <span class="nhsuk-hint" id="example-hint">
+              By agreeing you will be able to log in as {{ data.currentUser }}
+            </span>
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  Yes I give consent
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no" checked>
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                  No, I do not consent
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </form>  
+    </div>
+  </div>  
 
-        {% call fieldset({
-          legend: {
-            text: "Do you give consent {{data.service}}?",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
 
-        {{ radios({
-          "idPrefix": "nhs-login",
-          "name": "nhs-login",
-          "items": [
-            {
-              "value": "Yes",
-              "text": "Yes"
-            },
-            {
-              "value": "No",
-              "text": "No"
-            }
-          ]
-        }) }}
-
-        {% endcall %}
-
-        {{ button({
-          "text": "Continue"
-        }) }}
-
-        {{ details({
-          "text": "What is NHS login?",
-          "HTML": "
-            <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-            <p>You can find your NHS number on any document sent to you by the NHS. This may include:</p>
-            <ul>
-              <li>prescriptions</li>
-              <li>test results</li>
-              <li>hospital referral letters</li>
-              <li>appointment letters</li>
-              <li>your NHS medical card</li>
-            </ul>
-            <p>Ask your GP practice for help if you can't find your NHS number.</p>
-          "
-          }) }}
-
-      </form>
-
-    </div>  
-
-  </div>
 {% endblock %}
