@@ -78,5 +78,44 @@ router.post('/login-as', function (req, res) {
     }
 })
 
+router.post('/login/login-triage', function (req, res) {
+
+    // Make a variable and give it the value from 'know-nhs-number'
+    var triage = req.session.data['triage']
+  
+    // Check whether the variable matches a condition
+    if (triage == "AsYourself"){
+      // Send user to next page
+      res.redirect('/service/service-logged-in')
+    }
+    if (triage == "AsSomeoneElse"){
+        // Send user to next page
+        res.redirect('/login/login-as-list')
+    }
+      if (triage == "Delegate"){
+        // Send user to next page
+        res.redirect('/add-delegate/delegate-preflight')
+    }
+})
+
+router.post('/login/login-as-list', function (req, res) {
+
+    // Make a variable and give it the value from 'know-nhs-number'
+    var delegateUser = req.session.data['delegateUser']
+  
+    // Check whether the variable matches a condition
+    if (delegateUser == "John"){
+      // Send user to next page
+      res.redirect('/service/service-logged-in')
+    }
+    if (delegateUser == "Tom"){
+        // Send user to next page
+        res.redirect('/service/service-logged-in')
+    }
+      if (delegateUser == "Harriet"){
+        // Send user to next page
+        res.redirect('/service/service-logged-in')
+    }
+})
 
 module.exports = router;

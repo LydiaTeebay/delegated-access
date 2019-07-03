@@ -12,12 +12,12 @@
 {% endblock %}
 
 <!-- if the user is logging in as another person then display the banner -->
-{# {% if data.currentUser !== data.delegateUser %} #}
+ {% if data.currentUser !== data.delegateUser %}
 
   {% block proxy %}
     <div class="proxy">You are logged in as {{ data.delegateUser }}</div>
   {% endblock %}
-{# {% endif %} #}
+ {% endif %}
 
 
 <!-- Breadcrumb goes inside the beforeContent block -->

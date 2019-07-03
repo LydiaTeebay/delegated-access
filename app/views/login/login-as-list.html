@@ -22,31 +22,31 @@
      <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="/login/login-triage" method="post">
+      <form action="/login/login-as-list" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What would you like to do?",
+            text: "Enter [service name] as:",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
         {{ radios({
-          "idPrefix": "triage",
-          "name": "triage",
+          "idPrefix": "delegateUser",
+          "name": "delegateUser",
           "items": [
             {
-              "value": "AsYourself",
-              "text": "Enter [service name] as yourself"
+              "value": "John",
+              "text": "John"
             },
               {
-              "value": "AsSomeoneElse",
-              "text": "Enter [service name] on behalf of someone else"
+              "value": "Tom",
+              "text": "Tom"
             },
             {
-              "value": "Delegate",
-              "text": "Let someone else enter [service name] on your behalf"
+              "value": "Harriet",
+              "text": "Harriet"
             }
           ]
         }) }}
@@ -58,9 +58,6 @@
         }) }}
 
         <br>
-        <mark>This would be dynamic. Remove option 2 if there is no delegation set up.</mark>
-        <br>
-        <mark>Should there be a "remember my choice" button?</mark>
         
       </form>
     </div>
