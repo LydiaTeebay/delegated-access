@@ -86,4 +86,12 @@ router.post('/login-as', function (req, res) {
 })
 
 
+router.post('/add-delegate/delegate-contactinfo', function(req, res) {
+console.log (req.session.data)
+    // user agrees to the consent
+    // and then accesses the service as the nominate
+   res.redirect('/add-delegate/delegate-summary');
+
+})
+
 module.exports = router;

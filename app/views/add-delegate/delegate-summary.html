@@ -33,6 +33,8 @@
         Adding a person to Service
       </h1>
 <mark>Need to figure out how to drag this information in.</mark>
+<div>        {{ data.ContactEmailAddress }}
+</div>
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
       <h2>Summary</h2>
@@ -113,7 +115,7 @@
               text: "Contact details"
             },
             value: {
-              html: '<p>david.smith@example.com</p>'
+              html: '{{ data.ContactEmailAddress }}'
             },
             actions: {
               items: [

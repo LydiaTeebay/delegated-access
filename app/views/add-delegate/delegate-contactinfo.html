@@ -35,25 +35,23 @@
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-      <h2>Please enter the contact information for your chosen person. This is where we will send the secure link so that they can gain access to [service name] on your behalf.</h2>
-      {% from 'input/macro.njk' import input %}
 
-{{ input({
-  "label": {
-    "text": "Email address"
-  },
-  "id": "input-example",
-  "name": "test-name",
-  "type": "email"
-}) }}
-
-
-{% from 'button/macro.njk' import button %}
-
-{{ button({
-  "text": "Continue",
-  "href": "/add-delegate/delegate-summary"
-}) }}
+      <form action="/add-delegate/delegate-contactinfo" method="post">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Please enter the contact information for your chosen person. This is where we will send the secure link so that they can gain access to [service name] on your behalf.
+            </h1>
+          </legend>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="ContactEmailAddress">
+              Email address
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="ContactEmailAddress" name="ContactEmailAddress" value="{{ data['ContactEmailAddress'] }}" type="text">
+          </div>
+        </fieldset>
+        <button class="nhsuk-button">Continue</button>
+      </form>
 
       <!-- End of content -->
 
