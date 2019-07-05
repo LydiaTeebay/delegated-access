@@ -16,6 +16,45 @@
 {% block content %}
 
   <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/login/login-as-list" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Enter {{ service.name }} as:
+            </h1>
+          </legend>
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="delegateUser" name="delegateUser" type="radio" value="John">
+                <label class="nhsuk-label nhsuk-radios__label" for="delegateUser">
+                  John
+                </label>
+            </div>
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="delegateUser" name="delegateUser" type="radio" value="Tom">
+                  <label class="nhsuk-label nhsuk-radios__label" for="delegateUser">
+                    Tom
+                  </label>
+            </div>
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="delegateUser" name="delegateUser" type="radio" value="Harriet">
+                  <label class="nhsuk-label nhsuk-radios__label" for="delegateUser">
+                   Harriet
+                  </label>
+            </div>
+          </div>       
+        </fieldset>
+      </div>
+      <button class="nhsuk-button">Continue</button>
+      </form>
+    </div>  
+  </div>
+
+  <!--
+
+  <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
 
@@ -62,7 +101,7 @@
       </form>
     </div>
   </div>
-
+-->
     </div>  
 
   </div>

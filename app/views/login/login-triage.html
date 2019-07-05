@@ -16,6 +16,47 @@
 {% block content %}
 
   <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/login/login-triage" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              What would you like to do?
+            </h1>
+          </legend>
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="triage" name="triage" type="radio" value="AsYourself">
+                <label class="nhsuk-label nhsuk-radios__label" for="triage">
+                  Enter {{ data.service }} as yourself
+                </label>
+            </div>
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="triage" name="triage" type="radio" value="AsSomeoneElse">
+                  <label class="nhsuk-label nhsuk-radios__label" for="triage">
+                    Enter {{ data.service }} on behalf of someone else
+                  </label>
+            </div>
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="triage" name="triage" type="radio" value="Delegate">
+                  <label class="nhsuk-label nhsuk-radios__label" for="triage">
+                    Allow someone else to enter {{ data.service }} on your behalf
+                  </label>
+            </div>
+          </div>       
+        </fieldset>
+      </div>
+      <button class="nhsuk-button">Continue</button>
+      </form>
+    </div>  
+  </div>
+
+
+
+<!--
+
+  <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
 
@@ -38,15 +79,15 @@
           "items": [
             {
               "value": "AsYourself",
-              "text": "Enter [service name] as yourself"
+              "text": "Enter {{ data.service }} as yourself"
             },
               {
               "value": "AsSomeoneElse",
-              "text": "Enter [service name] on behalf of someone else"
+              "text": "Enter {{ data.service }} on behalf of someone else"
             },
             {
               "value": "Delegate",
-              "text": "Allow someone else to enter [service name] on your behalf"
+              "text": "Allow someone else to enter {{ data.service }} on your behalf"
             }
           ]
         }) }}
@@ -64,6 +105,8 @@
         
       </form>
     </div>
+
+    -->
   </div>
 
     </div>  

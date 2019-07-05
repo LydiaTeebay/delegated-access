@@ -61,14 +61,6 @@ router.post('/login/login-details', function(req, res) {
 
 })
 
-router.post('/service/service-consent', function(req, res) {
-
-    // user agrees to the consent
-    // and then accesses the service as the nominate
-   req.session.data['serviceConsent'] = true;
-   res.redirect('/service/service-logged-in');
-
-})
 
 router.post('/add-delegate/delegate-name', function(req, res) {
     res.redirect('/add-delegate/delegate-nhs-no-1');
@@ -82,6 +74,17 @@ router.post('/add-delegate/delegate-nhs-no-1', function(req, res) {
         res.redirect('/add-delegate/delegate-nhs-no-2');
     } else {
         res.redirect('/add-delegate/delegate-dob');
+    }
+})
+
+router.post('/service/service-consent', function(req, res) {
+    
+    var givesConsent = req.session.data['givesConsent'];
+
+    if (givesConsent === 'yes') {
+        res.redirect('/login/login-triage');
+    } else {
+        res.redirect('/service-consent-rejected');
     }
 })
 
