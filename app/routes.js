@@ -82,7 +82,7 @@ router.post('/service/service-consent', function(req, res) {
     var givesConsent = req.session.data['givesConsent'];
 
     if (givesConsent === 'yes') {
-        res.redirect('/login/login-triage');
+        res.redirect('/login/login-as-combined');
     } else {
         res.redirect('/service-consent-rejected');
     }
@@ -159,5 +159,22 @@ router.post('/login/login-as-list', function (req, res) {
         res.redirect('/service/service-logged-in')
     }
 })
+
+router.post('/login/login-as-combined', function (req, res) {
+
+    // Make a variable and give it the value from 'delegateUser'
+    var delegateUser = req.session.data['delegateUser']
+  
+    // Check whether the variable matches a condition
+    if (delegateUser == "David"){
+      // Send user to next page
+      res.redirect('/service/service-logged-in-david')
+    }
+    if (delegateUser == "John"){
+        // Send user to next page
+        res.redirect('/service/service-logged-in')
+    }
+})
+
 
 module.exports = router;
