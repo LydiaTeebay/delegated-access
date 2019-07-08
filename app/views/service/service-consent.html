@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  Content page example - NHS.UK prototype kit
+  NHS login - Service consent
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -33,9 +33,10 @@
       To accept this request, you need to be signed up to {{ data.service }} and agree to share your NHS login information with them.</p>
       <p>{{ data.service }} will see your:
       <ul>
-        <li>last name</li>
+        <li>name</li>
         <li>date of birth</li>
-        <li>NHS number</li>
+        <li>postcode</li>
+        <li>email address</li>
       </ul>
       <p>Before you agree, you should read their terms of use and privacy policy to check how they will use your information.<p>
       
@@ -64,11 +65,7 @@
             </div>
           </div>       
         </fieldset>
-
-        <div class="nhsuk-inset-text">
-  <span class="nhsuk-u-visually-hidden">Information: </span>
-  <p>{{ data.delegateUser }} will not be notified if you reject this request.</p>
-</div>
+      
       </div>
       <button class="nhsuk-button">Continue</button>
       </form>

@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  Invited to Helm
+  Adding someone to your myHealth account
 {% endblock %}
 
 {% block content %}
@@ -11,12 +11,10 @@
       <h1 class="nhsuk-fieldset__legend--l">
         You have invited {{ data.firstName }} {{ data.lastName }} to act on your behalf for {{ data.service }}
       </h1>
-
-      <p>To get access to your information they will need to accept the invitation and then sign in with their NHS login. If they do not have an NHS login they will need to set one up.</p>
-      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Add another person</a></p>
-      <p>If nothing happens when you click the button, try this link instead. You might need to copy and paste it into an internet browser:</p>
-      <p><a href="/add-delegate/delegate-preflight">https://www.copythislink.com</a></p>
-      <p>If you did not do this, or you think it was in error, please contact [email].</p>
+      <p>This means {{ data.firstName }} can now enter your {{ data.service }} account and act on your behalf.
+      <p><a href="#">Contact us</a> if you did not do this or you think this may be an error.</p>
+      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Continue to {{ data.service }} </a></p>
+      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Add someone else to act on your behalf</a></p>
 
     </div>
   </div>

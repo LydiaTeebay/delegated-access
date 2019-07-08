@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  9 of 32
+ NHS login - Add a delegate - Summary
 {% endblock %}
 
 <!-- Your page content goes inside the content block -->
@@ -56,6 +56,20 @@
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
+            Their NHS number:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.nhsnumber }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/add-delegate/delegate-nhs-no-2">
+              Change
+                <span class="nhsuk-u-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
             Their date of birth:
           </dt>
           <dd class="nhsuk-summary-list__value">
@@ -82,20 +96,7 @@
             </a>
           </dd>
         </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Their NHS number:
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data.nhsnumber }}
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a href="/add-delegate/delegate-nhs-no-2">
-              Change
-                <span class="nhsuk-u-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
+        
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Their email address:

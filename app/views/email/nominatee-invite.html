@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  Invite to Helm
+  Invite to myHealth
 {% endblock %}
 
 {% block content %}
@@ -9,15 +9,18 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-        You have been invited by {{ data.delegateUser }} to act on their behalf for {{data.service}}
+        Hello, You have been invited by {{ data.delegateUser }} to act on their behalf for their {{data.service}} account.
       </h1>
 
       <p>To get access to their information you need to accept the invitation and then sign in with your NHS login. If you do not have an NHS login you will need to set one up.</p>
       <p><a href="/login/have-login" class="nhsuk-button">Accept invitation</a></p>
+      <p><a href="/login/have-login" class="nhsuk-button">Reject invitation</a></p>
       <p>If nothing happens when you click the button, try this link instead. You might need to copy and paste it into an internet browser:</p>
-      <a href="/nhs-login/login/have-login">http://login.nhs.uk/invite-to-helm</a>
+      <a href="/nhs-login/login/have-login">http://login.nhs.uk/invite-to-myHealth</a>
 
-      <p>If you do not know this person you can ignore this email.</p>
+      <p>This link will expire in 7 days.</p>
+
+      <p><a href="#">Contact us</a> if you do not know this person or you think this may be an error.</p>
 
     </div>
   </div>
