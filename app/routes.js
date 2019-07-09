@@ -82,9 +82,9 @@ router.post('/service/service-consent', function(req, res) {
     var givesConsent = req.session.data['givesConsent'];
 
     if (givesConsent === 'yes') {
-        res.redirect('/login/login-as-combined');
+        res.redirect('/service/service-consent-success');
     } else {
-        res.redirect('/service-consent-rejected');
+        res.redirect('/service/service-consent-rejected');
     }
 })
 
