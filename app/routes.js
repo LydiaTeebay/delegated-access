@@ -10,7 +10,7 @@ router.get('/john-nominates-david', function (req, res) {
     req.session.data['service'] = 'myHealth';
     req.session.data['serviceConsent'] = false;
     req.session.data['hasLogin'] = true;
-    res.render('email/nominatee-invite');
+    res.render('email/delegate-invite');
 })
 
 router.get('/john-adds-david-as-delegator', function (req, res) {
@@ -85,6 +85,17 @@ router.post('/service/service-consent', function(req, res) {
         res.redirect('/service/service-consent-success');
     } else {
         res.redirect('/service/service-consent-rejected');
+    }
+})
+
+router.post('/service/nhslogin-consent', function(req, res) {
+    
+    var givesConsent = req.session.data['givesConsent'];
+
+    if (givesConsent === 'yes') {
+        res.redirect('/service/nhslogin-success');
+    } else {
+        res.redirect('/service/nhslogin-rejected');
     }
 })
 

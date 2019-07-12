@@ -18,25 +18,17 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
-
+<mark> Copy needs to change to say this is specific to connecting the two NHS logins. </mark>
       <!-- Change the page title here -->
       <h1>
-        Email has been sent
+        You can now act on behalf of {{ data.delegateUser }} within {{ data.service }}
       </h1>
-
-      <p>We have sent an email to <strong>{{ data.firstName }} {{ data.lastName }}</strong> at <strong>{{ data.contactEmailAddress }}</strong> with a secure link. <br>
-      
-      <a href="/" role="button" draggable="false" class="nhsuk-button">
+      <p>You can now enter <strong>{{ data.delegateUser}}'s</strong> {{ data.service }} account. 
+      This means you can act on their behalf and see their information within {{ data.service }}. For example, you may be able to see their medical records.</p>
+      <p>Email the service desk at <a href:"mailto:XXX">XXX</a> if you would like to cancel this connection at any time.</p>
+      <a href="/login/login-as-combined" role="button" draggable="false" class="nhsuk-button">
         Continue to {{ data.service }}
       </a>
-      <mark> or shall we continue to account management? or to view all delegations?</mark>
-
-      <p><a href="/add-delegate/delegate-preflight">Add someone else to act on your behalf</a></p>
-
-      <hr>
-
-      <a href="/email/user-security">View email sent to John</a><br>
-      <a href="/john-nominates-david">View email sent to David</a>
 
 
     </div>  

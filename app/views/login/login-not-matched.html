@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  NHS login - Success!
+  NHS login - Error!
 {% endblock %}
 
 <!-- Your page content goes inside the content block -->
@@ -21,22 +21,13 @@
 
       <!-- Change the page title here -->
       <h1>
-        Email has been sent
+        Error!
       </h1>
-
-      <p>We have sent an email to <strong>{{ data.firstName }} {{ data.lastName }}</strong> at <strong>{{ data.contactEmailAddress }}</strong> with a secure link. <br>
-      
-      <a href="/" role="button" draggable="false" class="nhsuk-button">
+      <p>The details that the user entered do not match the details that the delegate has given us upon logging in.</p>
+      <mark>Ian is working on copy for this page.</mark>
+      <a href="/login/login-as-combined" role="button" draggable="false" class="nhsuk-button">
         Continue to {{ data.service }}
       </a>
-      <mark> or shall we continue to account management? or to view all delegations?</mark>
-
-      <p><a href="/add-delegate/delegate-preflight">Add someone else to act on your behalf</a></p>
-
-      <hr>
-
-      <a href="/email/user-security">View email sent to John</a><br>
-      <a href="/john-nominates-david">View email sent to David</a>
 
 
     </div>  
