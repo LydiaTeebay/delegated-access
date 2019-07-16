@@ -99,6 +99,19 @@ router.post('/service/nhslogin-consent', function(req, res) {
     }
 })
 
+router.post('/service/select-single-service', function(req, res) {
+    var service = req.session.data['selectSingleService'];
+
+    if (service === 'notFound') {
+        res.redirect('/service/select-service-not-listed');
+    } else {
+        // set the service throughout
+        req.session.data['service'] = service;
+        res.redirect('/add-delegate/delegate-preflight');
+    }
+    //console.log(service);
+})
+
 router.post('/add-delegate/delegate-dob', function(req, res) {
     res.redirect('/add-delegate/delegate-postcode');
 })
