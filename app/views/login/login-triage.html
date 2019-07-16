@@ -29,19 +29,19 @@
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="triage" name="triage" type="radio" value="AsYourself">
                 <label class="nhsuk-label nhsuk-radios__label" for="triage">
-                  Enter {{ data.service }} as yourself
+                  Enter {{ data.service or 'myHealth' }} as yourself
                 </label>
             </div>
             <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="triage" name="triage" type="radio" value="AsSomeoneElse">
                   <label class="nhsuk-label nhsuk-radios__label" for="triage">
-                    Enter {{ data.service }} on behalf of someone else
+                    Enter {{ data.service or 'myHealth' }} on behalf of someone else
                   </label>
             </div>
             <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="triage" name="triage" type="radio" value="Delegate">
                   <label class="nhsuk-label nhsuk-radios__label" for="triage">
-                    Allow someone else to enter {{ data.service }} on your behalf
+                    Allow someone else to enter {{ data.service or 'myHealth' }} on your behalf
                   </label>
             </div>
           </div>       

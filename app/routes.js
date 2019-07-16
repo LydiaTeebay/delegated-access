@@ -39,11 +39,11 @@ router.post('/login/login-details', function(req, res) {
     // we check here if the user already has nhs login
     // we also check if the user has already consented to the service
 
-    var hasLogin = req.session.data['hasLogin'];
-    var serviceConsent = req.session.data['serviceConsent'];
-    var currentUser = req.session.data['currentUser'];
-    
-    if (currentUser === 'David') {
+    var hasLogin = req.session.data['hasLogin'] || true;
+    var serviceConsent = req.session.data['serviceConsent'] || false;
+    //var currentUser = req.session.data['currentUser'] || 'NoUserSet';
+    //var delegatedUser = req.session.
+    //if (currentUser === 'David') {
         if (hasLogin === true) {
             if (serviceConsent === true) {
                 // login then go straight into the service
@@ -57,7 +57,7 @@ router.post('/login/login-details', function(req, res) {
         } else {
             // 
         }
-    }
+   // }
 
 })
 

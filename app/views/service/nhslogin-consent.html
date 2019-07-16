@@ -32,9 +32,9 @@
     This is <b>NOT</b> the service consent page.<br>
     This will be seen if someone is connected to another person for the very first time.</mark>
       <h1>Agree to be connected to someone else's NHS login</h1>
-      <p>{{ data.delegateUser }} is allowing you to enter their {{ data.service }} account and act on their behalf. 
-      To accept this request, you need to be signed up to {{ data.service }} and agree to share your NHS login information with them.</p>
-      <p>{{ data.service }} will see your:
+      <p>{{ data.delegateUser or 'John' }} is allowing you to enter their {{ data.service or 'myHealth' }} account and act on their behalf. 
+      To accept this request, you need to be signed up to {{ data.service or 'myHealth' }} and agree to share your NHS login information with them.</p>
+      <p>{{ data.service or 'myHealth' }} will see your:
       <ul>
         <li>name</li>
         <li>date of birth</li>

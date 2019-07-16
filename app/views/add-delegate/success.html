@@ -24,10 +24,10 @@
         Email has been sent
       </h1>
 
-      <p>We have sent an email to <strong>{{ data.firstName }} {{ data.lastName }}</strong> at <strong>{{ data.contactEmailAddress }}</strong> with a secure link. <br>
+      <p>We have sent an email to <strong>{{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.contactEmailAddress or 'david35@gmail.com' }}</strong> with a secure link. <br>
       <br>
       <a href="/" role="button" draggable="false" class="nhsuk-button">
-        Continue to {{ data.service }}
+        Continue to {{ data.service or 'myHealth' }}
       </a>
       <br>
       <mark> or shall we continue to account management? or to view all delegations?</mark>

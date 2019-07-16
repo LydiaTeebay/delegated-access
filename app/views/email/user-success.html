@@ -9,11 +9,11 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-      {{ data.firstName }} {{ data.lastName }} has been added to your NHS login account
+      {{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }} has been added to your NHS login account
       </h1>
-      <p>You have given {{ data.firstName }} {{ data.lastName }} access to act on your behalf within {{ data.service }} via NHS login.</p>
+      <p>You have given {{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }} access to act on your behalf within {{ data.service or 'myHealth' }} via NHS login.</p>
       <p><a href="#">Contact us</a> if you did not do this or you think this may be an error.</p>
-      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">View people who have access to your {{ data.service }} account</a></p>
+      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">View people who have access to your {{ data.service or 'myHealth' }} account</a></p>
     </div>
     <mark>Mention: levels of access can be changed through the service settings (?) or whatever the truth is.</mark><br>
           <mark>Waiting for copy from Ian</mark>

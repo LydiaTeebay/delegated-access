@@ -29,9 +29,9 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
       <h1>Agree to share your NHS login information</h1>
-      <p>{{ data.delegateUser }} is allowing you to enter their {{ data.service }} account and act on their behalf. 
-      To accept this request, you need to be signed up to {{ data.service }} and agree to share your NHS login information with them.</p>
-      <p>{{ data.service }} will see your:
+      <p>{{ data.delegateUser or 'John' }} is allowing you to enter their {{ data.service or 'myHealth' }} account and act on their behalf. 
+      To accept this request, you need to be signed up to {{ data.service or 'myHealth' }} and agree to share your NHS login information with them.</p>
+      <p>{{ data.service or 'myHealth' }} will see your:
       <ul>
         <li>name</li>
         <li>date of birth</li>
