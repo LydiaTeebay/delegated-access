@@ -29,46 +29,23 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
       <h1>Agree to share your NHS login information</h1>
-      <p>{{ data.delegateUser or 'John' }} is allowing you to enter their {{ data.service or 'myHealth' }} account and act on their behalf. 
-      To accept this request, you need to be signed up to {{ data.service or 'myHealth' }} and agree to share your NHS login information with them.</p>
-      <p>{{ data.service or 'myHealth' }} will see your:
+      <p>{{ data.delegateUser }} is allowing you to enter their {{ data.service }} account and act on their behalf. 
+To accept this request and continue, you need to agree to share your NHS login information. </p>
+      <p>{{ data.service }} will use your:
       <ul>
         <li>name</li>
         <li>date of birth</li>
-        <li>postcode</li>
-        <li>email address</li>
+        <li>NHS number</li>
       </ul>
       <p>Before you agree, you should read their terms of use and privacy policy to check how they will use your information.<p>
       
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-      <form action="/service/service-consent" method="post">
-      <div class="nhsuk-form-group">
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-              Do you accept?
-            </h1>
-          </legend>
-          <div class="nhsuk-radios">
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="givesConsent-1" name="givesConsent" type="radio" value="yes" checked>
-                <label class="nhsuk-label nhsuk-radios__label" for="givesConsent-1">
-                  Yes
-                </label>
-            </div>
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="givesConsent-2" name="givesConsent" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="givesConsent-2">
-                    No
-                  </label>
-            </div>
-          </div>       
-        </fieldset>
-      
-      </div>
-      <button class="nhsuk-button">Continue</button>
-      </form>
+      {{ button({
+        "text": "Agree and continue",
+        "href": "/service/service-consent-success"
+      }) }}
+
+<p><a href="#">I do not want to use my NHS login</a>
+
     </div>  
   </div>
     </div>
