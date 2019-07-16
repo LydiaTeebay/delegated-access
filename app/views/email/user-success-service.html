@@ -9,9 +9,9 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-      {{ data.firstName }} {{ data.lastName }} can now act on your behalf for {{ data.service }}
+      {{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }} can now act on your behalf for {{ data.service or 'myHealth' }}
       </h1>
-      <p>{{ data.firstName }} {{ data.lastName }} has accepted your invite to act on your behalf for {{ data.service }}. You can cancel this and remove their access at any time by visiting your account management area.</p>
+      <p>{{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }} has accepted your invite to act on your behalf for {{ data.service or 'myHealth' }}. You can cancel this and remove their access at any time by visiting your account management area.</p>
       <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Account management</a></p>
       <p><a href="">Ask another person to act on your behalf</a></p>
     </div>
