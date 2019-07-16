@@ -30,6 +30,13 @@
             </label>
             <input class="nhsuk-input nhsuk-u-width-three-quarters" id="firstName" name="firstName" value="{{ data['firstName'] }}" type="text">
           </div>
+          <mark>Middle name only needed if we go to PDS with the information supplied</mark>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="middleName">
+              Middle name (if they have one)
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="middleName" name="middleName" value="{{ data['middleName'] }}" type="text">
+          </div>
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="lastName">
               Last name
