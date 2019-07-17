@@ -24,12 +24,16 @@
         You can now act on behalf of {{ data.delegateUser or 'John' }} within {{ data.service or 'myHealth' }}
       </h1>
       <p>You can now enter <strong>{{ data.delegateUser or 'John' }}'s</strong> {{ data.service or 'myHealth' }} account. 
-      This means you can act on their behalf and see their information within {{ data.service }}. For example, you may be able to see their medical records.</p>
+      This means you can act on their behalf and see their information within {{ data.service or 'myHealth'  }}. For example, you may be able to see their medical records.</p>
+      <div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>Access to some things needs a higher level of security and so your details will be sent to be authorised by a clinician. Until you are fully authorised you may not be able to use all the features. This can take up to 7 days.</p>
+</div>
       <p>Email the service desk at <a href:"mailto:XXX">XXX</a> if you would like to cancel this connection at any time.</p>
       <a href="/login/login-as-combined" role="button" draggable="false" class="nhsuk-button">
         Continue to {{ data.service or 'myHealth' }}
       </a>
-<mark>Need to mention: you may not currently have access to all features. access to all features may need a clinician to authorise. this may take up to 7 days (not strictly true, but we will use 7 days as an assumption for the moment)</mark>
+<mark>Need to mention: </mark>
 
     </div>  
 
