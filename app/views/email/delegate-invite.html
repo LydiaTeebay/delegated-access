@@ -10,11 +10,11 @@
 
       <p><h1 class="nhsuk-fieldset__legend--l">
         Hello, </p>
-        You have been invited by {{ data.currentUser }} to act on their behalf for their {{ data.service }} account.
+        You have been invited by {{ data.currentUser or 'John' }} to act on their behalf for their {{ data.service or 'myHealth' }} account.
       </h1>
 
       <p>To get access to their information you need to accept the invitation and then sign in with your NHS login. If you do not have an NHS login you will need to set one up.</p>
-      <p><a href="/login/have-login" class="nhsuk-button">Continue to {{ data.service }} </a>
+      <p><a href="/login/have-login" class="nhsuk-button">Continue to {{ data.service or 'myHealth' }} </a>
       <p>This link will expire in 7 days.</p>
       <p><a href="#">Contact us</a> if you do not know this person or you think this may be an error.</p>
 <mark>Add info into the email invite about what it means to be a delegate for someone</mark>

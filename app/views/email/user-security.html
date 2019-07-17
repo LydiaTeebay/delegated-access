@@ -9,7 +9,7 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-      You have asked {{ data.firstName }} {{ data.lastName }} to act on your behalf for {{ data.service }}
+      You have asked {{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }} to act on your behalf for {{ data.service or 'myHealth' }}
       </h1>
       <p>We will let you know if they accept your invite.</p>
       <p><a href="#">Contact us</a> if you did not do this or you think this may be an error.</p>

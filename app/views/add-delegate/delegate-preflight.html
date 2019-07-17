@@ -20,7 +20,7 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page title here -->
-      <h1>Allow someone to enter {{ data.service }} on your behalf</h1>
+      <h1>Allow someone to enter {{ data.service or 'myHealth' }} on your behalf</h1>
       <h2>Before you start</h2>
      
       <p>To allow someone else to act on your behalf, you will need to tell us their:</p>
@@ -28,7 +28,7 @@
         <li>name</li>
         <li>email address</li>
       </ul>
-      <p>If you know this person’s NHS number, it may help us to find them quickly. If not, you will need to tell us their date of birth and postcode instead.</p>
+      <p>If you know this person’s NHS number, it may help us to find them quickly. If not, you will need to tell us their date of birth.</p>
 
       {{ details({
         "text": "Where can I find my NHS number?",
@@ -51,7 +51,7 @@
         "href": "/add-delegate/delegate-name"
       }) }}
 
-      <p><a href="/add-delegate/delegate-list">See who can enter {{ data.service }} on your behalf.</a></p>
+      <p><a href="/add-delegate/delegate-list">See who can enter {{ data.service or 'myHealth' }} on your behalf.</a></p>
 
     </div>  
 

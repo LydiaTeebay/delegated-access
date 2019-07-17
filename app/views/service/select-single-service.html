@@ -17,31 +17,31 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/login/login-as-list" method="post">
+      <form action="/service/select-single-service" method="post">
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              Enter {{ data.service or 'myHealth' }} as:
+              Which service do you want to add the person to?
             </h1>
           </legend>
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="delegateUser" name="delegateUser" type="radio" value="John">
-                <label class="nhsuk-label nhsuk-radios__label" for="delegateUser">
-                  John
+              <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="myHealth">
+                <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
+                  myHealth
                 </label>
             </div>
             <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="delegateUser" name="delegateUser" type="radio" value="Tom">
-                  <label class="nhsuk-label nhsuk-radios__label" for="delegateUser">
-                    Tom
+                <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="NHS App">
+                  <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
+                    NHS App
                   </label>
             </div>
             <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="delegateUser" name="delegateUser" type="radio" value="Harriet">
-                  <label class="nhsuk-label nhsuk-radios__label" for="delegateUser">
-                   Harriet
+                <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="notFound">
+                  <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
+                   my service is not listed
                   </label>
             </div>
           </div>       
