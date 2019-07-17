@@ -1,0 +1,21 @@
+{% extends 'layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  Someone has been added to your NHS login account
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+      You are now added to {{ data.currentUser or 'John' }}'s {{ data.service or 'myHealth' }} account.
+      </h1>
+This means that you can now... <mark>[insert list of things we can do as a delegate]</mark>
+      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Account management</a></p>
+    </div>
+          <mark>Waiting for copy from Ian</mark>
+
+  </div>
+
+{% endblock %}
