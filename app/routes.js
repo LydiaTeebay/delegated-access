@@ -109,7 +109,10 @@ router.post('/service/select-single-service', function(req, res) {
         req.session.data['service'] = service;
         res.redirect('/add-delegate/delegate-preflight');
     }
-    //console.log(service);
+})
+
+router.post('/service/select-multi-service', function(req, res) {
+    res.redirect('/add-delegate/delegate-preflight');
 })
 
 router.post('/add-delegate/delegate-dob', function(req, res) {
