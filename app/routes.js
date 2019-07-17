@@ -116,7 +116,7 @@ router.post('/service/select-multi-service', function(req, res) {
 })
 
 router.post('/add-delegate/delegate-dob', function(req, res) {
-    res.redirect('/add-delegate/delegate-postcode');
+    res.redirect('/add-delegate/delegate-email');
 })
 
 router.post('/add-delegate/delegate-postcode', function(req, res) {
