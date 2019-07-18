@@ -45,7 +45,7 @@
             Person who can act on your behalf:
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }}
+            {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/add-delegate/delegate-name">
@@ -108,7 +108,7 @@
             Their email address:
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data.contactEmailAddress or 'david35@gmail.com' }}
+            {{ data.contactEmailAddress or 'bob35@gmail.com' }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/add-delegate/delegate-email">
@@ -119,13 +119,13 @@
         </div>
       </dl>
 
-      <p>You are allowing <strong>{{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }}</strong> to enter your <strong>{{ data.service or 'myHealth' }}</strong> account. 
+      <p>You are allowing <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> to enter your <strong>{{ data.service or 'myHealth' }}</strong> account. 
       This means they can act on your behalf and see your information within <strong>{{ data.service or 'myHealth' }}</strong>. 
       For example, they may be able to see your medical records.</p>
 
       <p>You can cancel this at any time on your account management page.</p>
 
-      <p>Once you submit these details, we will send an email to <strong>{{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.contactEmailAddress or 'david35@gmail.com' }}</strong> with a secure link.
+      <p>Once you submit these details, we will send an email to <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.contactEmailAddress or 'bob35@gmail.com' }}</strong> with a secure link.
       They will need to open this link to confirm they agree to enter {{ data.service }} and act on your behalf.</p>
 
       <p>Please check your details are correct before submitting.</p>

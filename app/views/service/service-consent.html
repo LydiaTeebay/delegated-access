@@ -41,12 +41,12 @@
         <div style="padding: 0 0 16px 16px; float: left">
           <p>
             <span class="nhsuk-body-s" style="margin-bottom: 0">Your NHS login is:</span>
-          {{ currentUserEmail or 'john@gmail.com' }}
+          {{ currentUserEmail or 'bob@gmail.com' }}
           </p>
         </div>
       </div>
 
-      <p>{{ data.delegateUser or 'John' }} is allowing you to enter their {{ data.service or 'myHealth' }} account and act on their behalf. 
+      <p>{{ data.delegateUser or 'Alice' }} is allowing you to enter their {{ data.service or 'myHealth' }} account and act on their behalf. 
 To accept this request and continue, you need to agree to share your NHS login information. </p>
       <p>{{ data.service or 'myHealth' }} will use your:
       <ul>

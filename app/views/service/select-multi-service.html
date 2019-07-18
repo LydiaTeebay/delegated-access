@@ -31,6 +31,13 @@
     Select all that apply
     </span>
     <div class="nhsuk-checkboxes">
+      <!--<div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="service-0" name="selectMultiService" type="checkbox" value="selectAll">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="service-0">
+        select all
+        </label>
+      </div>
+      -->
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="service-1" name="selectMultiService" type="checkbox" value="myHealth">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="service-1">
@@ -54,91 +61,30 @@
 </div>
 <button class="nhsuk-button">Continue</button>
 <p><a href="/service/select-service-not-listed">Why is my service is not listed</a></p>
-      <!--<div class="nhsuk-form-group">
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-              Which service do you want to add the person to?
-            </h1>
-          </legend>
-          <div class="nhsuk-radios">
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="myHealth">
-                <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
-                  myHealth
-                </label>
-            </div>
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="NHS App">
-                  <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
-                    NHS App
-                  </label>
-            </div>
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="notFound">
-                  <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
-                   my service is not listed
-                  </label>
-            </div>
-          </div>       
-        </fieldset>
-      </div>
-      <button class="nhsuk-button">Continue</button>-->
       </form>
     </div>  
   </div>
-
-  <!--
-
-  <div class="nhsuk-grid-row">
-
-    <div class="nhsuk-grid-column-two-thirds">
-
-     <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="/login/login-as-list" method="post">
-
-        {% call fieldset({
-          legend: {
-            text: "Enter [service name] as:",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
-
-        {{ radios({
-          "idPrefix": "delegateUser",
-          "name": "delegateUser",
-          "items": [
-            {
-              "value": "John",
-              "text": "John"
-            },
-              {
-              "value": "Tom",
-              "text": "Tom"
-            },
-            {
-              "value": "Harriet",
-              "text": "Harriet"
-            }
-          ]
-        }) }}
-
-        {% endcall %}
-
-        {{ button({
-          "text": "Continue"
-        }) }}
-
-        <br>
-        
-      </form>
-    </div>
-  </div>
--->
-    </div>  
+</div>  
 
   </div>
+
+ {% block scripts %}
+ <script>
+
+
+/*
+var checkbox = document.querySelector("input[name=selectMultiService]");
+
+checkbox.addEventListener( 'change', function() {
+    if(this.checked) {
+        console.log('clicked')
+    } else {
+        console.log('something else clicked')
+    }
+});
+*/
+
+</script>
+ {% endblock %}
+
 {% endblock %}
