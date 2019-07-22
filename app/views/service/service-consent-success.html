@@ -21,13 +21,13 @@
 
       <!-- Change the page title here -->
       <h1>
-        You can now act on behalf of {{ data.delegateUser or 'Alice' }} within {{ data.service or 'myHealth' }}
+        You can now act on behalf of {{ data.delegateUser or 'Alice' }} in {{ data.service or 'myHealth' }}
       </h1>
-      <p>You can now enter <strong>{{ data.delegateUser or 'Alice' }}'s</strong> {{ data.service or 'myHealth' }} account. 
-      This means you can act on their behalf and see their information within {{ data.service or 'myHealth'  }}. For example, you may be able to see their medical records.</p>
+      <p>This means you are able to see {{ data.delegateUser or 'Alice' }}’s {{ data.service or 'myHealth' }} information. For example, you may be able to see some of their medical or appointment information.</p>
       <div class="nhsuk-inset-text">
   <span class="nhsuk-u-visually-hidden">Information: </span>
-  <p>Access to some parts of {{ data.service or 'myHealth' }} will require a higher level of security. In this case, your details will be sent to be authorised by a clinician. Until you are fully authorised you may not be able to use all the features. This can take up to 7 days.</p>
+<p>Access to some parts of {{ data.service or 'myHealth' }} will need a higher level of security. To do this, your information will be sent to a clinician to be authorised. Until you are fully authorised you may not be able to use all of {{ data.service or 'myHealth' }}’s features. <b>This can take up to 7 days.</b></p>
+
 </div>
       <p>Email the service desk at <a href:"mailto:XXX">XXX</a> if you would like to cancel this connection at any time.</p><BR>
 

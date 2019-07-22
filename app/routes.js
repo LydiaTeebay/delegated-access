@@ -52,7 +52,7 @@ router.post('/login/login-details', function(req, res) {
             } else {
                 // go to the service consent page
                 console.log('user has not given consent');
-                res.redirect('/service/service-consent');
+                res.redirect('/service/nhslogin-consent');
             }
         } else {
             // 
