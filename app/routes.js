@@ -3,19 +3,19 @@ const express = require('express');
 const router = express.Router();
 
 // add scenarios here - change session data
-router.get('/john-nominates-david', function (req, res) {
+router.get('/alice-nominates-bob', function (req, res) {
     req.session.data = {}
-    req.session.data['currentUser'] = 'David';
-    req.session.data['delegateUser'] = 'John';
+    req.session.data['currentUser'] = 'Bob';
+    req.session.data['delegateUser'] = 'Alice';
     req.session.data['service'] = 'myHealth';
     req.session.data['serviceConsent'] = false;
     req.session.data['hasLogin'] = true;
     res.render('email/delegate-invite');
 })
 
-router.get('/john-adds-david-as-delegator', function (req, res) {
+router.get('/alice-adds-bob-as-delegator', function (req, res) {
     req.session.data = {}
-    req.session.data['currentUser'] = 'John';
+    req.session.data['currentUser'] = 'Alice';
     req.session.data['service'] = 'myHealth';
     req.session.data['hasLogin'] = true;
     res.render('add-delegate/delegate-preflight');
@@ -43,7 +43,7 @@ router.post('/login/login-details', function(req, res) {
     var serviceConsent = req.session.data['serviceConsent'] || false;
     //var currentUser = req.session.data['currentUser'] || 'NoUserSet';
     //var delegatedUser = req.session.
-    //if (currentUser === 'David') {
+    //if (currentUser === 'Bob') {
         if (hasLogin === true) {
             if (serviceConsent === true) {
                 // login then go straight into the service
@@ -173,7 +173,7 @@ router.post('/login/login-as-list', function (req, res) {
     var delegateUser = req.session.data['delegateUser']
   
     // Check whether the variable matches a condition
-    if (delegateUser == "John"){
+    if (delegateUser == "Alice"){
       // Send user to next page
       res.redirect('/service/service-logged-in')
     }

@@ -29,7 +29,24 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
       <h1>Agree to share your NHS login information</h1>
-      <p>{{ data.delegateUser or 'John' }} is allowing you to enter their {{ data.service or 'myHealth' }} account and act on their behalf. 
+
+      <!-- Styling needs adding to main sass file and it could be improved -->
+      <div style="width: 100%; display: inline-block">
+        <div style="float: left;">
+          <svg class="nhsuk-icon nhsuk-icon__user nhsuk-icon--size-50" xmlns="http://www.w3.org/2000/svg" viewBox="6 0 20 24" width="32" aria-hidden="true">
+            <path d="M16,2a10,10,0,0,0-1.09,19.93H15A6,6,0,0,0,16,22a6,6,0,0,0,1-.06h.05A10,10,0,0,0,16,2Zm5.4,15.88a6.45,6.45,0,0,0,.14-.88,5.3,5.3,0,0,0-2.4-4.14,4.89,4.89,0,0,1-6.28,0A5.3,5.3,0,0,0,10.46,17a6.45,6.45,0,0,0,.14.88,8,8,0,1,1,10.8,0Z"/>
+            <circle cx="16" cy="9" r="3"/>
+          </svg>
+        </div>
+        <div style="padding: 0 0 16px 16px; float: left">
+          <p>
+            <span class="nhsuk-body-s" style="margin-bottom: 0">Your NHS login is:</span>
+          {{ currentUserEmail or 'bob@gmail.com' }}
+          </p>
+        </div>
+      </div>
+
+      <p>{{ data.delegateUser or 'Alice' }} is allowing you to enter their {{ data.service or 'myHealth' }} account and act on their behalf. 
 To accept this request and continue, you need to agree to share your NHS login information. </p>
       <p>{{ data.service or 'myHealth' }} will use your:
       <ul>
