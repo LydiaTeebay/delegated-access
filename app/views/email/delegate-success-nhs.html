@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  Someone has been added to your NHS login account
+  EMAIL
 {% endblock %}
 
 {% block content %}
@@ -9,12 +9,11 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-      You are now added to {{ data.currentUser or 'John' }}'s {{ data.service or 'myHealth' }} account.
+      You have been added to {{ data.currentUser or 'John' }}'s NHS login.
       </h1>
-This means that you can now....
-      <p>You can view people who you can act on behalf of, or people who can act on behalf of you on the NHS login account manangement area.<br>
-      You can cancel these account connections on the NHS login account management area.
-      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Account management</a></p>
+      <p>This means you can now act on [NAME]’s behalf within any services they ask you to.</p>
+      <p>You can cancel this connection and at any time by visiting your NHS login account management area.</p>
+      <p><a href="#" class="nhsuk-button">Account management</a></p>
     </div>
           <mark>Need to include information on how to remove the connection to their NHS login</mark>
 

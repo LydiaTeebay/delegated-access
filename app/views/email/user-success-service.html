@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  Someone can now act on your behalf
+  EMAIL
 {% endblock %}
 
 {% block content %}
@@ -9,10 +9,11 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-      {{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }} can now act on your behalf for {{ data.service or 'myHealth' }}
+      {{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }} can now act on your behalf in {{ data.service or 'myHealth' }}
       </h1>
-      <p>{{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }} has accepted your invite to act on your behalf for {{ data.service or 'myHealth' }}. You can cancel this and remove their access at any time by visiting your account management area.</p>
-      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Account management</a></p>
+      <p>{{ data.firstName or 'David' }} {{ data.lastName or 'Smith' }} has accepted your invite to act on your behalf in {{ data.service or 'myHealth' }}. </p>
+      <p>Go to {{ data.service or 'myHealth' }}’s settings to manage what {{ data.firstName or 'David' }} can see and do. You can cancel and remove their access at any time by visiting your NHS login account management area.</p>
+      <p><a href="#" class="nhsuk-button">Account management</a></p>
       <p><a href="">Ask another person to act on your behalf</a></p>
     </div>
     <mark>Need to mention: You can add them to another service within the account management. Levels of access per service can be changed through the service settings.</mark><br>
