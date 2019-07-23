@@ -12,12 +12,12 @@
       {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} can now act on your behalf in {{ data.service or 'myHealth' }}
       </h1>
       <p>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} has accepted your invite to act on your behalf in {{ data.service or 'myHealth' }}. </p>
-      <p>Go to {{ data.service or 'myHealth' }}’s settings to manage what {{ data.firstName or 'David' }} can see and do. You can cancel and remove their access at any time by visiting your NHS login account management area.</p>
+      <p>Go to {{ data.service or 'myHealth' }}’s settings to manage what {{ data.firstName or 'Alice' }} can see and do. 
+      You can cancel and remove their access at any time by visiting your NHS login account management area.</p>
+      <!--<p>To see what other services you can add {{ data.firstName or 'Bob' }} to, or to add him to one, visit account management</p>-->
       <p><a href="#" class="nhsuk-button">Account management</a></p>
       <p><a href="">Ask another person to act on your behalf</a></p>
     </div>
-    <mark>Need to mention: You can add them to another service within the account management. Levels of access per service can be changed through the service settings.</mark><br>
-
   </div>
 
 {% endblock %}
