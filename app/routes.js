@@ -15,10 +15,10 @@ router.get('/alice-nominates-bob', function (req, res) {
 
 router.get('/alice-adds-bob-as-delegator', function (req, res) {
     req.session.data = {}
-    req.session.data['currentUser'] = 'Alice';
-    req.session.data['service'] = 'myHealth';
+    //req.session.data['currentUser'] = 'Alice';
+    //req.session.data['service'] = 'myHealth';
     req.session.data['hasLogin'] = true;
-    res.render('add-delegate/delegate-preflight');
+    res.render('service/select-single-service');
 })
 
 // Add your routes here - above the module.exports line
