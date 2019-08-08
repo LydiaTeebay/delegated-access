@@ -4,11 +4,11 @@ const router = express.Router();
 
 // add scenarios here - change session data
 router.get('/alice-nominates-bob', function (req, res) {
-    req.session.data = {}
-    req.session.data['currentUser'] = 'Bob';
-    req.session.data['delegateUser'] = 'Alice';
-    req.session.data['service'] = 'myHealth';
-    req.session.data['serviceConsent'] = false;
+    //req.session.data = {}
+    //req.session.data['currentUser'] = 'Bob';
+    //req.session.data['delegateUser'] = 'Alice';
+    //req.session.data['service'] = 'myHealth';
+    //req.session.data['serviceConsent'] = false;
     req.session.data['hasLogin'] = true;
     res.render('email/delegate-invite');
 })
