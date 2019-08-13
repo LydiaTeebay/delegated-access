@@ -1,0 +1,122 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  NHS login - Add a delegate
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/add-delegate/delegate-relationship" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              What is {{ data.firstName or 'Bob' }}'s relationship to you?
+            </h1>
+          </legend>
+          
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="partner" name="partner" type="radio" value="partner">
+                <label class="nhsuk-label nhsuk-radios__label" for="partner">
+                  spouse / partner / common law partner
+                </label>
+            </div>
+           
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="parent" name="parent" type="radio" value="parent">
+                  <label class="nhsuk-label nhsuk-radios__label" for="parent">
+                    parent
+                  </label>
+            </div>
+            
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="guardian" name="guardian" type="radio" value="guardian">
+                  <label class="nhsuk-label nhsuk-radios__label" for="guardian">
+                    guardian
+                  </label>
+            </div>
+            
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="fosterparent" name="fosterparent" type="radio" value="fosterparent">
+                  <label class="nhsuk-label nhsuk-radios__label" for="fosterparent">
+                    foster parent
+                  </label>
+            </div>
+            
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="stepparent" name="stepparent" type="radio" value="stepparent">
+                  <label class="nhsuk-label nhsuk-radios__label" for="stepparent">
+                    step parent
+                  </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="child" name="child" type="radio" value="child">
+                  <label class="nhsuk-label nhsuk-radios__label" for="child">
+                    child
+                  </label>
+            </div>
+
+                        <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="mother" name="mother" type="radio" value="mother">
+                  <label class="nhsuk-label nhsuk-radios__label" for="mother">
+                    mother
+                  </label>
+            </div>
+
+             <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="father" name="father" type="radio" value="father">
+                  <label class="nhsuk-label nhsuk-radios__label" for="father">
+                    father
+                  </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="sister" name="sister" type="radio" value="sister">
+                  <label class="nhsuk-label nhsuk-radios__label" for="sister">
+                    sister
+                  </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="brother" name="brother" type="radio" value="brother">
+                  <label class="nhsuk-label nhsuk-radios__label" for="brother">
+                    brother
+                  </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="carer" name="carer" type="radio" value="carer">
+                  <label class="nhsuk-label nhsuk-radios__label" for="carer">
+                    carer
+                  </label>
+            </div>
+
+            <div class="nhsuk-form-group">
+                 <label class="nhsuk-label" for="input-example">
+                    Other:
+                </label>
+               <input class="nhsuk-input" id="input-example" name="test-name" type="text">
+            </div>
+
+
+          </div>       
+        </fieldset>
+      </div>
+      <button class="nhsuk-button">Continue</button>
+      </form>
+    </div>  
+  </div>
+{% endblock %}
