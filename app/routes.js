@@ -13,6 +13,24 @@ router.get('/alice-nominates-bob', function (req, res) {
     res.render('email/delegate-invite');
 })
 
+router.get('/research-flow-bob', function(req, res) {
+    req.session.data = {}; // reset the data
+    //req.session.data['service'] = ''
+
+    // we need to wake up the other herokus at this point
+
+    res.render('email/delegate-invite');
+})
+
+router.get('/research-flow-alice', function(req, res) {
+    req.session.data = {}; // reset the data
+    //req.session.data['service'] = ''
+
+    // we need to wake up the other herokus at this point
+
+    res.render('service/myhealth-home');
+})
+
 router.get('/alice-adds-bob-as-delegator', function (req, res) {
     req.session.data = {}
     //req.session.data['currentUser'] = 'Alice';
