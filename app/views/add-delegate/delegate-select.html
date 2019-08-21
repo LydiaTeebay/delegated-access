@@ -1,0 +1,104 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/service/select-single-service" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Who do you want to give access to?
+            </h1>
+          </legend>
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="myHealth" checked="checked">
+                <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
+                  Bob
+                </label>
+            </div>
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="NHS App">
+                  <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
+                    Dave
+                  </label>
+            </div>
+            
+          </div>       
+        </fieldset>
+      </div>
+      <button class="nhsuk-button">Continue</button>
+      <p><a href="/add-delegate/delegate-preflight">Add a new person</a></p>
+      </form>
+    </div>  
+  </div>
+
+  <!--
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+     <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="/login/login-as-list" method="post">
+
+        {% call fieldset({
+          legend: {
+            text: "Enter [service name] as:",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        {{ radios({
+          "idPrefix": "delegateUser",
+          "name": "delegateUser",
+          "items": [
+            {
+              "value": "Alice",
+              "text": "Alice"
+            },
+              {
+              "value": "Tom",
+              "text": "Tom"
+            },
+            {
+              "value": "Harriet",
+              "text": "Harriet"
+            }
+          ]
+        }) }}
+
+        {% endcall %}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+        <br>
+        
+      </form>
+    </div>
+  </div>
+-->
+    </div>  
+
+  </div>
+{% endblock %}
