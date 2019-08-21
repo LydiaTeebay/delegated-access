@@ -32,7 +32,7 @@ router.get('/research-flow-alice', function(req, res) {
     http.get("http://delegated-access.herokuapp.com/", function(e) {
         console.log(e.statusCode);
     });
-    http.get("http://nhs-login-onboarding-prototype.herokuapp.com/", function(e) {
+    http.get("http://manage-nhs-login.herokuapp.com/", function(e) {
         console.log(e.statusCode);
     });
   
