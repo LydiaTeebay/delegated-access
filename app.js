@@ -1,6 +1,7 @@
 // Core dependencies
 const path = require('path')
 const fs = require('fs')
+const http = require('http')
 
 // External dependencies
 const bodyParser = require('body-parser')
@@ -212,8 +213,26 @@ if (useDocumentation || onlyDocumentation == 'true') {
   documentationApp.get(/^([^.]+)$/, function (req, res, next) {
     automaticRouting.matchRoutes(req, res, next)
   })
-
 }
+
+/*
+app.get('/wakeywakey', function(req, res) {
+
+  http.get("http://nhs-cid.herokuapp.com", function(e) {
+      console.log(e.statusCode);
+  });
+  http.get("http://delegated-access.herokuapp.com/", function(e) {
+      console.log(e.statusCode);
+  });
+  http.get("http://nhs-login-onboarding-prototype.herokuapp.com/", function(e) {
+      console.log(e.statusCode);
+  });
+
+  console.log('waking up all heroku sites')
+
+  http.redirect('service/myhealth-home')
+});
+*/
 
 // Clear all data in session if you open /examples/passing-data/clear-data
 app.post('/examples/passing-data/clear-data', function (req, res) {

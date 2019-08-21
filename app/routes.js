@@ -1,6 +1,7 @@
 // External dependencies
 const express = require('express');
 const router = express.Router();
+const http = require('http')
 
 // add scenarios here - change session data
 router.get('/alice-nominates-bob', function (req, res) {
@@ -25,10 +26,20 @@ router.get('/research-flow-bob', function(req, res) {
 router.get('/research-flow-alice', function(req, res) {
     req.session.data = {}; // reset the data
     //req.session.data['service'] = ''
+    http.get("http://delegated-access-nhslogin.herokuapp.com", function(e) {
+        console.log(e.statusCode);
+    });
+    http.get("http://delegated-access.herokuapp.com/", function(e) {
+        console.log(e.statusCode);
+    });
+    http.get("http://nhs-login-onboarding-prototype.herokuapp.com/", function(e) {
+        console.log(e.statusCode);
+    });
+  
+    console.log('waking up all heroku sites')
+ 
 
-    // we need to wake up the other herokus at this point
-
-    res.render('service/myhealth-home');
+    res.redirect('service/myhealth-home');
 })
 
 router.get('/alice-adds-bob-as-delegator', function (req, res) {
