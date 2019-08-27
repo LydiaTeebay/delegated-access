@@ -108,16 +108,16 @@ router.post('/add-delegate/delegate-relationship', function(req, res) {
     if (relationship === 'partner') {
         res.redirect('/add-delegate/relationship-1');
 
-    if (relationship === 'parent') {
+    } if (relationship === 'parent') {
         res.redirect('/add-delegate/relationship-2');
 
-    if (relationship === 'child') {
+    } if (relationship === 'child') {
         res.redirect('/add-delegate/relationship-3');
             
-    if (relationship === 'sibling') {
+    } if (relationship === 'sibling') {
         res.redirect('/add-delegate/relationship-4');
 
-    if (relationship === 'carer') {
+    } if (relationship === 'carer') {
         res.redirect('/add-delegate/relationship-5');
 
     } else {
