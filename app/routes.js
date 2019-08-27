@@ -100,24 +100,38 @@ router.post('/add-delegate/delegate-relationship', function(req, res) {
     
     var relationship = req.session.data['relationship'];
 
-    if (relationship === 'partner') {
+    if (relationship === '1') {
         res.redirect('/add-delegate/delegate-relationship-1');
 
-    } if (relationship === 'parent') {
+    } if (relationship === '2') {
         res.redirect('/add-delegate/delegate-relationship-2');
 
-    } if (relationship === 'child') {
+    } if (relationship === '3') {
         res.redirect('/add-delegate/delegate-relationship-3');
             
-    } if (relationship === 'sibling') {
+    } if (relationship === '4') {
         res.redirect('/add-delegate/delegate-relationship-4');
 
-    } if (relationship === 'carer') {
-        res.redirect('/add-delegate/delegate-relationship-5');
-
     } else {
-        res.redirect('/add-delegate/delegate-relationship-6');
+        res.redirect('/add-delegate/delegate-nhs-no-1');
     }
+})
+
+
+router.post('/add-delegate/delegate-relationship-1', function(req, res) {
+    res.redirect('/add-delegate/delegate-nhs-no-1');
+})
+
+router.post('/add-delegate/delegate-relationship-2', function(req, res) {
+    res.redirect('/add-delegate/delegate-nhs-no-1');
+})
+
+router.post('/add-delegate/delegate-relationship-3', function(req, res) {
+    res.redirect('/add-delegate/delegate-nhs-no-1');
+})
+
+router.post('/add-delegate/delegate-relationship-4', function(req, res) {
+    res.redirect('/add-delegate/delegate-nhs-no-1');
 })
 
 
