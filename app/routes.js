@@ -95,11 +95,6 @@ router.post('/add-delegate/delegate-name', function(req, res) {
     res.redirect('/add-delegate/delegate-relationship');
 })
 
- router.post('/add-delegate/delegate-relationship', function(req, res) {
-    res.redirect('/add-delegate/delegate-nhs-no-1');
-})
-
-
 
 router.post('/add-delegate/delegate-relationship', function(req, res) {
     
