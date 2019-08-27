@@ -18,52 +18,56 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
       <form action="/add-delegate/delegate-relationship" method="post">
+
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+
             <h1 class="nhsuk-fieldset__heading">
               What is {{ data.firstName or 'Bob' }}'s relationship to you?
             </h1>
           </legend>
           
           <div class="nhsuk-radios">
+
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="partner" name="partner" type="radio" value="partner">
+              <input class="nhsuk-radios__input" id="partner" name="relationship" type="radio" value="partner">
                 <label class="nhsuk-label nhsuk-radios__label" for="partner">
                   spouse / partner / common law partner
                 </label>
             </div>
            
+           
             <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="parent" name="parent" type="radio" value="parent">
+                <input class="nhsuk-radios__input" id="parent" name="relationship" type="radio" value="parent">
                   <label class="nhsuk-label nhsuk-radios__label" for="parent">
                     parent / guardian / foster parent / step parent / mother / father
                   </label>
             </div>
 
             <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="child" name="child" type="radio" value="child">
+                <input class="nhsuk-radios__input" id="child" name="relationship" type="radio" value="child">
                   <label class="nhsuk-label nhsuk-radios__label" for="child">
                     child / daughter / son
                   </label>
             </div>
 
             <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="sister" name="sister" type="radio" value="sibling">
+                <input class="nhsuk-radios__input" id="sister" name="relationship" type="radio" value="sibling">
                   <label class="nhsuk-label nhsuk-radios__label" for="sister">
                     sister / brother
                   </label>
             </div>
 
             <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="carer" name="carer" type="radio" value="carer">
+                <input class="nhsuk-radios__input" id="carer" name="relationship" type="radio" value="carer">
                   <label class="nhsuk-label nhsuk-radios__label" for="carer">
                     carer
                   </label>
             </div>
 
             <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="other" name="other" type="radio" value="other">
+                <input class="nhsuk-radios__input" id="other" name="relationship" type="radio" value="other">
                   <label class="nhsuk-label nhsuk-radios__label" for="other">
                     other
                   </label>
