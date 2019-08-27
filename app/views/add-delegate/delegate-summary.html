@@ -54,6 +54,22 @@
             </a>
           </dd>
         </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Their relationship to you:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.firstName or 'Bob' }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/add-delegate/delegate-relationship">
+              Change
+                <span class="nhsuk-u-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
         {{ hasNHSNumber }}
         {% if data.hasNHSNumber === 'yes' %}
         <div class="nhsuk-summary-list__row">

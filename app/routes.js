@@ -95,9 +95,38 @@ router.post('/add-delegate/delegate-name', function(req, res) {
     res.redirect('/add-delegate/delegate-relationship');
 })
 
-router.post('/add-delegate/delegate-relationship', function(req, res) {
+ router.post('/add-delegate/delegate-relationship', function(req, res) {
     res.redirect('/add-delegate/delegate-nhs-no-1');
 })
+
+
+
+router.post('/add-delegate/delegate-relationship', function(req, res) {
+    
+    var relationship = req.session.data['relationship'];
+
+    if (relationship === 'partner') {
+        res.redirect('/add-delegate/relationship-1');
+
+    if (relationship === 'parent') {
+        res.redirect('/add-delegate/relationship-2');
+
+    if (relationship === 'child') {
+        res.redirect('/add-delegate/relationship-3');
+            
+    if (relationship === 'sibling') {
+        res.redirect('/add-delegate/relationship-4');
+
+    if (relationship === 'carer') {
+        res.redirect('/add-delegate/relationship-5');
+
+    } else {
+        res.redirect('/add-delegate/delegate-relationship-6');
+    }
+})
+
+
+
 
 router.post('/add-delegate/delegate-nhs-no-1', function(req, res) {
     
