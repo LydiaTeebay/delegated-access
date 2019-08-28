@@ -159,8 +159,15 @@ router.post('/service/service-consent', function(req, res) {
     }
 })
 
+router.get('/service/nhslogin-consent', function(req, res) {
+    // get the status of the ID check
+    req.session.data['id'] = req.query.id || 'passed';
+    console.log("ID check has: " + req.session.data['id']);
+
+    res.render('service/nhslogin-consent');
+})
+
 router.post('/service/nhslogin-consent', function(req, res) {
-    
     var givesConsent = req.session.data['givesConsent'];
 
     if (givesConsent === 'yes') {

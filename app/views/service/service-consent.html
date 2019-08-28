@@ -28,6 +28,9 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+
+      <mark>ID CHECK: {{ data.id }}</mark>
+
       <h1>Agree to share your NHS login information</h1>
 
       <!-- Styling needs adding to main sass file and it could be improved -->
@@ -62,19 +65,26 @@
         <p>You will be able to access myHealth on behalf of {{ data.delegateUser or 'Alice' }} once you have passed our checks.</p>
       </div>
       -->
-      
-      <mark>make this conditional based on where the user has come from</mark>
+
+      <!--<mark>make this conditional based on where the user has come from</mark>-->
+      {% if data.id ===  'pending' %}
       <div class="nhsuk-warning-callout">
         <h3 class="nhsuk-warning-callout__label">Awaiting checks</h3>
         <p>You will be able to access myHealth on behalf of {{ data.delegateUser or 'Alice' }} once you have passed our checks.</p>
       </div>
-      
 
+      {{ button({
+        "text": "Agree and continue",
+        "href": "/service/service-consent-pending"
+      }) }}
+      {% else %}
+
+      <!--<mark>This needs to go to the pending screen when the above callout is on page</mark>-->
       {{ button({
         "text": "Agree and continue",
         "href": "/service/service-consent-success"
       }) }}
-
+      {% endif %}
     <p><a href="#">I do not agree to sharing my information</a>
 
     </div>  
