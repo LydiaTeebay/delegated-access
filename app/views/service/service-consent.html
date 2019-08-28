@@ -55,13 +55,27 @@
         <li>NHS number</li>
       </ul>
       <p>Before you agree, you should read {{ data.service or 'myHealth' }}'s terms of use and privacy policy to check how they will use your information.<p>
+
+      <!--
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>You will be able to access myHealth on behalf of {{ data.delegateUser or 'Alice' }} once you have passed our checks.</p>
+      </div>
+      -->
       
+      <mark>make this conditional based on where the user has come from</mark>
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">Awaiting checks</h3>
+        <p>You will be able to access myHealth on behalf of {{ data.delegateUser or 'Alice' }} once you have passed our checks.</p>
+      </div>
+      
+
       {{ button({
         "text": "Agree and continue",
         "href": "/service/service-consent-success"
       }) }}
 
-<p><a href="#">I do not agree to sharing my information</a>
+    <p><a href="#">I do not agree to sharing my information</a>
 
     </div>  
   </div>
