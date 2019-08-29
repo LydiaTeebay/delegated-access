@@ -1,0 +1,45 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+    <h1>Services only you can access</h1>
+    
+    {{ insetText({
+      "HTML": "<p>Some services do not allow people to enter and act on someone else's behalf</p>"
+    }) }}
+    
+
+    <h2>Services that only you can use</h2>
+    <ul>
+      <li>AsthmaApp</li>
+      <li>OtherApp</li>
+      <li>Another service</li>
+    </ul>
+
+    <p>We can tell you if any of these services change and let you add someone to act on your behalf.</p>
+    
+    <a href="" class="nhsuk-button">Notify me when services are updated</a>
+    <p><a href="/service/select-single-service">Back to select a service</a></p>
+
+    </div>  
+  </div>
+
+    </div>  
+
+  </div>
+{% endblock %}
