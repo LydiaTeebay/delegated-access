@@ -135,6 +135,9 @@ router.post('/add-delegate/delegate-relationship-4', function(req, res) {
 })
 
 
+router.post('/add-delegate/delegate-relationship-not-listed', function(req, res) {
+    res.redirect('/add-delegate/delegate-nhs-no-1');
+})
 
 
 router.post('/add-delegate/delegate-nhs-no-1', function(req, res) {
