@@ -11,12 +11,24 @@
   MyHealth
 {% endblock %}
 
+{% block beforeContent %}
+
+{{ hero({
+  "heading": "Welcome to myHealth",
+  
+  "imageURL": "/images/cardiologyBanner.jpg"
+}) }}
+
+{% endblock %}
+
 <!-- if the user is logging in as another person then display the banner -->
 {% block proxy %}
   {% if data.currentUser != data.delegateUser %}
     <div class="proxy">You are logged in as {{ data.delegateUser or 'Alice' }}</div>
   {% endif %}
 {% endblock %}
+
+
 
 <!-- Breadcrumb goes inside the beforeContent block -->
 <!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
@@ -35,116 +47,34 @@
 
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
 
     
       <!-- Change the page title here -->
-      <h1>{{ data.service or 'myHealth' }}</h1>
+     <!-- <h1>{{ data.service or 'myHealth' }}</h1>-->
 
       
-{#
-      {{ button({
-        "text": "Continue with NHS login",
-        "href": "/nhs-lo"
-      }) }}
-#}
-{#
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-      <p class="nhsuk-body-l">
-        Start the flow here
-      </p>
-      
-      <p>
-        For more styles, code snippets and guidance on components visit the
-        <a href="https://beta.nhs.uk/service-manual/styles-components-patterns">NHS digital service manual</a>.
-      </p>
+<div class="nhsuk-grid-row nhsuk-panel-group">
+  <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+    <div class="nhsuk-panel">
+      <h3>Eat well</h3>
+      <p>All you need to know about the major food groups and a healthy, balanced diet</p>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+    <div class="nhsuk-panel">
+      <h3>Healthy weight</h3>
+      <p>Check your BMI using our healthy weight calculator and find out if you're a healthy weight</p>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+    <div class="nhsuk-panel">
+      <h3>Sleep and tiredness</h3>
+      <p>Find out how to sleep well and the common lifestyle factors that are making you tired</p>
+    </div>
+  </div>
+</div>
 
-      {{ button({
-  "text": "Start flow as Alice",
-  "href": "/index"
-}) }}
-
-{{ button({
-  "text": "Start flow as Bob"
-}) }}
-<!--
-      <figure class="nhsuk-image">
-        <img class="nhsuk-image__img" src="/images/placeholder-image-16-9.jpg" alt="A 16:9 image placeholder">
-        <figcaption class="nhsuk-image__caption">
-          Image example
-        </figcaption>
-      </figure>
--->
-      <h2>Level heading two</h2>
-
-      {{ list({
-        "title": "Do",
-        "type": "tick",
-        "items": [
-          {
-            "item": "cover blisters that are likely to burst with a soft plaster or dressing"
-          },
-          {
-            "item": "wash your hands before touching a burst blister"
-          },
-          {
-            "item": "allow the fluid in a burst blister to drain before covering it with a plaster or dressing"
-          }
-        ]
-      }) }}
-
-      {{ list({
-        "title": "Don't",
-        "type": "cross",
-        "items": [
-          {
-            "item": "burst a blister yourself"
-          },
-          {
-            "item": "peel the skin off a burst blister"
-          },
-          {
-            "item": "pick at the edges of the remaining skin"
-          },
-          {
-            "item": "wear the shoes or use the equipment that caused your blister until it heals"
-          }
-        ]
-      }) }}
-
-      <h3>
-        Level heading three
-      </h3>
-
-      <p>
-        Body text:
-      </p>
-
-      <ul>
-        <li>
-          The quick brown
-        </li>
-        <li>
-          fox jumps over
-        </li>
-        <li>
-          the lazy dog
-        </li>
-      </ul>
-
-      {{ warningCallout({
-        "heading": "School, nursery or work",
-        "HTML": "<p>Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.</p>"
-      }) }}
-
-      {{ reviewDate({
-        "lastReview": "12 February 2017",
-        "nextReview": "1 February 2020"
-      }) }}
-
-      <!-- End of content -->
-#}
     </div>  
 
   </div>
