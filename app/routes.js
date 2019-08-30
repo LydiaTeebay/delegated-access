@@ -111,6 +111,9 @@ router.post('/add-delegate/delegate-relationship', function(req, res) {
             
     } if (relationship === '4') {
         res.redirect('/add-delegate/delegate-relationship-4');
+   
+    } if (relationship === '5') {
+        res.redirect('/add-delegate/delegate-relationship-5');
 
     } else {
         res.redirect('/add-delegate/delegate-nhs-no-1');
