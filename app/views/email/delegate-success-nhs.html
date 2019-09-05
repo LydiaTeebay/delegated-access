@@ -9,9 +9,9 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-      You have been added to {{ data.currentUser or 'Alice' }}'s NHS login.
+      You have been added to {{ data.primaryUser or 'Alice' }}'s NHS login.
       </h1>
-      <p>This means you can now act on {{ data.currentUser or 'Alice' }}’s behalf within any services they ask you to.</p>
+      <p>This means you can now act on {{ data.primaryUser or 'Alice' }}’s behalf within any services they ask you to.</p>
       <p>You can cancel this at any time by visiting your NHS login account management area.</p>
       <p><a href="#" class="nhsuk-button">Account management</a></p>
     </div>

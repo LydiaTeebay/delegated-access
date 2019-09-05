@@ -6,8 +6,8 @@ const http = require('http')
 // add scenarios here - change session data
 router.get('/alice-nominates-bob', function (req, res) {
     //req.session.data = {}
-    //req.session.data['currentUser'] = 'Bob';
-    //req.session.data['delegateUser'] = 'Alice';
+    //req.session.data['primaryUser'] = 'Alice';
+    //req.session.data['delegate'] = 'Bob';
     //req.session.data['service'] = 'myHealth';
     //req.session.data['serviceConsent'] = false;
     req.session.data['hasLogin'] = true;
@@ -44,7 +44,7 @@ router.get('/research-flow-alice', function(req, res) {
 
 router.get('/alice-adds-bob-as-delegator', function (req, res) {
     req.session.data = {}
-    //req.session.data['currentUser'] = 'Alice';
+    //req.session.data['primaryUser'] = 'Alice';
     //req.session.data['service'] = 'myHealth';
     req.session.data['hasLogin'] = true;
     res.render('service/select-single-service');
@@ -70,9 +70,9 @@ router.post('/login/login-details', function(req, res) {
 
     var hasLogin = req.session.data['hasLogin'] || true;
     var serviceConsent = req.session.data['serviceConsent'] || false;
-    //var currentUser = req.session.data['currentUser'] || 'NoUserSet';
+    //var primaryUser = req.session.data['primaryUser'] || 'NoUserSet';
     //var delegatedUser = req.session.
-    //if (currentUser === 'Bob') {
+    //if (primaryUser === 'Bob') {
         if (hasLogin === true) {
             if (serviceConsent === true) {
                 // login then go straight into the service
@@ -258,25 +258,25 @@ router.post('/login/login-triage', function (req, res) {
 router.post('/login/login-as-list', function (req, res) {
 
     // Make a variable and give it the value from 'know-nhs-number'
-    var delegateUser = req.session.data['delegateUser']
+    var delegate = req.session.data['delegate']
   
     // Check whether the variable matches a condition
-    if (delegateUser == "Alice"){
+    if (delegate == "Alice"){
       // Send user to next page
       res.redirect('/service/service-logged-in')
     }
-    if (delegateUser == "Tom"){
+    if (delegate == "Tom"){
         // Send user to next page
         res.redirect('/service/service-logged-in')
     }
-      if (delegateUser == "Harriet"){
+      if (delegate == "Harriet"){
         // Send user to next page
         res.redirect('/service/service-logged-in')
     }
 })
 
 router.post('/login/login-as-combined', function (req, res) {
-    res.redirect('/service/service-logged-in')
+    res.redirect('/service/myhealth-logged-in')
 })
 
 
