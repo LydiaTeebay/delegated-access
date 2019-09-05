@@ -38,72 +38,35 @@
                     NHS App
                   </label>
             </div>
-            <div class="nhsuk-radios__item">
+            <!-- NOT MVP -->
+            <!--<div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="blank">
                   <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
                     I don't want to add the person to a service yet 
                   </label>
-            </div>
+            </div>-->
           </div>       
         </fieldset>
       </div>
       <button class="nhsuk-button">Continue</button>
+      <!-- NOT MVP -->
+      <!--
       <p><a href="/service/select-service-not-listed">My service is not listed</a></p>
+      -->
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+          My service is not listed
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Some services do not allow people to enter and act on someone else's behalf</p>
+        </div>
+      </details>
       </form>
     </div>  
   </div>
-
-  <!--
-
-  <div class="nhsuk-grid-row">
-
-    <div class="nhsuk-grid-column-two-thirds">
-
-     <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="/login/login-as-list" method="post">
-
-        {% call fieldset({
-          legend: {
-            text: "Enter [service name] as:",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
-
-        {{ radios({
-          "idPrefix": "delegate",
-          "name": "delegate",
-          "items": [
-            {
-              "value": "Alice",
-              "text": "Alice"
-            },
-              {
-              "value": "Tom",
-              "text": "Tom"
-            },
-            {
-              "value": "Harriet",
-              "text": "Harriet"
-            }
-          ]
-        }) }}
-
-        {% endcall %}
-
-        {{ button({
-          "text": "Continue"
-        }) }}
-
-        <br>
-        
-      </form>
-    </div>
-  </div>
--->
-    </div>  
+</div>  
 
   </div>
 {% endblock %}
