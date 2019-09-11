@@ -21,7 +21,7 @@
 
       <!-- Change the page title here -->
       <h1>
-        Summary
+        Check your answers before continuing
       </h1>
 
       <dl class="nhsuk-summary-list">
@@ -142,7 +142,7 @@
       <p>You can cancel this at any time on your account management page.</p>
 
       <p>Once you submit these details, we will send an email to <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.contactEmailAddress or 'bob35@gmail.com' }}</strong> with a secure link.
-      They will need to open this link to confirm they agree to enter {{ data.service }} and act on your behalf.</p>
+      They will need to open this link to confirm they agree to enter {{ data.service }} and act on your behalf within 7 days.</p>
 
       <p>Please check your details are correct before submitting.</p>
 
@@ -150,8 +150,12 @@
         "text": "Submit",
         "href": "/add-delegate/success"
       }) }}
+
+      <!-- NOT MVP -->
+      <!--
       <p><a href="/add-delegate/delegate-preflight">Start again</a></p>
       <p><a href="#" onclick="alert('This will take the user back to either account management or the service')">Exit without saving</a></p>
+      -->
     </div>  
 
   </div>

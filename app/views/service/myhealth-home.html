@@ -23,8 +23,8 @@
 
 <!-- if the user is logging in as another person then display the banner -->
 {% block proxy %}
-  {% if data.currentUser != data.delegateUser %}
-    <div class="proxy">You are logged in as {{ data.delegateUser or 'Alice' }}</div>
+  {% if data.primaryUser != data.delegate %}
+    <div class="proxy">You are logged in as {{ data.primaryUser or 'Alice' }}</div>
   {% endif %}
 {% endblock %}
 
@@ -48,10 +48,6 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-full">
-
-    
-      <!-- Change the page title here -->
-     <!-- <h1>{{ data.service or 'myHealth' }}</h1>-->
 
       
 <div class="nhsuk-grid-row nhsuk-panel-group">

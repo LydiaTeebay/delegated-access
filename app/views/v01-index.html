@@ -39,8 +39,8 @@
       
 
       <p>
-        Alice has an NHS login account and has no nominated access for myHealth<br>
-        Journey starts with Alice adding a delegate. (He has navigated there from within account management)
+        Alice has an NHS login account and has no delegate for myHealth<br>
+        Journey starts with Alice adding a delegate. (She has navigated there from within account management)
       </p>
       {{ button({
         "text": "Start flow as Alice",
@@ -72,6 +72,11 @@
       <h3>Consent</h3>
       <a href="service/nhslogin-consent">Consent to be added/connected to the user's NHS login account</a><br /><br />
       <a href="service/service-consent">Consent for the specific service that they have been allocated to</a>
+
+      <hr>
+
+      <p>Bob has been added as a delegate for Alice and can now log into myHealth on her bahalf</p>
+      <a class="nhsuk-button" href="http://localhost:3000/login/login-as-combined">Enter myHealth on behalf of Alice</a>
 
       <hr>    
 

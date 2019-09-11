@@ -24,7 +24,12 @@
             <h1 class="nhsuk-fieldset__heading">
               Which service do you want to add the person to?
             </h1>
+            <!--<p>You can be given access to manage a service on behalf of another person or give access to someone to act on your behalf</p>
+            <p>You can connect your NHS login with another person. You can add services to that person and allow them to access services on your behalf</p>-->
           </legend>
+          <span class="nhsuk-hint" id="example-hint">
+            The person you add will be able to access a service on your behalf, they will be able to do some or all of the things that you can do in the selected service.
+          </span>
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="myHealth" checked="checked">
@@ -38,72 +43,35 @@
                     NHS App
                   </label>
             </div>
-            <div class="nhsuk-radios__item">
+            <!-- NOT MVP -->
+            <!--<div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="blank">
                   <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
                     I don't want to add the person to a service yet 
                   </label>
-            </div>
+            </div>-->
           </div>       
         </fieldset>
       </div>
       <button class="nhsuk-button">Continue</button>
+      <!-- NOT MVP -->
+      <!--
       <p><a href="/service/select-service-not-listed">My service is not listed</a></p>
+      -->
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+          My service is not listed
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Some services do not allow people to enter and act on someone else's behalf</p>
+        </div>
+      </details>
       </form>
     </div>  
   </div>
-
-  <!--
-
-  <div class="nhsuk-grid-row">
-
-    <div class="nhsuk-grid-column-two-thirds">
-
-     <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="/login/login-as-list" method="post">
-
-        {% call fieldset({
-          legend: {
-            text: "Enter [service name] as:",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
-
-        {{ radios({
-          "idPrefix": "delegateUser",
-          "name": "delegateUser",
-          "items": [
-            {
-              "value": "Alice",
-              "text": "Alice"
-            },
-              {
-              "value": "Tom",
-              "text": "Tom"
-            },
-            {
-              "value": "Harriet",
-              "text": "Harriet"
-            }
-          ]
-        }) }}
-
-        {% endcall %}
-
-        {{ button({
-          "text": "Continue"
-        }) }}
-
-        <br>
-        
-      </form>
-    </div>
-  </div>
--->
-    </div>  
+</div>  
 
   </div>
 {% endblock %}
