@@ -27,14 +27,14 @@
           </legend>
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="delegate" name="delegate" type="radio" value="Bob">
-                <label class="nhsuk-label nhsuk-radios__label" for="delegate">
+              <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="{{ data.firstName or 'Bob' }}">
+                <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
                   Yourself
                 </label>
             </div>
             <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="delegate" name="delegate" type="radio" value="{{ data.primaryUserFirstName or 'Alice' }}">
-                  <label class="nhsuk-label nhsuk-radios__label" for="delegate">
+                <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="{{ data.primaryUserFirstName or 'Alice' }}">
+                  <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
                     {{ data.primaryUserFirstName or 'Alice' }}
                   </label>
           </div>       

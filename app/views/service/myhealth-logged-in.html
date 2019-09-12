@@ -13,8 +13,8 @@
 
 <!-- if the user is logging in as another person then display the banner -->
 {% block proxy %}
-  {% if data.primaryUserFirstName != data.delegate %}
-    <div class="proxy">You are logged in as {{ data.primaryUserFirstName or 'Alice' }}</div>
+  {% if (data.primaryUserFirstName or 'Alice' ) == (data.loggedInUser or 'Bob') %}
+    <div class="proxy">You are acting on behalf of {{ data.primaryUserFirstName or 'Alice' }}</div>
   {% endif %}
 {% endblock %}
 
@@ -63,7 +63,7 @@
             Name
           </dt>
           <dd class="nhsuk-summary-list__value">
-            Alice Smith
+            {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="#">
@@ -108,7 +108,7 @@
           </dt>
           <dd class="nhsuk-summary-list__value">
             <p class="nhsuk-body">07700 900457</p>
-            <p class="nhsuk-body">alicesmith@example.com</p>
+            <p class="nhsuk-body">{{ data.primaryUserFirstName or 'Alice' }}.{{ data.primaryUserLastName or 'Smith' }}@gmail.com</p>
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="#">
