@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <p>{{ data.primaryUser or 'Alice' }} is allowing you to enter their {{ data.service or 'myHealth' }} account and act on their behalf.</p>
+      <p>{{ data.primaryUserFirstName or 'Alice' }} is allowing you to enter their {{ data.service or 'myHealth' }} account and act on their behalf.</p>
       <p>To accept this invite, you need to agree to share some of your NHS login information.</p>
       <p>{{ data.service or 'myHealth' }} will use your:
       <ul>
@@ -60,7 +60,7 @@
       <!--
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>You will be able to access myHealth on behalf of {{ data.primaryUser or 'Alice' }} once you have passed our checks.</p>
+        <p>You will be able to access myHealth on behalf of {{ data.primaryUserFirstName or 'Alice' }} once you have passed our checks.</p>
       </div>
       -->
 
@@ -68,7 +68,7 @@
       {% if data.id ===  'pending' %}
       <div class="nhsuk-warning-callout">
         <h3 class="nhsuk-warning-callout__label">Awaiting checks</h3>
-        <p>You will be able to access myHealth on behalf of {{ data.primaryUser or 'Alice' }} once you have passed our checks.</p>
+        <p>You will be able to access myHealth on behalf of {{ data.primaryUserFirstName or 'Alice' }} once you have passed our checks.</p>
       </div>
 
       {{ button({

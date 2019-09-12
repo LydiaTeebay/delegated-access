@@ -23,8 +23,8 @@
 
 <!-- if the user is logging in as another person then display the banner -->
 {% block proxy %}
-  {% if data.primaryUser != data.delegate %}
-    <div class="proxy">You are logged in as {{ data.primaryUser or 'Alice' }}</div>
+  {% if data.primaryUserFirstName != data.delegate %}
+    <div class="proxy">You are logged in as {{ data.primaryUserFirstName or 'Alice' }}</div>
   {% endif %}
 {% endblock %}
 

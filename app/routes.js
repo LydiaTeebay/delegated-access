@@ -6,7 +6,7 @@ const http = require('http')
 // add scenarios here - change session data
 router.get('/alice-nominates-bob', function (req, res) {
     //req.session.data = {}
-    //req.session.data['primaryUser'] = 'Alice';
+    //req.session.data['primaryUserFirstName'] = 'Alice';
     //req.session.data['delegate'] = 'Bob';
     //req.session.data['service'] = 'myHealth';
     //req.session.data['serviceConsent'] = false;
@@ -39,15 +39,25 @@ router.get('/research-flow-alice', function(req, res) {
     console.log('waking up all heroku sites')
  
 
-    res.redirect('service/myhealth-home');
+    //res.redirect('service/myhealth-home');
+    res.redirect('primary-user-details');
+
 })
 
 router.get('/alice-adds-bob-as-delegator', function (req, res) {
     req.session.data = {}
-    //req.session.data['primaryUser'] = 'Alice';
+    //req.session.data['primaryUserFirstName'] = 'Alice';
     //req.session.data['service'] = 'myHealth';
     req.session.data['hasLogin'] = true;
     res.render('service/select-single-service');
+})
+
+// Add your routes here - above the module.exports line
+router.post('/primary-user-details', function (req, res) {
+
+    //var nhsNumber = req.session.data['nhs-login'];
+    
+    res.redirect('service/myhealth-home');
 })
 
 // Add your routes here - above the module.exports line
@@ -70,9 +80,9 @@ router.post('/login/login-details', function(req, res) {
 
     var hasLogin = req.session.data['hasLogin'] || true;
     var serviceConsent = req.session.data['serviceConsent'] || false;
-    //var primaryUser = req.session.data['primaryUser'] || 'NoUserSet';
+    //var primaryUserFirstName = req.session.data['primaryUserFirstName'] || 'NoUserSet';
     //var delegatedUser = req.session.
-    //if (primaryUser === 'Bob') {
+    //if (primaryUserFirstName === 'Bob') {
         if (hasLogin === true) {
             if (serviceConsent === true) {
                 // login then go straight into the service

@@ -2,7 +2,7 @@ module.exports = {
 
     // Insert values here
     /*
-    'primaryUser' : 'Alice',
+    'primaryUserFirstName' : 'Alice',
     'delegate' : 'Bob',
     'service' : 'myHealth',
     'serviceConsent' : false,
