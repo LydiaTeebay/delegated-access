@@ -37,8 +37,8 @@
 
       <hr>
 
-      <a href="/email/user-security">View email sent to Alice</a><br>
-      <a href="/alice-nominates-bob">View email sent to Bob</a>
+      <a href="/email/user-security">View email sent to {{ data.primaryUserFirstName or 'Alice' }}</a><br>
+      <a href="/alice-nominates-bob">View email sent to {{ data.firstName or 'Bob' }}</a>
 
 
     </div>  
