@@ -63,6 +63,8 @@
         </div>
       </details>
 
+      {% set url = "http://manage-nhs-login.herokuapp.com/account/v3b/index?mattisthebest=true&primaryUserFirstName=" + (data.primaryUserFirstName or 'Alice') + "&primaryUserLastName=" + (data.primaryUserLastName or 'Smith') %}
+      
       <details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">
@@ -71,7 +73,7 @@
         </summary>
         <div class="nhsuk-details__text">
           <ul>
-            <li><a href="http://manage-nhs-login.herokuapp.com/account/v3b/index?mattisthebest=true">Manage your NHS login</a></li>
+            <li><a href='{{ url }}'>Manage your NHS login</a></li>
           </ul> 
         </div>
       </details>
