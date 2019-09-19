@@ -23,30 +23,101 @@
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-three-quarters">
 
-      <!-- Change the page title here -->
-      <h1>
-        MVP
-        <!--<span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>-->
-      </h1>
+    <h1>Delegated Access</h1>
+      <mark>Rachel to confirm facts and figures and how to respresent high level info</mark>
+      </br>
+      </br>
+      <div class="nhsuk-grid-row nhsuk-panel-group">
+        <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+          <div class="nhsuk-panel">
+            <h3 class="nhsuk-heading-xl">1</h3>
+            <p>Iteration</p>
+          </div>
+          </div>
+          <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+            <div class="nhsuk-panel">
+              <h3 class="nhsuk-heading-xl">40+</h3>
+              <p>Users involved</p>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+            <div class="nhsuk-panel">
+              <h3 class="nhsuk-heading-xl">840</h3>
+              <p>Mins of user testing</p>
+            </div>
+          </div>
+        </div>
+  
+    <h2>Nominated Access</h2>
+      <p>This scenario is where one competent adult wants to share access to some/all of their health data with another competent adult. A pre-requisite for this journey is that both parties must have a NHS Login account. This means that both parties will have been ID verified by the NHS Login service.</p>
+        <ul>
+          <li><a href="https://jira.digital.nhs.uk/browse/CID-5577">JIRA Epic</a></li>
+          <li><a href="https://confluence.digital.nhs.uk/display/NL/Nominated+Access">Confluence</a></li>
+          <li><a href="/account/v4/index">Current version</a></li> <mark>to do</mark>
+        </ul>
 
-      <h2>v01 - pres-print prototype</h2>
 
-      <h3>Research</h3>
-      <p>For this initial prototye the bulk of the design was built around technnical requirements and limitations, past research and multiple quan surveys. We created a prototype before the end of discovery to aid discussions within the team and to take to a co-creation session</p>
-      <ul>
-      <li>Gov survey <a href="https://confluence.digital.nhs.uk/display/NL/Internal+Survey+April+2019">Gov Survey</a></li>
-      <li>CAPI survey <a href="https://confluence.digital.nhs.uk/display/NL/CAPI+Survey+-+Healthcare+Management">CAPI Survey</a></li>
-      <li>Past discovery research</li>
-      <li>Assumptions</li>
-      </ul>
+      <details class="nhsuk-details nhsuk-expander version-list">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            MVP v1
+          </span>
+        </summary>
+        <div class="nhsuk-details__text version-text">
+          <br>
+          <h3><a href="">MVP v1 Prototype</a></h3>
+            <p>For this initial prototye the bulk of the design was built around technnical requirements and limitations, past research and multiple quan surveys. We created a prototype before the end of discovery to aid discussions within the team and to take to a co-creation session</p>
+            <ul>
+              <li>Gov survey <a href="https://confluence.digital.nhs.uk/display/NL/Internal+Survey+April+2019">Gov Survey</a></li>
+              <li>CAPI survey <a href="https://confluence.digital.nhs.uk/display/NL/CAPI+Survey+-+Healthcare+Management">CAPI Survey</a></li>
+              <li>Past discovery research</li>
+              <li>Assumptions</li>
+            </ul>
+          <h3>User testing (2)</h3>
+          <ul>
+            <li>Carers group Methley 3rd September - 10+ focus group</li>
+            <li>In home sessions with people who do tasks on behalf of another person - 4 primary users, 4 delegates</li>
+          </ul>
+          <h3>Design Challenges (2)</h3>
+          <ul>
+            <li>Some users don't understand relationship group meanings, eg sibling, civil partnership etc</li>
+            <li>more to add following research analysis</li>
+          </ul>
+          {{ button({
+            "text": "MVP - v01",
+            "href": "/v01-index"
+          }) }}
+          <hr>
+        </div>
 
-      {{ button({
-        "text": "MVP - v01",
-        "href": "/v01-index"
-      }) }}
+      </details>
 
+      <details class="nhsuk-details nhsuk-expander version-list">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Error messages
+          </span>
+        </summary>
+
+        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Invitation</h4>
+        <mark>to do</mark>
+          <ul>
+            <li><a href="">Invitation expiry exceeded</a></li>
+          </ul>
+
+      </details>
+      <hr> 
+
+      <h2>Mother claims child</h2>
+      <p>Pending</p>
+
+      <hr> 
+
+      <h2>Power of attorney</h2>
+      <p>Pending</p>
+    
     </div>
   </div>
 {% endblock %}
