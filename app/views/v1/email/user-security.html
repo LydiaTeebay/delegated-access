@@ -1,0 +1,25 @@
+{% extends 'v1/layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  EMAIL
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+      You have asked {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} to act on your behalf for {{ data.service or 'myHealth' }}
+      </h1>
+      <p>We will let you know if they accept your invite.</p>
+
+      <div class="nhsuk-warning-callout">
+  <h3 class="nhsuk-warning-callout__label">Important</h3>
+  <p><a href="#">Contact us</a> or speak to your GP if you did not do this or someone is pressuring you to do this.</p>
+</div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

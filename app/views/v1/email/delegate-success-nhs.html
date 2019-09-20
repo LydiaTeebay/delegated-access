@@ -1,0 +1,20 @@
+{% extends 'v1/layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  EMAIL
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+      You have been added to {{ data.primaryUserFirstName or 'Alice' }}'s NHS login.
+      </h1>
+      <p>This means you can now act on {{ data.primaryUserFirstName or 'Alice' }}’s behalf within any services they ask you to.</p>
+      <p>You can cancel this at any time by visiting your NHS login account management area.</p>
+      <p><a href="#" class="nhsuk-button">Account management</a></p>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'v1/layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  EMAIL
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+      {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} has not been added to your NHS login
+      </h1>
+      <p>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} has declined your invite to be added to your NHS login.</p>
+      <p>Visit your account management area to see who is currently added to your NHS login, or try adding someone else.</p>
+      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Account management</a></p>
+      <p><a href="">Add another person to your NHS login</a></p>
+    </div>
+
+  </div>
+
+{% endblock %}
