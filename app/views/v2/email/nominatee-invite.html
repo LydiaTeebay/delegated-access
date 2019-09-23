@@ -1,0 +1,24 @@
+{% extends 'v2/layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  Invite to myHealth
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <p><h1 class="nhsuk-fieldset__legend--l">
+        Hello, </p>
+        You have been invited by {{ data.primaryUserFirstName or 'Alice' }} to act on their behalf for their {{ data.service or 'myHealth' }} account.
+      </h1>
+
+      <p>To get access to their information you need to accept the invitation and then sign in with your NHS login. If you do not have an NHS login you will need to set one up.</p>
+      <p><a href="/login/have-login" class="nhsuk-button">Accept invitation</a> <a href="/service/rejected-invite" class="nhsuk-button nhsuk-button--secondary">Reject invitation</a>
+      <p>This link will expire in 7 days.</p>
+      <p><a href="#">Contact us</a> if you do not know this person or you think this may be an error.</p>
+
+    </div>
+  </div>
+
+{% endblock %}
