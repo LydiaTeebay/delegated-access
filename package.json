@@ -16,6 +16,7 @@
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "accessible-autocomplete": "^1.6.2",
     "basic-auth": "^2.0.1",
     "body-parser": "^1.18.3",
     "browser-sync": "^2.26.7",

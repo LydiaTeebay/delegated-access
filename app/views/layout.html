@@ -10,6 +10,7 @@
 <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% block headCSS %}
   <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/accessible-autocomplete.min.css" rel="stylesheet">
 {% endblock %}
 
 <!-- Set the page title inside the pageTitle block -->
@@ -45,18 +46,19 @@
   })}}
 
   <!-- print out all the session values - this is just for testing -->
-    {#
+    
   <p>session data</p>
 
   {% for key, value in data %}
     {{ key }} : {{ value }} <br>
   {% endfor %}
-  #}
+  
 {% endblock %}
 
 {% block bodyEnd %}
   {% block scripts %}
     <!-- Custom JavaScript files can be added to this file -->
+    <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
     {% include "includes/scripts.html" %}
     <!-- For adding page specific JavsScript -->
     {% block pageScripts %}{% endblock %}

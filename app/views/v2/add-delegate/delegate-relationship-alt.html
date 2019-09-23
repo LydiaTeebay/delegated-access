@@ -1,0 +1,111 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  NHS login - Add a delegate
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+<!--
+    <label class="" for="my-autocomplete">What is {{ data.firstName or 'Bob' }}'s relationship to you?</label>
+    <div id="my-autocomplete-container"></div>
+-->
+     
+     <form action="/v2/add-delegate/delegate-relationship" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+
+            <h1 class="nhsuk-fieldset__heading">
+              What is {{ data.firstName or 'Bob' }}'s relationship to you?
+            </h1>
+          </legend>
+          <label class="" for="my-autocomplete">Start typing and we'll try and match it</label>
+          <div id="my-autocomplete-container"></div>
+
+         
+        </fieldset>
+      </div>
+      <button class="nhsuk-button">Continue</button>
+      </form>
+      
+    </div>  
+  </div>
+{% endblock %}
+{% block pageScripts %}
+<script>
+function customSuggest (query, syncResults) {
+        var results = [
+          { endonym: 'Mum / Mom', name: 'Mother' },
+          { endonym: 'Son / Daughter', name: 'Child' },
+          { endonym: 'Dad', name: 'Father' },
+          { endonym: 'Husband Wife', name: 'Spouse' },
+          { endonym: 'Mother / Father / Son / Daughter / Niece / Nephew', name: 'Next of kin' },
+          { endonym: 'Girlfriend / Boyfriend', name: 'Partner' },
+          { endonym: '', name: 'Not Specified' },
+          { endonym: 'Grandparent / Grandmother / Grandad / Nan', name: 'Relative' },
+          { endonym: 'Sibling', name: 'Sister' },
+          { endonym: 'Sibling', name: 'Brother' },
+          { endonym: '', name: 'Not Known' },
+          { endonym: 'Mother / Father', name: 'Parent' },
+          { endonym: 'Helper', name: 'Carer' },
+          { endonym: '', name: 'Non-dependant' },
+          { endonym: '', name: 'Foster parent' },
+          { endonym: 'Step Mother / Step Father', name: 'Step parent' },
+          { endonym: 'Son / Daughter / Nephew / Niece', name: 'Dependant' },
+          { endonym: 'Grand Parent / Grandad / Grandma / Uncle / Aunt', name: 'Guardian' },
+          { endonym: '', name: 'Polygamous partner' }
+        ]
+        syncResults(query
+          ? results.filter(function (result) {
+              var resultContains = result.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
+              var endonymContains = result.endonym.toLowerCase().indexOf(query.toLowerCase()) !== -1
+              return resultContains || endonymContains
+            })
+          : []
+        )
+      }
+
+      function inputValueTemplate (result) {
+        return result && result.name
+      }
+
+      //function suggestionTemplate (result) {
+      //  return result && '<strong>' + result.name + '</strong>' +
+      //    ' (<span lang=' + result.endonymLang + '>' + result.endonym + '</span>)'
+      //}
+
+      // remove the internationalised section
+      function suggestionTemplate (result) {
+        return result && '<strong>' + result.name + '</strong>' +
+          ' (' + result.endonym + '</span>)'
+      }
+
+      element = document.querySelector('#my-autocomplete-container')
+      id = 'autocomplete-customTemplates'
+      accessibleAutocomplete({
+        element: element,
+        id: id,
+        name: 'relationship',
+        source: customSuggest,
+        templates: {
+          inputValue: inputValueTemplate,
+          suggestion: suggestionTemplate
+        }
+      })
+    
+
+</script>
+{% endblock %}

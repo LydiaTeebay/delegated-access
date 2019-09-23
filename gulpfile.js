@@ -24,7 +24,8 @@ function cleanPublic() {
 function compileStyles() {
   return gulp.src([
     'app/assets/sass/**/*.scss',
-    'docs/assets/sass/**/*.scss'
+    'docs/assets/sass/**/*.scss',
+    'app/assets/sass/**/*.css'
   ])
     .pipe(sass())
     .pipe(gulp.dest('public/css'))
