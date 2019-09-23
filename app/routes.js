@@ -1,10 +1,7 @@
 // External dependencies
 const express = require('express');
 const router = express.Router();
-const http = require('http')
-//const version = 'v1';
-//const version = req.session.data['version'] || 'v1';
-//req.session.data['primaryUserFirstName'] = req.query.primaryUserFirstName;
+const http = require('http');
 
 function getVersion(a) {
     return a || 'v1';
@@ -49,6 +46,16 @@ router.get('/*/alice-adds-bob-as-delegator', function (req, res) {
     res.render(getVersion(req.query.version) + 'service/select-single-service');
 })
 
+router.post('/*/add-delegate/delegate-nhs-no-1', function(req, res) {
+    req.session.data['hasNHSNumber'];
+
+    if (req.session.data['hasNHSNumber'] == 'yes') {
+        res.redirect('/' + getVersion(req.query.version) + '/add-delegate/delegate-nhs-no-2');
+    } else {
+        res.redirect('/' + getVersion(req.query.version) + '/add-delegate/delegate-dob');
+    }
+})
+
 router.post('/*/nhs-login', function (req, res) {
 
     var nhsNumber = req.session.data['nhs-login'];
@@ -84,10 +91,7 @@ router.post('/*/login/login-details', function(req, res) {
 })
 
 router.post('/*/add-delegate/delegate-relationship', function(req, res) {
-    //console.log(getVersion(req.query.version));
-    //console.log('sub ' + req.url.substring(1,3))
     var relationship = req.session.data['relationship'];
-    console.log('relationship')
     if (relationship === '1') {
         res.redirect('/' + req.url.substring(1,3) + '/add-delegate/delegate-relationship-1');
 

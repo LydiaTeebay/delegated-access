@@ -17,7 +17,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/v1/add-delegate/delegate-nhs-no-2" method="get">
+      <form action="/v1/add-delegate/delegate-nhs-no-1" method="post">
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -25,6 +25,7 @@
               Do you know {{ data.firstName or 'Bob' }}'s NHS number?
             </h1>
           </legend>
+          <mark>this is broken - only yes works for now</mark>
           <span class="nhsuk-hint" id="example-hint">
             <p>This is a 10 digit number, like 485 777 3456</p>
             <p>You can find this on any letter sent to {{ data.firstName }} by the NHS, on a prescription or by logging in to a GP practice online service</p>
