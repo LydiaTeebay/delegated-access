@@ -76,3 +76,15 @@
 	  padding: nhsuk-spacing(0) nhsuk-spacing(0) nhsuk-spacing(0) nhsuk-spacing(0) !important;
 	}
   }
+
+
+
+  .autocomplete__input {
+	  &:focus {
+		box-shadow: 0 0 0 4px #ffb81C;
+		outline: 4px solid transparent;
+		outline-offset: 4px;
+		border: 2px solid black;
+	  }
+
+  }
