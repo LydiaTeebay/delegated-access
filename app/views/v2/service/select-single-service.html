@@ -17,7 +17,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/v2/service/select-single-service" method="post">
+      <form action="/v2/add-delegate/delegate-preflight" method="get">
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -32,24 +32,17 @@
           </span>
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="myHealth" checked="checked">
-                <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
+              <input class="nhsuk-radios__input" id="service1" name="service" type="radio" value="myHealth">
+                <label class="nhsuk-label nhsuk-radios__label" for="service">
                   myHealth
                 </label>
             </div>
             <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="NHS App">
-                  <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
+                <input class="nhsuk-radios__input" id="service2" name="service" type="radio" value="NHS App">
+                  <label class="nhsuk-label nhsuk-radios__label" for="service">
                     NHS App
                   </label>
             </div>
-            <!-- NOT MVP -->
-            <!--<div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="selectSingleService" name="selectSingleService" type="radio" value="blank">
-                  <label class="nhsuk-label nhsuk-radios__label" for="selectSingleService">
-                    I don't want to add the person to a service yet 
-                  </label>
-            </div>-->
           </div>       
         </fieldset>
       </div>
