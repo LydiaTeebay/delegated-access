@@ -17,7 +17,11 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/v2/add-delegate/delegate-email" method="get">
+      {% if data.summaryReturn === 'yes' %}
+        <form action="/v2/add-delegate/delegate-summary" method="get">
+      {% else %}
+        <form action="/v2/add-delegate/delegate-email" method="get">
+      {% endif %}
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
