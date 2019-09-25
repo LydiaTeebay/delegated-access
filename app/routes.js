@@ -8,11 +8,11 @@ function getVersion(a) {
 }
 
 // add scenarios here - change session data
-router.get('/*/alice-nominates-bob', function (req, res) {
-    req.session.data['hasLogin'] = true;
-    console.log(getVersion(req.query.version))
-    res.render(getVersion(req) + '/email/delegate-invite');
-})
+//router.get('/*/alice-nominates-bob', function (req, res) {
+    //req.session.data['hasLogin'] = true;
+//    console.log(getVersion(req.query.version))
+//    res.render(getVersion(req) + '/email/delegate-invite');
+//})
 
 router.get('/*/research-flow-bob', function(req, res) {
     req.session.data = {}; // reset the data
