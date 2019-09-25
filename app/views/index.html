@@ -130,13 +130,49 @@
             Error messages
           </span>
         </summary>
-
-        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Invitation</h4>
-        <mark>to do</mark>
+        <div class="nhsuk-details__text">
+          <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Service Select</h4>
           <ul>
-            <li><a href="">Invitation expiry exceeded</a></li>
+            <li><a href="/v2/errors/select-service/user-fails-to-select-service">User doesn't select a service</a></li>
+            <li><a href="">No services are available for the user to select</a></li>
           </ul>
 
+        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Enter name of delegate</h4>
+          <ul>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-add-first-name-and-last-name">User fails to add first name and last name of the delegate</a></li>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-add-first-name">User fails to add first name of the delegate</a></li>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-add-last-name">User fails to add last name of the delegate</a></li>
+          </ul>
+
+        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Select delegate relationship</h4>
+          <ul>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-select-relationship">User fails to select a relationship before continuing</a></li>
+          </ul>
+
+        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Enter delegate NHS Number</h4>
+          <ul>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-select-option-nhs">User fails to select whether they have NHS number</a></li>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-add-nhs-number">User fails to add an NHS number</a></li>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-add-valid-nhs-number">User adds an NHS number that isn't valid</a></li>
+          </ul>
+
+        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Enter delegate DOB</h4>
+          <ul>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-add-dob">User fails to add a DOB (either field)</a></li>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-add-valid-dob">User fails to add a valid DOB</a></li>
+          </ul>
+
+        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Enter delegate email address</h4>
+          <ul>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-add-email">User fails to add an email</a></li>
+            <li><a href="/v2/errors/add-delegate/user-fails-to-add-valid-email">User fails to add a valid email</a></li>
+          </ul>
+
+        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Delegate invite</h4>
+          <ul>
+            <li><a href="">Invitation has expired</a></li>
+          </ul>
+        </div>
       </details>
       {#
       <hr> 
