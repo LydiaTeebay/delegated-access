@@ -32,20 +32,20 @@
       <h1>Agree to be added to {{ data.primaryUserFirstName or 'Alice' }}’s NHS login as their {{data.relationship or 'carer'}} </h1>
 
       <!-- Styling needs adding to main sass file and it could be improved -->
-      <div style="width: 100%; display: inline-block">
+      <!--<div style="width: 100%; display: inline-block">
         <div style="float: left;">
           <svg class="nhsuk-icon nhsuk-icon__user nhsuk-icon--size-50" xmlns="http://www.w3.org/2000/svg" viewBox="6 0 20 24" width="32" aria-hidden="true">
             <path d="M16,2a10,10,0,0,0-1.09,19.93H15A6,6,0,0,0,16,22a6,6,0,0,0,1-.06h.05A10,10,0,0,0,16,2Zm5.4,15.88a6.45,6.45,0,0,0,.14-.88,5.3,5.3,0,0,0-2.4-4.14,4.89,4.89,0,0,1-6.28,0A5.3,5.3,0,0,0,10.46,17a6.45,6.45,0,0,0,.14.88,8,8,0,1,1,10.8,0Z"/>
             <circle cx="16" cy="9" r="3"/>
           </svg>
         </div>
-        <!--<div style="padding: 0 0 16px 16px; float: left">
+        <div style="padding: 0 0 16px 16px; float: left">
           <p>
             <span class="nhsuk-body-s" style="margin-bottom: 0">Your NHS login is:</span>
           {{ currentUserEmail or 'bob35@gmail.com' }}
           </p>
-        </div>-->
-      </div>
+        </div>
+      </div>-->
 
 
       <p>{{ data.primaryUserFirstName or 'Alice' }} has invited you to enter their {{ data.service or 'myHealth' }} account and act on their behalf.</p>
