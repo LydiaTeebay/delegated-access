@@ -1,4 +1,4 @@
-{% extends 'v2/layouts/layout-email.html' %}
+{% extends 'v1/layouts/layout-email.html' %}
 
 {% block pageTitle %}
   EMAIL - Invite to myHealth
@@ -17,19 +17,11 @@
       <p>This means you will be able to see {{ data.primaryUserFirstName or 'Alice' }}’s {{ data.service or 'myHealth' }} information. 
       For example, you may be able to see some of their medical or appointment information.</p>
       -->
-
-      <p>To do this you must:
-
-      <!--<h3>1. Get NHS login</h3>-->
-      <h4>1. Sign in with your NHS login</h4>
-      <p>If you do not have an NHS login you will need to set one up and return to this email.</p>
-      <p><a href="https://delegated-access-nhslogin.herokuapp.com/create-account/v18/start?service=myHealth&serviceName=myHealth&returnUrl=https://delegated-access.herokuapp.com/v2/service/nhslogin-consent&" class="nhsuk-button">Get NHS login</a>
-
-
-      <!--<h3>2. Respond to invite</h3>-->
-      <h4>2. Accept the invitation</h4>
-      <p>If you have an NHS login then you can respond to the invitation.</p>      
-      <p><a href="https://delegated-access-nhslogin.herokuapp.com/create-account/v18/start?service=myHealth&serviceName=myHealth&returnUrl=https://delegated-access.herokuapp.com/v2/service/nhslogin-consent&" class="nhsuk-button">Respond to invite</a>
+      
+      <p>To do this you must accept the invitation and sign in with your NHS login. <br>
+      If you do not have an NHS login you will need to set one up. Once you have set one up, return here to accept the invite.</p>
+      
+      <p><a href="https://delegated-access-nhslogin.herokuapp.com/create-account/v18/start?service=myHealth&serviceName=myHealth&returnUrl=https://delegated-access.herokuapp.com/v1/service/nhslogin-consent&" class="nhsuk-button">Respond to invite</a>
       
       <p>This invite will expire in 7 days.</p>
       
