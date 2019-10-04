@@ -9,7 +9,7 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-      You can now act on {{ data.primaryUserFirstName or 'Alice' }}'s behalf in {{ data.service or 'myHealth' }}.
+      You can now act on {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s behalf in {{ data.service or 'myHealth' }}.
       </h1>
 
       <!-- NOT MVP -->
@@ -18,9 +18,8 @@
           For example, you may be able to see some of their medical or appointment information.</p>
       -->
       <mark>is this message right?</mark>
-      <p>You can cancel this at any time by visiting your NHS login account management area.</p>
         
-      <p><a href="#" class="nhsuk-button">Continue to {{ data.service or 'myHealth' }}</a></p>
+      <p>You can cancel this at any time by <a href="">managing your NHS login.</a></p>
     </div>
   </div>
 
