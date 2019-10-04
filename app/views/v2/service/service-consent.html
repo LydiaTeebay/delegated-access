@@ -29,7 +29,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Agree to share your NHS login information</h1>
+      <h1>{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName }} is allowing you to enter their <b>{{ data.service or 'myHealth' }}</b> account and act on their behalf.</h1>
 
       <!-- Styling needs adding to main sass file and it could be improved -->
       <!--<div style="width: 100%; display: inline-block">
@@ -47,7 +47,6 @@
         </div>
       </div>-->
 
-      <p>{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName }} is allowing you to enter their <b>{{ data.service or 'myHealth' }}</b> account and act on their behalf.</p>
       <p>To accept this invite, you need to agree to share some of your NHS login information.</p>
       <p><b>{{ data.service or 'myHealth' }}</b> will use your:
       <ul>
@@ -61,7 +60,8 @@
         <li>personal health information</li>
       </ul>
 
-      <p>Before you agree, you should read <b>{{ data.service or 'myHealth' }}</b>'s terms of use and privacy policy to check how they will use your information. This does not mean that you will have a {{ data.service or 'myHealth' }} account.<p>
+      <p>Before you agree, you should read <b>{{ data.service or 'myHealth' }}</b>'s terms of use and privacy policy to check how they will use your information.</p>
+      <p> This does not mean that you will have a {{ data.service or 'myHealth' }} account.<p>
 
       <!--
       <div class="nhsuk-inset-text">
