@@ -8,40 +8,60 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  NHS login - Add a delegate
+  NHS login - Primary User Details
 {% endblock %}
 
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-     {% if data.summaryReturn === 'yes' %}
-        <form action="/v2/add-delegate/delegate-summary" method="get">
-      {% else %}
-        <form action="/v2/add-delegate/delegate-relationship" method="post">
-      {% endif %}
-      <div class="nhsuk-form-group">
+      <form action="/v2/email/delegate-invite" method="get">
         <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              This is not part of the prototype
+            </h1>
+          </legend>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="primaryUserFirstName">
+              Primary user first name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="primaryUserFirstName" name="primaryUserFirstName" value="{{ data['primaryUserFirstName'] }}" type="text">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="primaryUserLastName">
+              Primary user last name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="primaryUserLastName" name="primaryUserLastName" value="{{ data['primaryUserLastName'] }}" type="text">
+          </div>
+          <div class="nhsuk-form-group">
+        
+          <!--
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
               What is {{ data.firstName or 'Bob' }}'s relationship to you?
             </h1>
           </legend>
+          -->
+          <!--
           <span class="nhsuk-hint" id="example-hint">
             <p>Start typing and we'll try and match it</p>
           </span>
-          <!--<label class="" for="my-autocomplete">Start typing and we'll try and match it</label>-->
+          -->
+          <label class="nhsuk-label" for="my-autocomplete">Primary user relationship</label>
           <div id="my-autocomplete-container"></div>
 
          
+        
         </fieldset>
-      </div>
-      <button class="nhsuk-button">Continue</button>
+        <button class="nhsuk-button">Start Prototype</button>
       </form>
-      
     </div>  
   </div>
 {% endblock %}
+
 {% block pageScripts %}
 <script>
 function customSuggest (query, syncResults) {
@@ -87,26 +107,6 @@ function customSuggest (query, syncResults) {
           { endonym: 'Helper', name: 'Carer' },
           { endonym: 'Neighbour', name: 'Friend' }
 
-          
-          /* { endonym: 'Mum / Mom', name: 'Mother' },
-          { endonym: 'Son / Daughter', name: 'Child' },
-          { endonym: 'Dad', name: 'Father' },
-          { endonym: 'Husband Wife', name: 'Spouse' },
-          { endonym: 'Mother / Father / Son / Daughter / Niece / Nephew', name: 'Next of kin' },
-          { endonym: 'Girlfriend / Boyfriend', name: 'Partner' },
-          { endonym: '', name: 'Not Specified' },
-          { endonym: 'Grandparent / Grandmother / Grandad / Nan', name: 'Relative' },
-          { endonym: 'Sibling', name: 'Sister' },
-          { endonym: 'Sibling', name: 'Brother' },
-          { endonym: '', name: 'Not Known' },
-          { endonym: 'Mother / Father', name: 'Parent' },
-          { endonym: 'Helper', name: 'Carer' },
-          { endonym: '', name: 'Non-dependant' },
-          { endonym: '', name: 'Foster parent' },
-          { endonym: 'Step Mother / Step Father', name: 'Step parent' },
-          { endonym: 'Son / Daughter / Nephew / Niece', name: 'Dependant' },
-          { endonym: 'Grand Parent / Grandad / Grandma / Uncle / Aunt', name: 'Guardian' },
-          { endonym: '', name: 'Polygamous partner' } */
         ]
         syncResults(query
           ? results.filter(function (result) {
