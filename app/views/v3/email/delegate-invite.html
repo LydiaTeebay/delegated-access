@@ -1,0 +1,34 @@
+{% extends 'v1/layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  EMAIL - Invite to myHealth
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <p><h1 class="nhsuk-fieldset__legend--l">
+        {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }} has invited you to act on their behalf in {{ data.service or 'myHealth' }}.
+      </h1>
+
+      <!-- NOT MVP -->
+      <!--
+      <p>This means you will be able to see {{ data.primaryUserFirstName or 'Alice' }}’s {{ data.service or 'myHealth' }} information. 
+      For example, you may be able to see some of their medical or appointment information.</p>
+      -->
+      
+      <p>To do this you must accept the invitation and sign in with your NHS login. </p>
+      <p>If you do not have an NHS login <a href="https://delegated-access-nhslogin.herokuapp.com/create-account/v18/start?service=myHealth&serviceName=myHealth&returnUrl=https://delegated-access.herokuapp.com/v3/service/nhslogin-consent&">you will need to set one up</a>. Once you have set one up, return here to accept the invite.</p>
+      
+      <p><a href="https://nhs-cid.herokuapp.com/create-account/v17/start?service=myHealth&serviceName=myHealth&returnUrl=https://delegated-access.herokuapp.com/v3/service/nhslogin-consent&" class="nhsuk-button">Respond to invite</a>
+      
+      <p>If you do not want to accept {{ data.primaryUserFirstName or 'Alice' }}'s invite, please ignore this email.</p>
+
+      <p>This invite will expire in 7 days.</p>
+
+      <p><a href="#">Contact us</a> if you do not know this person or you think this may be an error.</p>
+    </div>
+  </div>
+
+{% endblock %}
