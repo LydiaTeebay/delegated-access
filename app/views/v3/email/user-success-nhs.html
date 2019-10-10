@@ -1,0 +1,21 @@
+{% extends 'v3/layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  EMAIL
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+      {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} has been added to your NHS login
+      </h1>
+      <p>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} has accepted your invite to be added to your NHS login. You can remove them at any time by visiting your account management area.</p>
+      <!--<p>If you haven't already, you can now add {{ data.firstName or 'Bob' }} to a service within account management.  Levels of access per service can be changed through the service settings.</p> -->
+      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Account management</a></p>
+      <p><a href="">Add another person to your NHS login</a></p>
+    </div>
+  </div>
+
+{% endblock %}
