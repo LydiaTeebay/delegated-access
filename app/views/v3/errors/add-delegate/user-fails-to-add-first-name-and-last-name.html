@@ -21,17 +21,17 @@
         </h2>
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#firstName">You need to enter a first name</a>
+              <a href="#firstName">Enter their first name</a>
             </li>
             <li>
-              <a href="#lastName">You need to enter a last name</a>
+              <a href="#lastName">Enter their last name</a>
             </li>
           </ul>
       </div>
       {% if data.summaryReturn === 'yes' %}
-        <form action="/v3/add-delegate/delegate-summary" method="get">
+        <form action="/v2/add-delegate/delegate-summary" method="get">
       {% else %}
-        <form action="/v3/add-delegate/delegate-relationship-alt" method="get">
+        <form action="/v2/add-delegate/delegate-relationship-alt" method="get">
       {% endif %}
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -43,12 +43,13 @@
             You will find this information in a passport or on a driving licence.
           </span>-->
           <div class="nhsuk-form-group nhsuk-form-group--error">
-            <span class="nhsuk-error-message" id="new-email-no-input-error">
-              <span class="nhsuk-u-visually-hidden">Error:</span> You need to enter a first name
-            </span>
+            
             <label class="nhsuk-label" for="firstName">
               First name
             </label>
+            <span class="nhsuk-error-message" id="new-email-no-input-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Enter their first name
+            </span>
             <input class="nhsuk-input nhsuk-u-width-three-quarters nhsuk-input--error" id="firstName" name="firstName" value="{{ data['firstName'] }}" type="text">
           </div>
           <div class="nhsuk-form-group nhsuk-form-group--error">
@@ -56,7 +57,7 @@
               Last name
             </label>
             <span class="nhsuk-error-message" id="new-email-no-input-error">
-              <span class="nhsuk-u-visually-hidden">Error:</span> You need to enter a last name
+              <span class="nhsuk-u-visually-hidden">Error:</span> Enter their last name
             </span>
             <input class="nhsuk-input nhsuk-u-width-three-quarters nhsuk-input--error" id="lastName" name="lastName" value="{{ data['lastName'] }}" type="text">
           </div>

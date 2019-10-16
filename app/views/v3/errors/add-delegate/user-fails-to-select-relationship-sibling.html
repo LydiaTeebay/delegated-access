@@ -24,41 +24,57 @@
         </h2>
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#example-error-1">You need to select yes or no</a>
+              <a href="#example-error-1">Select their relationship to you</a>
             </li>
           </ul>
       </div>
 
+      <form action="/v2/add-delegate/delegate-relationship" method="post">
 
-      <form action="/v2/add-delegate/delegate-nhs-no-1" method="post">
       <div class="nhsuk-form-group nhsuk-form-group--error">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+
             <h1 class="nhsuk-fieldset__heading">
-              Do you know {{ data.firstName or 'Bob' }}'s NHS number?
+              What kind of sibling is {{ data.firstName or 'Bob' }} to you?
             </h1>
           </legend>
-          
-          <span class="nhsuk-hint" id="example-hint">
-            <p>This is a 10 digit number, like 485 777 3456</p>
-            <p>You can find this on any letter sent to {{ data.firstName }} by the NHS, on a prescription or by logging in to a GP practice online service</p>
-          </span>
           <span class="nhsuk-error-message" id="new-email-no-input-error">
-              <span class="nhsuk-u-visually-hidden">Error:</span> You need to select yes or no
+              <span class="nhsuk-u-visually-hidden">Error:</span> Select their relationship to you
             </span>
           <div class="nhsuk-radios">
+
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="hasNHSNumber" type="radio" value="yes">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  Yes
+              <input class="nhsuk-radios__input" id="sister" name="relationship" type="radio" value="Sister">
+                <label class="nhsuk-label nhsuk-radios__label" for="sister">
+                  Sister
                 </label>
             </div>
+           
             <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-2" name="hasNHSNumber" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                    No
+              <input class="nhsuk-radios__input" id="brother" name="relationship" type="radio" value="Brother">
+                <label class="nhsuk-label nhsuk-radios__label" for="brother">
+                  Brother
+                </label>
+            </div>
+
+           
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="siblingother" name="relationship" type="radio" value="Sibling - other">
+                <label class="nhsuk-label nhsuk-radios__label" for="siblingother">
+                  Other
+                </label>
+            </div>
+
+<!--
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="other" name="relationship" type="radio">
+                  <label class="nhsuk-label nhsuk-radios__label" for="other">
+                    other:
+                     <input class="nhsuk-input" id="partner-other" name="relationship" type="text" >
                   </label>
             </div>
+-->
           </div>       
         </fieldset>
       </div>

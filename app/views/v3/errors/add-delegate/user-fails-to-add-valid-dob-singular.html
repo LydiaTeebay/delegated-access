@@ -23,7 +23,7 @@ NHS login - Add a delegate
         </h2>
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#example-error-1">You need to enter a Date of birth</a>
+              <a href="#example-error-1">Check the month entered is correct</a>
             </li>
           </ul>
       </div>
@@ -45,17 +45,17 @@ NHS login - Add a delegate
             </span>
 
             <span class="nhsuk-error-message" id="dob-errors-error">
-              <span class="nhsuk-u-visually-hidden">Error:</span> You need to enter a Date of birth
+              <span class="nhsuk-u-visually-hidden">Error:</span> Check the month entered is correct
             </span>
 
 
-            <div class="nhsuk-date-input" id="dob-errors">
+            <div class="nhsuk-date-input" id="dob">
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-errors-Day">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dobDay">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dobDay" name="dobDay" type="number" {{ data['dobDay'] }} pattern="[0-9]*">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dobDay" name="dobDay" type="number" {{ data['dobDay'] }} pattern="[0-9]*">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -68,10 +68,10 @@ NHS login - Add a delegate
               </div>
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-errors-Year">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dobYear">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="dobYear" name="dobYear" type="number" {{ data['dobYear'] }} pattern="[0-9]*">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dobYear" name="dobYear" type="number" {{ data['dobYear'] }} pattern="[0-9]*">
                 </div>
               </div>
             </div>
