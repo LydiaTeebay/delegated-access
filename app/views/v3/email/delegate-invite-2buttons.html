@@ -1,7 +1,7 @@
 {% extends 'v3/layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  EMAIL - Invite to myHealth
+  EMAIL - Invite to stepWell
 {% endblock %}
 
 {% block content %}
@@ -9,12 +9,12 @@
     <div class="nhsuk-grid-column-full">
 
       <p><h1 class="nhsuk-fieldset__legend--l">
-        {{ data.primaryUserFirstName or 'Alice' }} has invited you to act on their behalf in {{ data.service or 'myHealth' }}.
+        {{ data.primaryUserFirstName or 'Alice' }} has invited you to act on their behalf in {{ data.service or 'stepWell' }}.
       </h1>
 
       <!-- NOT MVP -->
       <!--
-      <p>This means you will be able to see {{ data.primaryUserFirstName or 'Alice' }}’s {{ data.service or 'myHealth' }} information. 
+      <p>This means you will be able to see {{ data.primaryUserFirstName or 'Alice' }}’s {{ data.service or 'stepWell' }} information. 
       For example, you may be able to see some of their medical or appointment information.</p>
       -->
 

@@ -1,7 +1,7 @@
 {% extends 'v3/layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  Adding someone to your myHealth account
+  Adding someone to your stepWell account
 {% endblock %}
 
 {% block content %}
@@ -9,12 +9,12 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-        You have invited {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} to act on your behalf for {{ data.service or 'myHealth' }}
+        You have invited {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} to act on your behalf for {{ data.service or 'stepWell' }}
       </h1>
-      <p>This means {{ data.firstName or 'Bob' }} can now enter your {{ data.service or 'myHealth' }} account and act on your behalf.
+      <p>This means {{ data.firstName or 'Bob' }} can now enter your {{ data.service or 'stepWell' }} account and act on your behalf.
       <p><a href="#">Contact us</a> if you did not do this or you think this may be an error.</p>
       <mark>What is the primary action here - would it be to revoke access?</mark>
-      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Continue to {{ data.service or 'myHealth' }} </a></p>
+      <p><a href="/add-delegate/delegate-preflight" class="nhsuk-button">Continue to {{ data.service or 'stepWell' }} </a></p>
       <p><a href="/add-delegate/delegate-preflight">Add someone else to act on your behalf</a></p>
 
     </div>

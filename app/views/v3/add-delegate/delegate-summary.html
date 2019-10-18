@@ -30,7 +30,7 @@
             Service:
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data.service or 'myHealth' }}
+            {{ data.service or 'stepWell' }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/v3/service/select-single-service?summaryReturn=yes">
@@ -134,8 +134,8 @@
         </div>
       </dl>
 
-      <p>You are allowing <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> to enter your <strong>{{ data.service or 'myHealth' }}</strong> account. 
-      This means they can act on your behalf and see your information within <strong>{{ data.service or 'myHealth' }}</strong>. 
+      <p>You are allowing <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> to enter your <strong>{{ data.service or 'stepWell' }}</strong> account. 
+      This means they can act on your behalf and see your information within <strong>{{ data.service or 'stepWell' }}</strong>. 
       For example, they may be able to see your medical records.</p>
 
       <p>You can cancel this at any time on your account management page.</p>
