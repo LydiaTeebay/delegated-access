@@ -23,14 +23,14 @@
         </h2>
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#example-error-1">You need to select a service</a>
+              <a href="#example-error-1">Please select a service</a>
             </li>
           </ul>
       </div>
       {% if data.summaryReturn === 'yes' %}
-        <form action="/v3/add-delegate/delegate-summary" method="get">
+        <form action="/v2/add-delegate/delegate-summary" method="get">
       {% else %}
-        <form action="/v3/add-delegate/delegate-preflight" method="get">
+        <form action="/v2/add-delegate/delegate-preflight" method="get">
       {% endif %}
       <div class="nhsuk-form-group nhsuk-form-group--error">
         <fieldset class="nhsuk-fieldset">
@@ -41,12 +41,15 @@
             <!--<p>You can be given access to manage a service on behalf of another person or give access to someone to act on your behalf</p>
             <p>You can connect your NHS login with another person. You can add services to that person and allow them to access services on your behalf</p>-->
           </legend>
-          <span class="nhsuk-error-message" id="new-email-no-input-error">
-              <span class="nhsuk-u-visually-hidden">Error:</span> You need to select a service
-            </span>
+
           <span class="nhsuk-hint" id="example-hint">
             The person you add will be able to access a service on your behalf, they will be able to do some or all of the things that you can do in the selected service.
           </span>
+
+                    <span class="nhsuk-error-message" id="new-email-no-input-error">
+              <span class="nhsuk-u-visually-hidden">Error:</span> Please select a service
+            </span>
+
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="service1" name="service" type="radio" value="stepWell">

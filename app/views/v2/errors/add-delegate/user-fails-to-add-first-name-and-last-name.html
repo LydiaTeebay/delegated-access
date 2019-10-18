@@ -53,12 +53,12 @@
             <input class="nhsuk-input nhsuk-u-width-three-quarters nhsuk-input--error" id="firstName" name="firstName" value="{{ data['firstName'] }}" type="text">
           </div>
           <div class="nhsuk-form-group nhsuk-form-group--error">
+                      <span class="nhsuk-error-message" id="new-email-no-input-error">
+              <span class="nhsuk-u-visually-hidden">Error:</span> Enter their last name
+            </span>
             <label class="nhsuk-label" for="lastName">
               Last name
             </label>
-            <span class="nhsuk-error-message" id="new-email-no-input-error">
-              <span class="nhsuk-u-visually-hidden">Error:</span> Enter their last name
-            </span>
             <input class="nhsuk-input nhsuk-u-width-three-quarters nhsuk-input--error" id="lastName" name="lastName" value="{{ data['lastName'] }}" type="text">
           </div>
         </fieldset>

@@ -24,28 +24,30 @@
         </h2>
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#example-error-1">Check you have entered your {{ data.firstName or 'Bob'}}'s email address correctly</a>
+              <a href="#example-error-1">Enter an email address in the correct format, like name@example.com</a>
             </li>
           </ul>
       </div>
 
-      <form action="/v3/add-delegate/delegate-summary" method="get">
+      <form action="/v2/add-delegate/delegate-summary" method="get">
+        <div class="nhsuk-form-group nhsuk-form-group--error">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
               Tell us {{ data.firstName or 'Bob' }}'s email address
             </h1>
           </legend>
-          <div class="nhsuk-form-group nhsuk-form-group--error">
+          <div class="nhsuk-form-group">
             <span class="nhsuk-error-message" id="new-email-no-input-error">
-              <span class="nhsuk-u-visually-hidden">Error:</span> Check you have entered your {{ data.firstName or 'Bob'}}'s email address correctly
+              <span class="nhsuk-u-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
             </span>
-            <label class="nhsuk-label" for="contactEmailAddress">
+            <!--<label class="nhsuk-label" for="contactEmailAddress">
               Email address
-            </label>
+            </label>-->
             <input id="expample-error-1" class="nhsuk-input nhsuk-u-width-three-quarters nhsuk-input--error" id="contactEmailAddress" name="contactEmailAddress" value="{{ data['contactEmailAddress'] }}" type="text">
           </div>
         </fieldset>
+        </div>
         <button class="nhsuk-button">Continue</button>
       </form>
 
