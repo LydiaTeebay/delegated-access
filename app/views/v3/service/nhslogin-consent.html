@@ -47,7 +47,7 @@
         </div>
       </div>-->      
 
-      <p>To accept this invite, you will need to agree to share some of your NHS login information.</p>
+      <p>To accept this invite, you will need to agree to share some of your NHS login information with <b>{{ data.service or 'myHealth' }}</b>.</p>
       <p><b>{{ data.service or 'myHealth' }}</b> will use your:
       <ul>
         <li>name</li>
@@ -61,7 +61,9 @@
         <li>personal health information</li>
       </ul>
 
-      <p>After accepting this invite, you will be added to </b>{{ data.primaryUserFirstName or 'Alice' }}'s</b> NHS login as her <b>{{ data.relationship or 'carer' }}</b> and will be able to act on her behalf. This means {{ data.primaryUserFirstName or 'Alice' }} will be able to see your name in the account management area of their NHS login.</p>
+      <p>After accepting this invite, you will be added to </b>{{ data.primaryUserFirstName or 'Alice' }}'s</b> NHS login as her <b>{{ data.relationship or 'carer' }}</b> and will be able to act on her behalf. 
+      This means {{ data.primaryUserFirstName or 'Alice' }} will be able to see your name in the account management area of their NHS login.
+      {{ data.primaryUserFirstName or 'Alice' }} will not be able to see your personal health information.</p>
 
 
       <p>Before you agree, you should read <b>{{ data.service or 'myHealth' }}</b>'s terms of use and privacy policy to check how they will use your information.</p>
