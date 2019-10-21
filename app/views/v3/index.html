@@ -21,13 +21,13 @@
 
       <!-- Change the page title here -->
       <h1>
-        MVP v2 Prototype
+        MVP v3 Prototype
       </h1>
      
       <h2>Primary user adds a delegate</h2>
 
       <p>
-        Alice has an NHS login account and has no delegate for myHealth<br>
+        Alice has an NHS login account and has no delegate for a service<br>
         Journey starts with Alice adding a delegate.
       </p>
       {{ button({
@@ -43,7 +43,7 @@
 
       <h2>Delegate user accepts invitation</h2>
       <p>
-        Bob has been invited to act on behalf of Alice as a delegate on myHealth<br>
+        Bob has been invited to act on behalf of Alice as a delegate within a service<br>
         Bob has not agreed to consent<br>
         Bob may or may not have an NHS login account already<br>
         Journey starts with Bob receiving an email inviting him to be a delegate
@@ -55,12 +55,14 @@
       
       <h3>Emails</h3>
       <a href="email/delegate-invite">Invite ("someone has added you to their account, this means you can do this, this and this, click here to accept invite")</a></br></br>
+      
+      <p>NB: Consent emails have now been combined</p>
       <a href="email/delegate-success-nhs">NHS success ("you have been connected to someone's nhs login - see all people you can act on behalf of")</a></br></br>
       <a href="email/delegate-success-service">Service success ("you have been added as a delegate to someone's [SERVICE] account - see all people you can act on behalf of")</a>
       <br /><br />
       <h3>Consent</h3>
-      <a href="service/nhslogin-consent">Consent to be added/connected to the user's NHS login account</a><br /><br />
-      <a href="service/service-consent">Consent for the specific service that they have been allocated to</a>
+      <p>NB: Consent pages have now been combined </p>
+      <a href="service/nhslogin-consent">Consent to be added/connected to the user's NHS login account and for the specific service that they have been allocated to</a><br /><br />
 
     </div>  
 
