@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Your email address has been changed
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-fieldset__legend--l">
+          We could not match you
+      </h1>
+
+      <p>This may be because:</p>
+        <ul>
+            <li>the information entered by the other person does not match the information you entered</li>
+            <li>there is more than one person that matches your information.</li>
+            <li>there is a problem with our service. Please try again later</li>
+        </ul>
+
+      <p>You will need to go to the person who invited you and get them to send another invitation.</p>
+    </div>
+
+  </div>
+{% endblock %}
