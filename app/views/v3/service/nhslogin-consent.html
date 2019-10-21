@@ -29,7 +29,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Agree to be added to {{ data.primaryUserFirstName or 'Alice' }}’s NHS login </h1>
+      <h1>{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName }} is inviting you to enter their <b>{{ data.service or 'myHealth' }}</b> account and act on their behalf.</h1>
 
       <!-- Styling needs adding to main sass file and it could be improved -->
       <!--<div style="width: 100%; display: inline-block">
@@ -45,18 +45,55 @@
           {{ currentUserEmail or 'bob35@gmail.com' }}
           </p>
         </div>
-      </div>-->
+      </div>-->      
+
+      <p>To accept this invite, you will need to agree to share some of your NHS login information.</p>
+      <p><b>{{ data.service or 'myHealth' }}</b> will use your:
+      <ul>
+        <li>name</li>
+        <li>date of birth</li>
+        <li>NHS number</li>
+        <li>relationship to {{ data.primaryUserFirstName or 'Alice' }}</li>
+      </ul>
+
+      <p><b>{{ data.service or 'myHealth' }}</b> will <b>not</b> use your:
+      <ul>
+        <li>personal health information</li>
+      </ul>
+
+      <p>After accepting this invite, you will be added to </b>{{ data.primaryUserFirstName or 'Alice' }}'s</b> NHS login as her <b>{{ data.relationship or 'carer' }}</b> and will be able to act on her behalf. This means {{ data.primaryUserFirstName or 'Alice' }} will be able to see your name in the account management area of their NHS login.</p>
 
 
-      <p>{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName }} has invited you to enter their {{ data.service or 'myHealth' }} account and act on their behalf as their {{data.relationship or 'carer'}}.</p>
-      <p>Before you can do this, you must agree to be added to their NHS login. This means they will be able to see your name in the account management area of their NHS login. </p>
-      
+      <p>Before you agree, you should read <b>{{ data.service or 'myHealth' }}</b>'s terms of use and privacy policy to check how they will use your information.</p>
+      <p>This does not mean that you will have a </b>{{ data.service or 'myHealth' }}</b> account for yourself.<p>
+
+      <!--
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>You will be able to access myHealth on behalf of {{ data.primaryUserFirstName or 'Alice' }} once you have passed our checks.</p>
+      </div>
+      -->
+
+      <!--<mark>make this conditional based on where the user has come from</mark>-->
+      {% if data.id ===  'pending' %}
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">Awaiting checks</h3>
+        <p>You will be able to access myHealth on behalf of {{ data.primaryUserFirstName or 'Alice' }} once you have passed our checks.</p>
+      </div>
+
       {{ button({
         "text": "Agree and continue",
-        "href": "service-consent"
+        "href": "service-consent-pending"
       }) }}
+      {% else %}
 
-<p><a href="#">I do not want to connect my NHS login</a>
+      <!--<mark>This needs to go to the pending screen when the above callout is on page</mark>-->
+      {{ button({
+        "text": "Agree and continue",
+        "href": "service-consent-success"
+      }) }}
+      {% endif %}
+    <p><a href="#">I do not agree to sharing my information</a>
 
     </div>  
   </div>
