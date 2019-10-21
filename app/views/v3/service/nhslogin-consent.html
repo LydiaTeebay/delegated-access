@@ -29,7 +29,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Agree to be added to {{ data.primaryUserFirstName or 'Alice' }}’s NHS login as their {{data.relationship or 'carer'}} </h1>
+      <h1>Agree to be added to {{ data.primaryUserFirstName or 'Alice' }}’s NHS login </h1>
 
       <!-- Styling needs adding to main sass file and it could be improved -->
       <!--<div style="width: 100%; display: inline-block">
@@ -48,7 +48,7 @@
       </div>-->
 
 
-      <p>{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName }} has invited you to enter their {{ data.service or 'myHealth' }} account and act on their behalf.</p>
+      <p>{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName }} has invited you to enter their {{ data.service or 'myHealth' }} account and act on their behalf as their {{data.relationship or 'carer'}}.</p>
       <p>Before you can do this, you must agree to be added to their NHS login. This means they will be able to see your name in the account management area of their NHS login. </p>
       
       {{ button({
