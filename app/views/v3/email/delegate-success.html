@@ -9,17 +9,13 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-      You can now act on {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s behalf in {{ data.service or 'stepWell' }}.
+      Success
       </h1>
 
-      <!-- NOT MVP -->
-      <!-- 
-      <p>This means you will be able to see {{ data.primaryUserFirstName or 'Alice' }}'s {{ data.service or 'stepWell' }} information. 
-          For example, you may be able to see some of their medical or appointment information.</p>
-      -->
-     <!-- <mark>is this message right?</mark>-->
+      <p>You have been added to {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}’s NHS login as their <b>{{data.relationship or 'carer' }}</b>. 
+      You can now enter <b>{{ data.service or 'stepWell' }}</b> on their behalf, and any other services they ask you to.</p>
         
-      <p>You can cancel this at any time by <a href="">managing your NHS login.</a></p>
+      <p>You can cancel this at any time by visiting your <a href="">NHS login account management area</a>.</p>
     </div>
   </div>
 
