@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  NHS login - Success!
+  NHS login - Success
 {% endblock %}
 
 <!-- Your page content goes inside the content block -->
@@ -20,22 +20,21 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page title here -->
-      <h1>Once you have passed our checks, you will be able to act on behalf of {{ data.primaryUser or 'Alice' }} in {{ data.service or 'myHealth' }}
+      <h1>
+        You can now act on behalf of {{ data.primaryUserFirstName or 'Alice' }} in {{ data.service or 'stepWell' }}
       </h1>
-      <p>This means you will be able to see {{ data.primaryUserFirstName or 'Alice' }}’s {{ data.service or 'myHealth' }} information. For example, you may be able to see some of their medical or appointment information.</p>
+      <p>This means you are able to see {{ data.primaryUserFirstName or 'Alice' }}’s {{ data.service or 'stepWell' }} information. For example, you may be able to see some of their medical or appointment information.</p>
       <div class="nhsuk-inset-text">
   <span class="nhsuk-u-visually-hidden">Information: </span>
-<p>Access to some parts of {{ data.service or 'myHealth' }} may need a higher level of security. To do this, your information will be sent to {{ data.primaryUserFirstName or 'Alice' }}'s clinician to be authorised. Until you are fully authorised you may not be able to use all of {{ data.service or 'myHealth' }}’s features. <b>This can take up to 7 days.</b></p>
+<p>Access to some parts of {{ data.service or 'stepWell' }} may need a higher level of security. To do this, your information will be sent to {{ data.primaryUserFirstName or 'Alice' }}'s clinician to be authorised. Until you are fully authorised you may not be able to use all of {{ data.service or 'stepWell' }}’s features. <b>This can take up to 7 days.</b></p>
 
 </div>
       <p><a href="#">Email the service desk</a> if you would like to cancel this at any time.</p><BR>
 
-      {% if data.id !== 'pending' %}
       <a href="../login/login-as-combined" role="button" draggable="false" class="nhsuk-button">
-        Continue to {{ data.service or 'myHealth' }}
+        Continue to {{ data.service or 'stepWell' }}
       </a>
     </div>  
-    {% endif %}
 
   </div>
 {% endblock %}
