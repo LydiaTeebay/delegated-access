@@ -23,21 +23,18 @@
       <h1>
         You can now act on behalf of {{ data.primaryUserFirstName or 'Alice' }} in {{ data.service or 'stepWell' }}
       </h1>
-      <p>This means you are able to see {{ data.primaryUserFirstName or 'Alice' }}’s {{ data.service or 'stepWell' }} information. For example, you may be able to see some of their medical or appointment information.</p>
 
 
-<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
+<p><ul>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
   <!-- dynamic content from the service -->
-  <ul>
     <li>appointment bookings</li>
     <li>ordering repeat prescriptions</li>
     </ul>
     </p>
 
 
-<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
+<p><ul>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
  <!-- dynamic content from the service -->
-  <ul>
     <li>medical records</li>
     </ul>
     </p>
