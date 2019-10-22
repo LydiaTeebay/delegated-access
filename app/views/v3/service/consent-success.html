@@ -25,22 +25,22 @@
       </h1>
 
 
-<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
+<p><b>{{ data.service or 'stepWell' }}</b> features you can access on behalf of <b>{{ data.primaryUserFirstName or 'Alice' }}</b> include:
   <!-- dynamic content from the service -->
-    <ul>
+    <ul class="nhsuk-list nhsuk-list--bullet">
     <li>appointment bookings</li>
     <li>ordering repeat prescriptions</li>
     </ul>
     </p>
+<br>
 
-
-<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
+<p><b>{{ data.service or 'stepWell' }}</b> features you cannot access on behalf of <b>{{ data.primaryUserFirstName or 'Alice' }}</b> include:
  <!-- dynamic content from the service -->
     <ul class="nhsuk-list nhsuk-list--bullet">
     <li>medical records</li>
     </ul>
     </p>
-
+<br>
  <details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
