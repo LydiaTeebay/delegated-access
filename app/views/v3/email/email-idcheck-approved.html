@@ -1,0 +1,27 @@
+{% extends '_layouts/_grids/_grid-email-hotjar.html' %}
+{% block page_title %}You passed our checks{% endblock %}
+{% set hidehead = "true" %}
+{% set hideBeta = "true" %}
+{% set bodyClass = "body-email" %}
+
+{# work out where to send users #}
+{% if service %}
+  {% set params = "?service=" + service + "&serviceName=" + serviceName + "&devMode=" + devMode + "&returnUrl=" + returnUrl + "&emailAddress=" + emailAddress + "&mobileNum=" + mobileNum + "&verified=" + verified %}
+{% endif %}
+
+{% block content %}
+<div class="first-item" style="padding-bottom: 100px;" >
+
+  <h1>You passed our checks</h1>
+
+  <p>Now you can <a href="/start/v12/nhs-app-start">use your NHS login to access the NHS app.</a></p>
+
+  <p>Use your NHS login to access other health websites and apps wherever you see 'NHS login'.</p>
+
+<!--  <div class="callout callout&#45;&#45;compact" style="border-left: 7px solid lightgrey; padding: 5px inherit; margin-top: 10px;">-->
+<!--    <p>You can now use your NHS login.</p>-->
+<!--  </div>-->
+
+</div>
+
+{% endblock %}
