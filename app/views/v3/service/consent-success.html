@@ -24,17 +24,23 @@
         You can now act on behalf of {{ data.primaryUserFirstName or 'Alice' }} in {{ data.service or 'stepWell' }}
       </h1>
       <p>This means you are able to see {{ data.primaryUserFirstName or 'Alice' }}’s {{ data.service or 'stepWell' }} information. For example, you may be able to see some of their medical or appointment information.</p>
-      <div class="nhsuk-inset-text">
-  <span class="nhsuk-u-visually-hidden">Information: </span>
-<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:</p>
+
+
+<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
   <!-- dynamic content from the service -->
   <ul>
     <li>appointment bookings</li>
     <li>ordering repeat prescriptions</li>
-<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:</p>
+    </ul>
+    </p>
+
+
+<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
  <!-- dynamic content from the service -->
   <ul>
     <li>medical records</li>
+    </ul>
+    </p>
 
  <details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
@@ -47,9 +53,10 @@
           A clinician may need to review the request, which can take up to 7 days.</p>
         </div>
       </details>
-</div>
 
-      <p><a href="#">Email the service desk</a> if you would like to cancel this at any time.</p><BR>
+
+
+      <p>You can cancel this at any time by visiting your <a href="">NHS login account management area</a>.</p>
 
       <a href="../login/login-as-combined" role="button" draggable="false" class="nhsuk-button">
         Continue to {{ data.service or 'stepWell' }}
