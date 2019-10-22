@@ -17,14 +17,14 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/v3/add-delegate/delegate-relationship" method="post">
+      <form action="/v2/add-delegate/delegate-relationship" method="post">
 
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
 
             <h1 class="nhsuk-fieldset__heading">
-              What kind of sibling is {{ data.firstName or 'Bob' }} to you?
+              What is {{ data.firstName or 'Bob' }}'s relationship to you?
             </h1>
           </legend>
           

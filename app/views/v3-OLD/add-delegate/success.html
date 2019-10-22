@@ -1,0 +1,47 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  NHS login - Success!
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>
+        Email has been sent
+      </h1>
+
+      <p>We have sent an email to <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.contactEmailAddress or 'bob35@gmail.com' }}</strong> with a secure link that will expire within 7 days.<br>
+      <br>
+      <a href="../service/myhealth-logged-in" role="button" draggable="false" class="nhsuk-button">
+        Continue to {{ data.service or 'myHealth' }}
+      </a>
+      <br>
+      <!--<mark> or shall we continue to account management? or to view all delegations?</mark>-->
+
+      <p><a href="delegate-preflight">Add someone else to act on your behalf</a></p>
+      <p><a href="http://manage-nhs-login.herokuapp.com/account/v3b/index">Manage your NHS login</a></p>
+
+      <hr>
+
+      <a href="../email/user-security">View email sent to {{ data.primaryUserFirstName or 'Alice' }}</a><br>
+      <a href="../email/delegate-invite">View email sent to {{ data.firstName or 'Bob' }}</a>
+
+
+    </div>  
+
+  </div>
+{% endblock %}

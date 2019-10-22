@@ -18,9 +18,9 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
       {% if data.summaryReturn === 'yes' %}
-        <form action="/v3/add-delegate/delegate-summary" method="get">
+        <form action="/v2/add-delegate/delegate-summary" method="get">
       {% else %}
-        <form action="/v3/add-delegate/delegate-preflight" method="get">
+        <form action="/v2/add-delegate/delegate-preflight" method="get">
       {% endif %}
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
@@ -38,7 +38,7 @@
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="service1" name="service" type="radio" value="stepWell">
                 <label class="nhsuk-label nhsuk-radios__label" for="service">
-                  stepWell
+                 {{ data.service or 'stepWell' }}
                 </label>
             </div>
             <div class="nhsuk-radios__item">
