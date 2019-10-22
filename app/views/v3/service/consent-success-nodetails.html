@@ -26,29 +26,9 @@
       <p>This means you are able to see {{ data.primaryUserFirstName or 'Alice' }}’s {{ data.service or 'stepWell' }} information. For example, you may be able to see some of their medical or appointment information.</p>
       <div class="nhsuk-inset-text">
   <span class="nhsuk-u-visually-hidden">Information: </span>
-<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:</p>
-  <!-- dynamic content from the service -->
-  <ul>
-    <li>appointment bookings</li>
-    <li>ordering repeat prescriptions</li>
-<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:</p>
- <!-- dynamic content from the service -->
-  <ul>
-    <li>medical records</li>
+<p>Access to some parts of {{ data.service or 'stepWell' }} may need a higher level of security. To do this, your information will be sent to {{ data.primaryUserFirstName or 'Alice' }}'s clinician to be authorised. Until you are fully authorised you may not be able to use all of {{ data.service or 'stepWell' }}’s features. <b>This can take up to 7 days.</b></p>
 
- <details class="nhsuk-details">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-          Why are these features not available?
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <p>To access these features, you will need to contact {{ data.primaryUserFirstName or 'Alice' }} directly. 
-          A clinician may need to review the request, which can take up to 7 days.</p>
-        </div>
-      </details>
 </div>
-
       <p><a href="#">Email the service desk</a> if you would like to cancel this at any time.</p><BR>
 
       <a href="../login/login-as-combined" role="button" draggable="false" class="nhsuk-button">
