@@ -25,24 +25,25 @@
       </h1>
 
 
-<p><ul>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
+<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
   <!-- dynamic content from the service -->
+    <ul>
     <li>appointment bookings</li>
     <li>ordering repeat prescriptions</li>
     </ul>
     </p>
 
 
-<p><ul>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
+<p>{{ data.service or 'stepWell' }} features you can access on behalf of {{ data.primaryUserFirstName or 'Alice' }} include:
  <!-- dynamic content from the service -->
-    <li>medical records</li>
+    <ul><li>medical records</li>
     </ul>
     </p>
 
  <details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
-          Why are these features not available?
+          Why are some of these features not available?
           </span>
         </summary>
         <div class="nhsuk-details__text">
