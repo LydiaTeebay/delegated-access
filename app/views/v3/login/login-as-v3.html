@@ -20,35 +20,40 @@
       <form action="../service/myhealth-logged-in" method="get">
      
           <h2>
-              What do you want to do?
+              Enter {{data.service or 'stepWell'}}
           </h2>
      
       <div class="nhsuk-form-group">
       
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            I want to:
+            Continue as:
           </legend>
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="CreateAccount">
-                <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
-                  enter {{data.service or 'stepWell'}} as myself
-                </label>
-            </div>
-            <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="{{ data.primaryUserFirstName or 'Alice' }}">
                   <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
-                    act on behalf of {{data.primaryUserFirstName or 'Alice'}} {{data.primaryUserLastName or 'Smith'}} in {{data.service or 'stepWell'}}
+                    {{data.primaryUserFirstName or 'Alice'}} {{data.primaryUserLastName or 'Smith'}}
                   </label>
           </div> 
 
                       <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="David">
                   <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
-                    act on behalf of David Robertson in {{data.service or 'stepWell'}}
+                    David Roberts
                   </label>
-          </div>          
+          </div>        
+
+                <div class="nhsuk-radios__divider">or</div>
+
+                          <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="CreateAccount">
+                <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
+                  Create an account or log in to [{{data.service or 'stepWell'}} as yourself
+
+                </label>
+            </div>
+
         </fieldset>
       </div>
       <button class="nhsuk-button">Continue</button>

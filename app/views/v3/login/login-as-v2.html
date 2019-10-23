@@ -20,33 +20,36 @@
       <form action="../service/myhealth-logged-in" method="get">
      
           <h2>
-              What do you want to do?
           </h2>
      
       <div class="nhsuk-form-group">
       
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            I want to:
+            Enter {{data.service or 'stepWell'}} as:
           </legend>
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="CreateAccount">
                 <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
-                  enter {{data.service or 'stepWell'}} as myself
+                 Yourself
                 </label>
+                <span class="nhsuk-hint nhsuk-radios__hint" id="gov-1-item-hint">
+                    You must have a {{data.service or 'stepWell'}} account to enter as yourself. 
+                    If you do not already have an account with {{data.service or 'stepWell'}}, you will need to create one.
+                </span>
             </div>
             <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="{{ data.primaryUserFirstName or 'Alice' }}">
                   <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
-                    act on behalf of {{data.primaryUserFirstName or 'Alice'}} {{data.primaryUserLastName or 'Smith'}} in {{data.service or 'stepWell'}}
+                    {{data.primaryUserFirstName or 'Alice'}} {{data.primaryUserLastName or 'Smith'}}
                   </label>
           </div> 
 
                       <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="David">
                   <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
-                    act on behalf of David Robertson in {{data.service or 'stepWell'}}
+                    David Robertson
                   </label>
           </div>          
         </fieldset>
