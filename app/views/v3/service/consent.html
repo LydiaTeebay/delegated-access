@@ -29,7 +29,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName }} has sent you an invite</h1>  
+      <h1>{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }} has sent you an invite</h1>  
 
       <p>{{ data.primaryUserFirstName or 'Alice' }} is inviting you to enter their <b>{{ data.service or 'myHealth' }}</b> account and act on their behalf. 
       To accept this invite, you must agree to share some of your NHS login information with <b>{{ data.service or 'myHealth' }}</b>.</p>
