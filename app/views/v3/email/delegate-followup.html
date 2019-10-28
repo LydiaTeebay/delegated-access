@@ -12,7 +12,7 @@
         Respond to {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
       </h1>
       
-      <p>Now you have an NHS login, you can now respond to {{ data.primaryUserFirstName or 'Alice' }}’s invite to act on their behalf in {{ data.service or 'stepWell'}}.</p>
+      <p>Now you have an NHS login, you can now respond to {{ data.primaryUserFirstName or 'Alice' }}’s invite to act on their behalf in <b>{{ data.service or 'stepWell'}}</b>.</p>
       
       <p><a href="https://nhs-cid.herokuapp.com/create-account/v17/start?service=myHealth&serviceName=myHealth&returnUrl=https://delegated-access.herokuapp.com/v3/service/consent&" class="nhsuk-button">Respond to invite</a>
       
