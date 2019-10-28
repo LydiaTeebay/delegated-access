@@ -77,8 +77,6 @@
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
     {% block bodyStart %}{% endblock %}
 
-      {% block proxy %}{% endblock %}
-
       {% block skipLink %}
         {{ skipLink({
           href: '#maincontent',
@@ -90,8 +88,7 @@
         {{ header({}) }}
       {% endblock %}
 
-      {% block beforeContent %}
-      {% endblock %}
+      {% block beforeContent %}{% endblock %}
 
       {% block main %}
         <div class="nhsuk-width-container {{ containerClasses }}">

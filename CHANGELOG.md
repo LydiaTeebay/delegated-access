@@ -1,5 +1,25 @@
 # NHS.UK prototype kit Changelog
 
+## 3.0.4 - 2nd October 2019
+
+- Use the latest version of the NHS.UK frontend library (v2.3.2)
+- Update package dependencies to latest versions
+
+## 3.0.3 - 11th September 2019
+
+:wrench: **Fixes**
+
+- Use the latest version of the NHS.UK frontend library (v2.3.1)
+- Update package dependencies to latest versions
+
+## 3.0.2 - 29th August 2019
+
+:wrench: **Fixes**
+
+- Update to NHS.UK frontend v2.3.0
+- Update package dependencies to latest versions
+- Use the lede text class on paragraphs below the page headings
+
 ## 3.0.1 - 24th June 2019
 
 :wrench: **Fixes**

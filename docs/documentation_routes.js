@@ -38,8 +38,6 @@ router.post('/install/mac', function (req, res) {
 
 })
 
-
-
 // Branching example
 router.post('/examples/branching/answer', function (req, res) {
 
