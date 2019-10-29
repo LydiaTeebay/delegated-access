@@ -72,27 +72,27 @@ router.post('/*/nhs-login', function (req, res) {
     }
 })
 
-router.post('/*/login/login-details', function(req, res) {
+// router.post('/*/login/login-details', function(req, res) {
 
-    // we check here if the user already has nhs login
-    // we also check if the user has already consented to the service
+//     // we check here if the user already has nhs login
+//     // we also check if the user has already consented to the service
 
-    var hasLogin = req.session.data['hasLogin'] || true;
-    var serviceConsent = req.session.data['serviceConsent'] || false;
+//     var hasLogin = req.session.data['hasLogin'] || true;
+//     var serviceConsent = req.session.data['serviceConsent'] || false;
 
-        if (hasLogin === true) {
-            if (serviceConsent === true) {
-                // login then go straight into the service
-                console.log('user has given consent')
-                res.redirect('/' + getVersion(req) + '/service/service-logged-in')
-            } else {
-                // go to the service consent page
-                console.log('user has not given consent');
-                res.redirect('/' + getVersion(req) + '/service/nhslogin-consent');
-            }
-        } else {
-        }
-})
+//         if (hasLogin === true) {
+//             if (serviceConsent === true) {
+//                 // login then go straight into the service
+//                 console.log('user has given consent')
+//                 res.redirect('/' + getVersion(req) + '/service/service-logged-in')
+//             } else {
+//                 // go to the service consent page
+//                 console.log('user has not given consent');
+//                 res.redirect('/' + getVersion(req) + '/service/consent');
+//             }
+//         } else {
+//         }
+// })
 
 router.post('/*/add-delegate/delegate-relationship', function(req, res) {
     var relationship = req.session.data['relationship'];
@@ -116,23 +116,23 @@ router.post('/*/add-delegate/delegate-relationship', function(req, res) {
     }
 })
 
-router.get('/*/service/nhslogin-consent', function(req, res) {
-    // get the status of the ID check
-    req.session.data['id'] = req.query.id || 'passed';
-    console.log("ID check has: " + req.session.data['id']);
+// router.get('/*/service/consent', function(req, res) {
+//     // get the status of the ID check
+//     req.session.data['id'] = req.query.id || 'passed';
+//     console.log("ID check has: " + req.session.data['id']);
 
-    res.render(getVersion(req) + '/service/nhslogin-consent');
-})
+//     res.render(getVersion(req) + '/service/consent');
+// })
 
-router.post('/*/service/nhslogin-consent', function(req, res) {
-    var givesConsent = req.session.data['givesConsent'];
+// router.post('/*/service/consent', function(req, res) {
+//     var givesConsent = req.session.data['givesConsent'];
 
-    if (givesConsent === 'yes') {
-        res.redirect('/' + getVersion(req) + '/service/nhslogin-success');
-    } else {
-        res.redirect('/' + getVersion(req) + '/service/nhslogin-rejected');
-    }
-})
+//     if (givesConsent === 'yes') {
+//         res.redirect('/' + getVersion(req) + '/service/nhslogin-success');
+//     } else {
+//         res.redirect('/' + getVersion(req) + '/service/nhslogin-rejected');
+//     }
+// }) 
 
 ////
 //router.post('/*/service/select-single-service', function(req, res) {
