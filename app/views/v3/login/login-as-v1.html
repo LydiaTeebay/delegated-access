@@ -44,6 +44,13 @@
           </div> 
 
                       <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="{{ data.primaryUserFirstName or 'Alice' }}">
+                  <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
+                    act on behalf of {{data.primaryUserFirstName or 'Alice'}} {{data.primaryUserLastName or 'Smith'}} in {{data.service or 'stepWell'}}
+                  </label>
+          </div> 
+
+                      <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="loggedInUser" name="loggedInUser" type="radio" value="David">
                   <label class="nhsuk-label nhsuk-radios__label" for="loggedInUser">
                     act on behalf of David Robertson in {{data.service or 'stepWell'}}
