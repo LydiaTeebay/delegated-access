@@ -116,6 +116,17 @@ router.post('/*/add-delegate/delegate-relationship', function(req, res) {
     }
 })
 
+
+router.post('/*/login/login-as-v3', function(req, res) {
+    var loggedInUser = req.session.data['loggedInUser'];
+    if (loggedInUser === 'CreateAccount') {
+        res.redirect('/' + getVersion(req) + '/service/myhealth-logged-out');
+
+    } else {
+        res.redirect('/' + getVersion(req) + '/service/myhealth-logged-in');
+    }
+})
+
 // router.get('/*/service/consent', function(req, res) {
 //     // get the status of the ID check
 //     req.session.data['id'] = req.query.id || 'passed';
