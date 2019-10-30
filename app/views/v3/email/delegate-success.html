@@ -13,14 +13,11 @@
       </h1>
 
       <p>You have been added to {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}’s NHS login as their <b>{{ data.relationship or 'carer' }}</b>. 
-      You can now enter <b>{{ data.service or 'stepWell' }}</b> on their behalf, and any other services they ask you to.</p>
-        
-      <p>You can cancel this at any time by visiting your <a href="">NHS login account management area</a>.</p>
-    
-      <!-- add in information about how to return back to the service & a link, and that they'll have to log in with NHS login -->
-
-            <p><a href="https://nhs-cid.herokuapp.com/create-account/v18/start?service=myHealth&serviceName=myHealth&returnUrl=https://delegated-access.herokuapp.com/v3/service/consent&" class="nhsuk-button">Continue to {{data.service or 'stepWell'}}</a>
+      You can now enter <b>{{ data.service or 'stepWell' }}</b> on their behalf at any time.</p>
       
+      <p>To do this, visit <a href="../service/myhealth-logged-out">www.stepwell.com</a> and log in with your NHS login.</p>
+
+      <p><a href="">Contact us</a> to cancel this at any time.</p>      
 
       
     </div>
