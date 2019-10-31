@@ -31,9 +31,9 @@
 
       <h1>{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }} has sent you an invite</h1>  
 
-      <p>{{ data.primaryUserFirstName or 'Alice' }} is inviting you to enter their <b>{{ data.service or 'myHealth' }}</b> account and act on their behalf. 
-      To accept this invite, you must agree to share some of your NHS login information with <b>{{ data.service or 'myHealth' }}</b>.</p>
-      <p><b>{{ data.service or 'myHealth' }}</b> will see your:
+      <p>{{ data.primaryUserFirstName or 'Alice' }} is inviting you to enter their <b>{{ data.service or 'stepWell' }}</b> account and act on their behalf. 
+      To accept this invite, you must agree to share some of your NHS login information with <b>{{ data.service or 'stepWell' }}</b>.</p>
+      <p><b>{{ data.service or 'stepWell' }}</b> will see your:
       <ul>
         <li>name</li>
         <li>date of birth</li>
@@ -41,14 +41,14 @@
         <li>relationship to {{ data.primaryUserFirstName or 'Alice' }}</li>
       </ul>
 
-      <p><b>{{ data.service or 'myHealth' }}</b> will not see your personal health information.
+      <p><b>{{ data.service or 'stepWell' }}</b> will not see your personal health information.
 
-      <p>You will be added to Alice's NHS login as her <b>{{ data.relationship or 'carer'}}</b> and will be able to act on her behalf. 
-      This means Alice will be able to see your name in the account management area of their NHS login.</p>
+      <p>You will be added to {{ data.primaryUserFirstName or 'Alice' }}'s NHS login as their <b>{{ data.relationship or 'carer'}}</b> and will be able to act on their behalf. 
+      This means {{ data.primaryUserFirstName or 'Alice' }} will be able to see your name in the account management area of their NHS login.</p>
 
-      <p>You will not create your own <b>{{data.service or 'myHealth'}}</b> account by accepting this invite and Alice will not be able to see your personal health information.</b>
+      <p>You will not create your own <b>{{ data.service or 'stepWell' }}</b> account by accepting this invite and {{ data.primaryUserFirstName or 'Alice' }} will not be able to see your personal health information.</b>
       
-      <p>Before you agree, you should read <b>{{ data.service or 'myHealth' }}</b>'s terms of use and privacy policy to check how they will use your information.</p>
+      <p>Before you agree, you should read <b>{{ data.service or 'stepWell' }}</b>'s terms of use and privacy policy to check how they will use your information.</p>
 
       {{ button({
         "text": "Agree and continue",
