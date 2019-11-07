@@ -1,0 +1,161 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+ NHS login - Add a delegate - Summary
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>
+        Check your answers before continuing
+      </h1>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Service:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.service or 'stepWell' }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/service/select-single-service?summaryReturn=yes">
+              Edit
+                <span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Person who can act on your behalf:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="delegate-name?summaryReturn=yes">
+              Edit
+                <span class="nhsuk-u-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Their relationship to you:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.relationship or 'carer' }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="delegate-relationship-alt?summaryReturn=yes">
+              Edit
+                <span class="nhsuk-u-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        {{ hasNHSNumber }}
+        {% if data.hasNHSNumber === 'yes' %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Their NHS number:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.nhsnumber or '123-456-7890' }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="delegate-nhs-no-2?summaryReturn=yes">
+              Edit
+                <span class="nhsuk-u-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+         {% endif %}
+          {% if data.hasNHSNumber === 'no' %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Their date of birth:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.dobDay or '21' }} - {{ data.dobMonth or '10' }} - {{ data.dobYear or '1979' }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="delegate-dob?summaryReturn=yes">
+              Edit
+                <span class="nhsuk-u-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <!--
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Their postcode:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.postcode }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/add-delegate/delegate-postcode">
+              Change
+                <span class="nhsuk-u-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        -->
+        {% endif %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Their email address:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.contactEmailAddress or 'bob35@gmail.com' }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="delegate-email?summaryReturn=yes">
+              Edit
+                <span class="nhsuk-u-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <p>You are allowing <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> to enter your <strong>{{ data.service or 'stepWell' }}</strong> account. 
+      This means they can act on your behalf and see your information within <strong>{{ data.service or 'stepWell' }}</strong>. 
+      For example, they may be able to see your medical records.</p>
+
+      <p>You can cancel this at any time on your account management page.</p>
+
+      <p>Once you submit these details, we will send an email to <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.contactEmailAddress or 'bob35@gmail.com' }}</strong> with a secure link.
+      They will need to open this link within 7 days to be able to confirm they agree to enter <b>{{ data.service }}</b> and act on your behalf.</p>
+
+      <p>Please check your details are correct before submitting.</p>
+
+      {{ button({
+        "text": "Submit",
+        "href": "success"
+      }) }}
+
+      <!-- NOT MVP -->
+      <!--
+      <p><a href="/add-delegate/delegate-preflight">Start again</a></p>
+      <p><a href="#" onclick="alert('This will take the user back to either account management or the service')">Exit without saving</a></p>
+      -->
+    </div>  
+
+  </div>
+{% endblock %}

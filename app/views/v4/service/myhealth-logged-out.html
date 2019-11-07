@@ -1,0 +1,47 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'v3/layouts/blank.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  stepWell
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ hero({
+  "heading": "Welcome to stepWell",
+  
+  "imageURL": "/images/cardiologyBanner.jpg"
+}) }}
+
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+
+<div>
+
+    <p>You are currently logged out, to log in:</p>
+    
+    <p><a href="#">log in using stepWell</a></p>
+
+    <p>or </p>
+    
+<a href="https://delegated-access-nhslogin.herokuapp.com/create-account/v18/start?service=stepWell&serviceName=stepWell&returnUrl=https://delegated-access.herokuapp.com/v3/login/login-as-v3"><br><img src="../../images/ContinueWith_Original.png"></a>
+
+</div>
+
+    </div>  
+
+  </div>
+{% endblock %}

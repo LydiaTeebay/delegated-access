@@ -1,0 +1,54 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  NHS login - Service consent
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{#
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+#}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>Your invite has expired</h1>  
+
+
+            <p>This could be because:
+        <!-- dynamic content from the service -->
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>you received it more than 7 days ago</li>
+            <li>you have already accepted the invite</li>
+          </ul>
+      </p>
+      
+      <p>If you haven’t already accepted the invite, ask the person who invited you to send a new one. If they send you a new one, delete the previous email and respond to the invite from the new email.
+      </p>
+
+      <p>If you have already accepted the invite, you can go directly to the service you were trying to access and log in with your NHS login.
+      </p>
+
+
+    </div>  
+  </div>
+    </div>
+  </div>  
+{% endblock %}

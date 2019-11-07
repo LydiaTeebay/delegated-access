@@ -1,0 +1,41 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Delegate List
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>People who can enter {{ data.service or 'stepWell' }} on your behalf:</h1>
+<p>Currently, you have not allowed anyone to enter {{ data.service or 'stepWell' }} to act on your behalf.</p>
+      <!--
+      <ul>
+        <li>Tom</li>
+        <li>Mary</li>
+        <li>Sue</li>
+      </ul>
+      <mark> If they have not added anyone, we will show "Currently, you have not allowed anyone to enter [service name] to act on your behalf."</mark>-->
+
+      {{ button({
+        "text": "Allow someone to act on your behalf",
+        "href": "delegate-preflight"
+      }) }}
+
+    </div>  
+
+  </div>
+{% endblock %}

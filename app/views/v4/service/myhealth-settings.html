@@ -1,0 +1,65 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'v2/layouts/blank.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Settings - stepWell
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-m">Your settings</h1>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+          Notifications
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          
+        </div>
+      </details>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+          Payments
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          
+        </div>
+      </details>
+
+      {% set url = "http://manage-nhs-login.herokuapp.com/account/v3b/index?mattisthebest=true&version=v3&primaryUserFirstName=" + (data.primaryUserFirstName or 'Alice') + "&primaryUserLastName=" + (data.primaryUserLastName or 'Smith') %}
+      
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+          Sign-in options
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <ul>
+            <li><a href='{{ url }}'>Manage your NHS login</a></li>
+          </ul> 
+        </div>
+      </details>
+    </div>  
+
+  </div>
+{% endblock %}

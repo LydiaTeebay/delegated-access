@@ -1,0 +1,54 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  NHS login - Add a delegate
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      {% if data.summaryReturn === 'yes' %}
+        <form action="delegate-summary" method="get">
+      {% else %}
+        <form action="delegate-relationship" method="get">
+      {% endif %}
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Tell us the person's full name
+            </h1>
+          </legend>
+          <!--<span class="nhsuk-hint" id="example-hint">
+            You will find this information in a passport or on a driving licence.
+          </span>-->
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="firstName">
+              First name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="firstName" name="firstName" value="{{ data['firstName'] }}" type="text">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="lastName">
+              Last name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="lastName" name="lastName" value="{{ data['lastName'] }}" type="text">
+          </div>
+        </fieldset>
+        <button class="nhsuk-button">Continue</button>
+        <!--
+        <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="delegate-relationship">
+          Continue
+        </a>
+        -->
+      </form>
+    </div>  
+  </div>
+{% endblock %}
