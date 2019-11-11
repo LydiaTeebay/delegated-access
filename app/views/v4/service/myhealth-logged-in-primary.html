@@ -57,7 +57,7 @@
             Name
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}
+            {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="#">
@@ -71,7 +71,7 @@
             Date of birth
             </dt>
             <dd class="nhsuk-summary-list__value">
-              5 January 1978
+              11 November 1981
             </dd>
             <dd class="nhsuk-summary-list__actions">
             <a href="#">
@@ -85,9 +85,9 @@
             Contact information
           </dt>
           <dd class="nhsuk-summary-list__value">
-            72 Guild Street
+            111 Byam Street
             <br>London
-            <br>SE23 6FH
+            <br>SE17 2PR
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="#">
@@ -101,8 +101,8 @@
             Contact details
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <p class="nhsuk-body">07700 900457</p>
-            <p class="nhsuk-body">{{ data.primaryUserFirstName or 'Alice' }}.{{ data.primaryUserLastName or 'Smith' }}@gmail.com</p>
+            <p class="nhsuk-body">07781 324887</p>
+            <p class="nhsuk-body">{{ data.firstName or 'Bob' }}.{{ data.lastName or 'Smith' }}@gmail.com</p>
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="#">
