@@ -29,7 +29,7 @@
             This is a 10 digit number, like 485 777 3456
           </span>
 
-            <p>It will be easier for us to find {{ data.firstName of 'Bob' }} if you tell us their NHS number. If not, we can use their date of birth.</p>
+            <p>It will be easier for us to find {{ data.firstName or 'Bob' }} if you tell us their NHS number. If not, we can use their date of birth.</p>
           
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
