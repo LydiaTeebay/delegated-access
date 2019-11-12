@@ -25,10 +25,12 @@
               Do you know {{ data.firstName or 'Bob' }}'s NHS number?
             </h1>
           </legend>
-          <span class="nhsuk-hint" id="example-hint">
-            <p>This is a 10 digit number, like 485 777 3456</p>
-            <p>You can find this on any letter sent to {{ data.firstName }} by the NHS, on a prescription or by logging in to a GP practice online service</p>
+          <span class="nhsuk-hint nhsuk-u-margin-bottom-2">
+            This is a 10 digit number, like 485 777 3456
           </span>
+
+            <p>It will be easier for us to find {{ data.firstName of 'Bob' }} if you tell us their NHS number. If not, we can use their date of birth.</p>
+          
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-1" name="hasNHSNumber" type="radio" value="yes">
