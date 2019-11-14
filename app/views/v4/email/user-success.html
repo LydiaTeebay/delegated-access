@@ -14,9 +14,9 @@
 
       <p>{{ data.firstName or 'Bob' }} has been added to your NHS login as your <b>{{data.relationship or 'carer'}}</b> and can enter <b>{{ data.service or 'stepWell' }}</b> on your behalf.</p>
 
-      <p>You can control what Bob can see and do on your behalf by contacting <b>{{ data.service or 'stepWell' }}</b>.</p>
+      <p>You can control what <b>{{ data.firstName or 'Bob' }}</b> can see and do on your behalf by contacting <b>{{ data.service or 'stepWell' }}</b>.</p>
       
-      <p>You can cancel and remove Bob’s access to <b>{{ data.service or 'stepWell' }}</b>, or remove them from your NHS login completely, by visiting your <a href"http://manage-nhs-login.herokuapp.com/account/v3b/index?mattisthebest=true&version=v3&primaryUserFirstName=Alice&primaryUserLastName=Smith">NHS login account management area</a>.</p>
+      <p>You can cancel and remove <b>{{ data.firstName or 'Bob' }}</b>’s access to <b>{{ data.service or 'stepWell' }}</b>, or remove them from your NHS login completely, by visiting your <a href"http://manage-nhs-login.herokuapp.com/account/v3b/index?mattisthebest=true&version=v3&primaryUserFirstName=Alice&primaryUserLastName=Smith">NHS login account management area</a>.</p>
     
     </div>
   </div>
