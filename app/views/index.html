@@ -27,6 +27,13 @@
 
     <h1>Delegated Access</h1>
 
+    <p>Nominated Access - This scenario is where one competent adult wants to share access to some/all of their health data with another competent adult. 
+          Both parties will need to have an NHS login.</p>
+        <ul>
+          <li><a href="https://jira.digital.nhs.uk/browse/CID-5577">JIRA Epic</a></li>
+          <li><a href="https://confluence.digital.nhs.uk/display/NL/Nominated+Access">Confluence</a></li>
+        </ul>
+
           <div class="nhsuk-grid-row nhsuk-panel-group">
         <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
           <div class="nhsuk-panel">
@@ -36,8 +43,9 @@
           </div>
           <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
             <div class="nhsuk-panel">
-              <h3 class="nhsuk-heading-xl">67</h3>
+              <h3 class="nhsuk-heading-xl">34*</h3>
               <p>Users involved</p>
+              <i>*1226 including CAPI survey</i>
             </div>
           </div>
           <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
@@ -46,16 +54,7 @@
               <p>Mins of user testing</p>
             </div>
           </div>
-        </div>
-
-
-    <h2>Nominated Access</h2>
-      <p> This scenario is where one competent adult wants to share access to some/all of their health data with another competent adult. 
-          Both parties will need to have an NHS login.</p>
-        <ul>
-          <li><a href="https://jira.digital.nhs.uk/browse/CID-5577">JIRA Epic</a></li>
-          <li><a href="https://confluence.digital.nhs.uk/display/NL/Nominated+Access">Confluence</a></li>
-        </ul>
+        </div>      
 
 
       <details class="nhsuk-details nhsuk-expander version-list">
@@ -66,27 +65,30 @@
         </summary>
         <div class="nhsuk-details__text version-text">
           <br>
-          <h3><a href="/v4/index">v4 Prototype</a></h3>
-       <p>  Date started: 7/11/2019<br>
-            Date ended: - </p>
 
-          <h3>User testing (0)</h3>
-          <ul>
-            <li>*fill in dates*</li>
-          </ul>
-          <h3>Key Findings (0)</h3>
-          <ul>
-            <li>*fill in key findings*</li>
-          </ul>
-          <h3>Design Challenges (0)</h3>
-          <ul>
-            <li>*fill in design challenges*</li>
-          </ul>
           {{ button({
-            "text": "v04",
+            "text": "Launch v4",
             "href": "v4/index"
           }) }}
           <hr>
+        <p>Date started: 7/11/2019<br>
+          Date ended: - </p>
+
+        <h3>User testing (0)</h3>
+          <ul>
+            <li>*fill in dates*</li>
+          </ul>
+
+        <h3>Key Findings (0)</h3>
+          <ul>
+            <li>*fill in key findings*</li>
+          </ul>
+        
+        <h3>Design Challenges (0)</h3>
+          <ul>
+            <li>*fill in design challenges*</li>
+          </ul>
+          
         </div>
 
       </details>
@@ -100,35 +102,34 @@
         </summary>
         <div class="nhsuk-details__text version-text">
           <br>
-          <h3><a href="/v3/index">v3 Prototype</a></h3>
-            <p>   Date started: -<br>
-                  Date ended: 7/11/2019 </p>
-            <p>
-            Review UR deck and fill these in.</p>
-            <ul>
-              <li>to add</li>
-            </ul>
-          <h3>User testing (0)</h3>
+
+          {{ button({
+            "text": "Launch v3",
+            "href": "v3/index"
+          }) }}            
+            <hr>
+            <p>Date started: 1/10/2019 (ish)<br>
+              Date ended: 7/11/2019</p>
+
+        <h3>User testing (2)</h3>
           <ul>
-            <li>Weetwood Hall - 7/10/2019</li>
+            <li>Weetwood Hall - 7/10/2019, 7 users (40min sessions)</li>
+            <li>Old Fire Station, Gipton - 31/10/2019, 5 users (45min sessions)</li>
           </ul>
-          <h3>Key Findings (0)</h3>
+
+        <h3>Key Findings (3)</h3>
           <ul>
             <li>Users were confused between who's health they were attempting to gain access of</li>
-            <li>Users didn't understand the difference between NHS login and accepting the invite</li>
-            <li></li>
+            <li>Users didn't understand the difference between creating an NHS login and accepting the invite</li>
+            <li>Users didn't understand the difference between stepWell and NHS login</li>
           </ul>
-          <h3>Design Challenges (0)</h3>
+
+        <h3>Design Challenges (2)</h3>
           <ul>
-            <li>Change the service name from myHealth to something totally different (with no pronouns)</li>
             <li>Redesign the email to help users better understand what they need to do</li>
-            <li>
+            <li>How can we explain to users the difference between NHS login, stepWell, accepting invite and creating NHS login.</li>
           </ul>
-          {{ button({
-            "text": "v03",
-            "href": "v3/index"
-          }) }}
-          <hr>
+
         </div>
 
       </details>
@@ -141,7 +142,11 @@
         </summary>
         <div class="nhsuk-details__text version-text">
           <br>
-          <h3><a href="/v2/index">v2 Prototype</a></h3>
+          {{ button({
+            "text": "Launch v2",
+            "href": "v2/index"
+          }) }}  
+          <hr>        
             <p>Added a new design for relationship selection. Removed reference to legal name and legal relationship.
             Changed the myHealth colour scheme to be green. Added ability to add the primary user at the start of the flow.
             Service selection comes first.
@@ -151,22 +156,19 @@
             </ul>
           <h3>User testing (2)</h3>
           <ul>
+            <li>Carers group Methley 3rd September - 10+ focus group</li>
             <li>GP surgery popup 26th Sept - 4 users</li>
-            <li>Weetwood hall 7th Oct - 7 users (40min sessions)</li>
           </ul>
           <h3>Key Findings (1)</h3>
           <ul>
             <li>The updated relationship pattern testing was inconclusive. Some users like the radios, others the search</li>
           </ul>
-          <h3>Design Challenges (1)</h3>
+          <h3>Design Challenges (2)</h3>
           <ul>
+            <li>Change the service name from myHealth to something totally different (with no pronouns)</li>
             <li>Improve the content and grouping of the relationship radios</li>
           </ul>
-          {{ button({
-            "text": "v02",
-            "href": "v2/index"
-          }) }}
-          <hr>
+
         </div>
 
       </details>
@@ -180,7 +182,11 @@
         </summary>
         <div class="nhsuk-details__text version-text">
           <br>
-          <h3><a href="/v1/index">v1 Prototype</a></h3>
+          {{ button({
+            "text": "Launch v1",
+            "href": "v1/index"
+          }) }}
+          <hr>
             <p>For this initial prototye the bulk of the design was built around technnical requirements and limitations, past research and multiple quan surveys. We created a prototype before the end of discovery to aid discussions within the team and to take to a co-creation session</p>
             <ul>
               <li>Gov survey <a href="https://confluence.digital.nhs.uk/display/NL/Internal+Survey+April+2019">Gov Survey</a></li>
@@ -188,9 +194,8 @@
               <li>Past discovery research</li>
               <li>Assumptions</li>
             </ul>
-          <h3>User testing (2)</h3>
+          <h3>User testing (1)</h3>
           <ul>
-            <li>Carers group Methley 3rd September - 10+ focus group</li>
             <li>In home sessions with people who do tasks on behalf of another person - 4 primary users, 4 delegates</li>
           </ul>
           <h3>Design Challenges (2)</h3>
@@ -198,11 +203,6 @@
             <li>Some users don't understand relationship group meanings, eg sibling, civil partnership etc</li>
             <li>more to add following research analysis</li>
           </ul>
-          {{ button({
-            "text": "v01",
-            "href": "v1/index"
-          }) }}
-          <hr>
         </div>
 
       </details>
@@ -211,74 +211,26 @@
       <details class="nhsuk-details nhsuk-expander version-list">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
-            Error messages - TO BE UPDATED.
+            Error scenarios
           </span>
         </summary>
         <div class="nhsuk-details__text">
-          <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Service Select</h4>
+        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Delegate error scenarios</h4>
           <ul>
-            <li><a href="/v2/errors/select-service/user-fails-to-select-service">User doesn't select a service</a></li>
-            <li><a href="/v2/errors/select-service/no-services-are-available-for-the-user-to-select">No services are available for the user to select</a></li>
+            <li><a href="v4/service/invite-expired">Invitation has already been accepted or has expired</a></li>
+            <li><a href="v4/service/error-alreadyaccepted">Relationship between two users has already been set up for this service</a></li>
+            <li><a href="v4/service/error-selfdelegating">Primary user is self delegating</a></li>
+            <li><a href="v4/service/error-matching-user">Delegate's NHS login details are different to those the Primary User gave us</a></li>
           </ul>
 
-        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Enter name of delegate</h4>
+        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Primary user error scenarios</h4>
           <ul>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-add-first-name-and-last-name">User fails to add first name and last name of the delegate</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-add-first-name">User fails to add first name of the delegate</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-add-last-name">User fails to add last name of the delegate</a></li>
+            <li><a href="v4/service/no-services-available">No services available to add a delegate to</a></li>
           </ul>
 
-        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Select delegate relationship</h4>
-          <ul>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-select-relationship">User fails to select a relationship before continuing - not used</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-select-relationship-top-level">User fails to select a relationship before continuing</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-select-relationship-partner">User fails to select a partner relationship before continuing</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-select-relationship-parent">User fails to select a parent relationship before continuing</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-select-relationship-sibling">User fails to select a sibling relationship before continuing</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-select-relationship-family">User fails to select a family relationship before continuing</a></li>
-          </ul>
-
-        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Enter delegate NHS Number</h4>
-          <ul>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-select-option-nhs">User fails to select whether they have NHS number</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-add-nhs-number">User fails to add an NHS number</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-add-valid-nhs-number">User adds an NHS number that isn't valid</a></li>
-          </ul>
-
-        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Enter delegate DOB</h4>
-          <ul>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-add-dob">User fails to add a DOB (either field)</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-add-valid-dob">User fails to add a valid DOB</a></li>
-          </ul>
-
-        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Enter delegate email address</h4>
-          <ul>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-add-email">User fails to add an email</a></li>
-            <li><a href="/v2/errors/add-delegate/user-fails-to-add-valid-email">User fails to add a valid email</a></li>
-          </ul>
-
-        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Delegate invite</h4>
-          <ul>
-            <li><a href="/v2/errors/invitation/invitation-has-expired">Invitation has expired</a></li>
-            <li><a href="/v2/errors/invitation/invitation-not-valid">Invitation is not valid</a></li>
-          </ul>
-
-        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Login in as delegate</h4>
-          <ul>
-            <li><a href="/v2/errors/login/user-fails-to-select-who-they-are-logging-in-as">User fails to select who they are logging in as</a></li>
-          </ul>
-
-          <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Matching delegate user</h4>
-        <ul>
-          <li><a href="/v2/errors/invitation/delegate-user-is-not-matched">Delegate user is not matched</a></li>
-        </ul>
-
-        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Other scenarios</h4>
-        <ul>
-          <li><a href="/v2/errors/other/user-starts-the-journey-part-way-through">User starts the journey part way through</a></li>
-        </ul>
         </div>
       </details>
+
 
 
 
