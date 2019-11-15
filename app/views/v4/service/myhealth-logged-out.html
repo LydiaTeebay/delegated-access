@@ -25,18 +25,40 @@
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
- 
+ <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-grid-row nhsuk-promo-group">
+        <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+          <div class="nhsuk-promo">
+            <a class="nhsuk-promo__link-wrapper" href="#">
+              <div class="nhsuk-promo__content">
+                <h3 class="nhsuk-promo__heading">Book appointments</h3>
+                  <p>Search for, book and cancel GP appointments with your registered GP surgery</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+      <div class="nhsuk-promo">
+        <a class="nhsuk-promo__link-wrapper" href="#">
+          <div class="nhsuk-promo__content">
+            <h3 class="nhsuk-promo__heading">Order repeat prescriptions</h3>
+              <p>See your available medications and request a new repeat prescription</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+      <div class="nhsuk-promo">
+        <a class="nhsuk-promo__link-wrapper" href="#">
+          <div class="nhsuk-promo__content">
+            <h3 class="nhsuk-promo__heading">View your medical record</h3>
+            <p>Get secure access to your GP medical record</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 
-<div>
-
-    <p>You are currently logged out, to log in:</p>
-    
-    <p><a href="#">log in using stepWell</a></p>
-
-    <p>or </p>
-    
-<a href="https://delegated-access-nhslogin.herokuapp.com/create-account/v18/start?service=stepWell&serviceName=stepWell&returnUrl=https://delegated-access.herokuapp.com/v3/login/login-as-v3"><br><img src="../../images/ContinueWith_Original.png"></a>
-
-</div>
 
 {% endblock %}
