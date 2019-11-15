@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'v3/layouts/blank.html' %}
+{% extends '../layouts/blank-loggedout.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -25,9 +25,7 @@
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
-  <div class="nhsuk-grid-row">
-
-    <div class="nhsuk-grid-column-full">
+ 
 
 <div>
 
@@ -41,7 +39,4 @@
 
 </div>
 
-    </div>  
-
-  </div>
 {% endblock %}

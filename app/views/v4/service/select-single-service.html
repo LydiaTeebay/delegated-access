@@ -6,6 +6,18 @@
     - add custom CSS and JavaScript
 -->
 
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Select a service",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+{% endblock %}
+
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
   Content page example - NHS.UK prototype kit
@@ -29,20 +41,28 @@
               Which service do you want to add the person to?
             </h1>
          </legend>
-         
+
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="service1" name="service" type="radio" value="stepWell">
-                <label class="nhsuk-label nhsuk-radios__label" for="service">
+                <label class="nhsuk-label nhsuk-radios__label" for="service1">
                  {{ data.service or 'stepWell' }}
                 </label>
             </div>
             <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="service2" name="service" type="radio" value="NHS App">
-                  <label class="nhsuk-label nhsuk-radios__label" for="service">
+                  <label class="nhsuk-label nhsuk-radios__label" for="service2">
                     NHS App
                   </label>
             </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="service3" name="service" type="radio" value="Patient Online">
+                  <label class="nhsuk-label nhsuk-radios__label" for="service3">
+                    Patient Online
+                  </label>
+            </div>
+
           </div>       
         </fieldset>
       </div>
