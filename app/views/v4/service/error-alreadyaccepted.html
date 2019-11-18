@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  NHS login - Service consent
+  Error: You can already act on behalf of {{data.primaryUserFirstName or 'Alice'}}
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -29,7 +29,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>You can already act on behalf of [name] within [service]</h1>  
+      <h1>You can already act on behalf of {{data.primaryUserFirstName or 'Alice'}} within {{data.service or 'stepWell'}}</h1>  
 
           <p>You do not need to respond to this invite, as you have already accepted a previous one.</p>
           <p>You can go directly to <a href="#">stepWell</a> and log in with your NHS login to act on their behalf.</p>

@@ -1,7 +1,7 @@
 {% extends '../layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  EMAIL
+        You have asked {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} to act on your behalf within {{ data.service or 'stepWell' }}
 {% endblock %}
 
 {% block content %}

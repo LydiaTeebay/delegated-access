@@ -1,7 +1,7 @@
 {% extends '../layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  EMAIL - Invite to stepWell
+{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }} has invited you to act on their behalf within {{ data.service or 'stepWell' }}
 {% endblock %}
 
 {% block content %}

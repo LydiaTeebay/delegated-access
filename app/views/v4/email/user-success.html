@@ -1,7 +1,7 @@
 {% extends '../layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  EMAIL
+        {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} has accepted your invite
 {% endblock %}
 
 {% block content %}
