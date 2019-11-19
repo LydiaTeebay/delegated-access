@@ -1,5 +1,7 @@
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
+
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -16,21 +18,20 @@
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 
-{% block beforeContent %}
-
-{% from 'components/warning-callout/macro.njk' import warningCallout %}
-
-{{ warningCallout({
-  "heading": "Email has been sent",
-  "HTML": "<p>Check the user's email inbox.</p>"
-}) }}
-
-{% endblock %}
-
 {% block content %}
+
+{% if emailSent === 'true' %}
+
+  {{ warningCallout({
+    "heading": "Email has been sent",
+    "HTML": "<p>Check the user's email inbox.</p>"
+  }) }}
+
+{% endif %}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="{{ this page }}" method="post">
+      <form action="{{ thisPage }}" method="post">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
