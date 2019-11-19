@@ -11,13 +11,26 @@
   NHS login - primary user details
 {% endblock %}
 
+
+
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
-{% block content %}
 
+{% block beforeContent %}
+
+{% from 'components/warning-callout/macro.njk' import warningCallout %}
+
+{{ warningCallout({
+  "heading": "Email has been sent",
+  "HTML": "<p>Check the user's email inbox.</p>"
+}) }}
+
+{% endblock %}
+
+{% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="email/delegate-invite" method="get">
+      <form action="{{ this page }}" method="post">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
@@ -36,20 +49,10 @@
             </label>
             <input class="nhsuk-input nhsuk-u-width-three-quarters" id="primaryUserLastName" name="primaryUserLastName" value="{{ data['primaryUserLastName'] }}" type="text">
           </div>
+
+          <input id="email" name="emailAddress" value="lydia.teebay1@nhs.net" type="hidden"> 
+
           <div class="nhsuk-form-group">
-        
-          <!--
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-              What is {{ data.firstName or 'Bob' }}'s relationship to you?
-            </h1>
-          </legend>
-          -->
-          <!--
-          <span class="nhsuk-hint" id="example-hint">
-            <p>Start typing and we'll try and match it</p>
-          </span>
-          -->
           <label class="nhsuk-label" for="my-autocomplete">Relationship of delegate</label>
           <div id="my-autocomplete-container"></div>
 

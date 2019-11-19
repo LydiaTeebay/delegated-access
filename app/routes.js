@@ -7,6 +7,13 @@ function getVersion(a) {
     return a.url.substring(1,3) || 'v1';
 }
 
+// connect to Notify
+
+var NotifyClient = require('notifications-node-client').NotifyClient,
+    notify = new NotifyClient(process.env.NOTIFYAPIKEY);
+
+
+    
 // add scenarios here - change session data
 //router.get('/*/alice-nominates-bob', function (req, res) {
     //req.session.data['hasLogin'] = true;
@@ -120,6 +127,28 @@ router.post('/*/add-delegate/delegate-relationship', function(req, res) {
 })
 
 
+// The URL here needs to match the URL of the page that the user is on
+// when they type in their email address
+router.post('/*/primary-user-details-and-relationship', function (req, res) {
+
+    notify.sendEmail(
+      // this long string is the template ID, copy it from the template
+      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // in your code.
+      '5d6649e3-b6df-4fc5-96e0-af80e3bec737',
+      // `emailAddress` here needs to match the name of the form field in
+      // your HTML page
+      req.body.emailAddress
+    );
+  
+    // This is the URL the users will be redirected to once the email
+    // has been sent
+    res.redirect('/v4/primary-user-details-and-relationship');
+  
+  });
+
+
+
 router.post('/*/login/login-as-v3', function(req, res) {
     var loggedInUser = req.session.data['loggedInUser'];
     if (loggedInUser === 'CreateAccount') {
@@ -129,6 +158,7 @@ router.post('/*/login/login-as-v3', function(req, res) {
         res.redirect('/' + getVersion(req) + '/service/myhealth-logged-in');
     }
 })
+
 
 // router.get('/*/service/consent', function(req, res) {
 //     // get the status of the ID check
@@ -217,3 +247,5 @@ router.post('/*/login/login-as-list', function (req, res) {
 })
 
 module.exports = router;
+
+
