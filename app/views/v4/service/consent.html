@@ -26,6 +26,16 @@ NHS login - {{ data.primaryUserFirstName or 'Alice' }} has sent you an invite
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
+{% if emailSent === 'true' %}
+
+  {{ warningCallout({
+    "heading": "Email has been sent",
+    "HTML": "<p>Check the user's email inbox.</p>"
+  }) }}
+  
+   <p><a href="https://delegated-access.herokuapp.com/v4/email/delegate-invite">click here to open it</a></p>
+
+{% endif %}
 
 
   <div class="nhsuk-grid-row">
@@ -52,8 +62,8 @@ NHS login - {{ data.primaryUserFirstName or 'Alice' }} has sent you an invite
       
       <p>Before you agree, you should read <b>{{ data.service or 'stepWell' }}</b>'s <a href="#">terms of use</a> and <a href="#">privacy policy</a> to check how they will use your information.</p>
 
-
       <form action="{{ thisPage }}" method="post">
+
         <fieldset class="nhsuk-fieldset">
           <input id="email" name="emailAddress" value="lydia.teebay1@nhs.net" type="hidden"> 
         </fieldset>
