@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  NHS login - Accept {{data.primaryUserFirstName or 'Alice'}}'s invite
+NHS login - {{ data.primaryUserFirstName or 'Alice' }} has sent you an invite
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->

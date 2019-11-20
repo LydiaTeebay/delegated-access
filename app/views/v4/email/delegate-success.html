@@ -1,7 +1,7 @@
 {% extends '../layouts/layout-email.html' %}
 
 {% block pageTitle %}
-    You have been added to {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}’s NHS login
+You have been added to {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}’s NHS login
 {% endblock %}
 
 {% block content %}
@@ -9,11 +9,10 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-      Success
+      You have been added to {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}’s NHS login as their <b>{{ data.relationship or 'carer' }}</b>
       </h1>
 
-      <p>You have been added to {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}’s NHS login as their <b>{{ data.relationship or 'carer' }}</b>. 
-      You can now enter <b>{{ data.service or 'stepWell' }}</b> on their behalf at any time.</p>
+      <p>You can now enter <b>{{ data.service or 'stepWell' }}</b> and act on their behalf at any time.</p>
       
       <p>To do this, visit <a href="../service/myhealth-logged-out">www.stepwell.com</a> and log in with your NHS login.</p>
 
