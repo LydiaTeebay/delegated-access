@@ -166,6 +166,36 @@ router.post('/v4/primary-user-details-and-relationship', function (req, res) {
 
 
 
+// The URL here needs to match the URL of the page that the user is on
+// when they type in their email address
+router.post('/v4/primary-user-details-and-relationship', function (req, res) {
+
+    notify.sendEmail(
+      // this long string is the template ID, copy it from the template
+      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // in your code.
+      '5d6649e3-b6df-4fc5-96e0-af80e3bec737',
+      // `emailAddress` here needs to match the name of the form field in
+      // your HTML page
+      req.body.emailAddress, { 
+          personalisation: {
+          'primaryuserfirstname': req.body.primaryUserFirstName,
+          'primaryuserlastname': req.body.primaryUserLastName 
+        },
+        reference: ''
+      })
+      .then(response => console.log(response))
+      .catch(err => console.error(err))
+
+    console.log(req.body.emailAddress)
+  
+    // This is the URL the users will be redirected to once the email
+    // has been sent
+    res.redirect('/v4/consent-success');
+  
+  })
+
+
 router.post('/*/login/login-as-v3', function(req, res) {
     var loggedInUser = req.session.data['loggedInUser'];
     if (loggedInUser === 'CreateAccount') {
