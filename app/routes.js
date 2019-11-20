@@ -166,6 +166,14 @@ router.post('/v4/primary-user-details-and-relationship', function (req, res) {
 
 
 
+  router.get('/v4/service/consent', function (req, res) {
+    var emailSent = req.query.emailSent
+    console.log(req.query.emailSent)
+    res.render('/v4/service/consent', {emailSent: emailSent}, function(err,html) {
+        res.send(html)
+    })
+})
+
 // The URL here needs to match the URL of the page that the user is on
 // when they type in their email address
 router.post('/v4/service/consent', function (req, res) {
