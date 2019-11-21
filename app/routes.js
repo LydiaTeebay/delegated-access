@@ -164,7 +164,7 @@ router.post('/v4/primary-user-details-and-relationship', function (req, res) {
   
   })
 
-  router.get('/v4/service/consent', function (req, res) {
+    router.get('/v4/service/consent', function (req, res) {
     var emailSent = req.query.emailSent
     console.log(req.query.emailSent)
     res.render('v4/service/consent', {emailSent: emailSent}, function(err,html) {
@@ -187,7 +187,6 @@ router.post('/v4/service/consent', function (req, res) {
           personalisation: {
           'primaryuserfirstname': req.body.primaryUserFirstName,
           'primaryuserlastname': req.body.primaryUserLastName,
-          'relationship': req.body.relationship
         },
         reference: ''
       })
@@ -244,21 +243,21 @@ router.post('/*/login/login-as-v3', function(req, res) {
 //    }
 //})
 
-router.post('/*/login-as', function (req, res) {
+// router.post('/*/login-as', function (req, res) {
 
     // Make a variable and give it the value from 'know-nhs-number'
-    var proxy = req.session.data['proxy']
+   //  var proxy = req.session.data['proxy']
   
     // Check whether the variable matches a condition
-    if (proxy == "Yourself"){
-      // Send user to next page
-      res.redirect('/' + getVersion(req) + '/service/service-page-logged-in')
-    }
-    else {
-      // Send user to ineligible page
-      res.redirect('/' + getVersion(req) + '/service/service-page-consent')
-    }
-})
+ //           if (proxy == "Yourself"){
+      //      // Send user to next page
+    //        res.redirect('/' + getVersion(req) + '/service/service-page-logged-in')
+  //          }
+        //    else {
+//            // Send user to ineligible page
+          //  res.redirect('/' + getVersion(req) + '/service/service-page-consent')
+          //  }
+       // })
 
 router.post('/*/login/login-triage', function (req, res) {
 
