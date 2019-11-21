@@ -198,7 +198,7 @@ router.post('/v4/service/consent', function (req, res) {
   
     // This is the URL the users will be redirected to once the email
     // has been sent
-    res.redirect('/v4/service/consent?emailSent=true');
+    res.redirect('/v4/service/consent-success?emailSent=true');
   
   })
 
