@@ -183,7 +183,7 @@ router.post('/v4/service/consent', function (req, res) {
       '5d6649e3-b6df-4fc5-96e0-af80e3bec737',
       // `emailAddress` here needs to match the name of the form field in
       // your HTML page
-      req.body.emailAddress, { 
+      req.body.emailAddress2, { 
           personalisation: {
           'primaryuserfirstname': req.body.primaryUserFirstName,
           'primaryuserlastname': req.body.primaryUserLastName,
@@ -193,7 +193,7 @@ router.post('/v4/service/consent', function (req, res) {
       .then(response => console.log(response))
       .catch(err => console.error(err))
 
-    console.log(req.body.emailAddress)
+    console.log(req.body.emailAddress2)
   
     // This is the URL the users will be redirected to once the email
     // has been sent
