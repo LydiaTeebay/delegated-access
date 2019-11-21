@@ -15,6 +15,17 @@ NHS login - You can now act on behalf of {{ data.primaryUserFirstName or 'Alice'
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
+{% if emailSent === 'true' %}
+
+  {{ warningCallout({
+    "heading": "Email has been sent",
+    "HTML": "<p>Check the user's email inbox.</p>"
+  }) }}
+  
+   <p><a href="https://delegated-access.herokuapp.com/v4/email/delegate-success">click here to open it</a></p>
+
+{% endif %}
+
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
