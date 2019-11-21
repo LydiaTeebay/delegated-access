@@ -180,7 +180,7 @@ router.post('/v4/service/consent', function (req, res) {
       // this long string is the template ID, copy it from the template
       // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
       // in your code.
-      'aa5440eb-1d3c-4d31-8b32-973df5119c40',
+      '5d6649e3-b6df-4fc5-96e0-af80e3bec737',
       // `emailAddress` here needs to match the name of the form field in
       // your HTML page
       req.body.emailAddress, { 
