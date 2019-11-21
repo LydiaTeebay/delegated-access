@@ -1,0 +1,60 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+    NHS login - Email has been sent
+    {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+     <div class="nhsuk-expander-group">
+  <details class="nhsuk-details nhsuk-expander">
+    <summary class="nhsuk-details__summary">
+      <span class="nhsuk-details__summary-text">
+      How to measure your blood glucose levels
+      </span>
+    </summary>
+    <div class="nhsuk-details__text">
+      <p>Testing your blood at home is quick and easy, although it can be uncomfortable. It does get better.</p>
+      <p>You would have been given:</p>
+      <ul>
+        <li>a blood glucose metre</li>
+        <li>small needles called lancets</li>
+        <li>a plastic pen to hold the lancest</li>
+        <li>small test strips</li>
+      </ul>
+    </div>
+  </details>
+  <details class="nhsuk-details nhsuk-expander">
+    <summary class="nhsuk-details__summary">
+      <span class="nhsuk-details__summary-text">
+      When to check your blood glucose level
+      </span>
+    </summary>
+    <div class="nhsuk-details__text">
+      <p>Try to check your blood:</p>
+      <ul>
+        <li>before meals</li>
+        <li>2 to 3 hours after meals</li>
+        <li>before, during (take a break) and after exercise</li>
+      </ul>
+      <p>This helps you understand your blood glucose levels and how they’re affected by meals and exercise. It should help you have more stable blood glucose levels.</p>
+    </div>
+  </details>
+</div>
+</div> 
+
+  </div>
+{% endblock %}
