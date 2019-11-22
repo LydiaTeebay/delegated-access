@@ -188,7 +188,7 @@ router.post('/v4/service/consent', function (req, res) {
           personalisation: {
           'primaryuserfirstname': req.body.primaryUserFirstName,
           'primaryuserlastname': req.body.primaryUserLastName,
-          'relationship': 'req.body.relationship'
+          'relationship': req.body.relationship
         },
         reference: ''
       })
