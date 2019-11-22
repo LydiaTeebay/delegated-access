@@ -63,7 +63,9 @@ NHS login - {{ data.primaryUserFirstName or 'Alice' }} has sent you an invite
       <form action="{{ thisPage }}" method="post">
 
         <fieldset class="nhsuk-fieldset">
-          <input id="email" name="emailAddress2" value="lydia.teebay1@nhs.net" type="hidden"> 
+          <input id="email" name="emailAddress" value="lydia.teebay1@nhs.net" type="hidden">
+          <input id="primaryUserFirstName" name="primaryUserFristName" value="{{ data.primaryUserFirstName or 'Alice' }}" type="hidden"> 
+          <input id="primaryUserLastName" name="primaryUserLastName" value="{{ data.primaryUserLastName or 'Smith' }}" type="hidden"> 
         </fieldset>
         <button class="nhsuk-button">Agree and continue</button>
       </form>
