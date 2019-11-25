@@ -51,17 +51,21 @@
           <!--<span class="nhsuk-hint" id="example-hint">
             You will find this information in a passport or on a driving licence.
           </span>-->
+
+          <!-- value="{{ data['firstName'] }}" -->
+          <!-- value="{{ data['lastName'] }}" -->
+          
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="firstName">
               First name
             </label>
-            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="firstName" name="firstName" value="{{ data['firstName'] }}" type="text">
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="firstName" name="firstName" type="text">
           </div>
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="lastName">
               Last name
             </label>
-            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="lastName" name="lastName" value="{{ data['lastName'] }}" type="text">
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="lastName" name="lastName" type="text">
           </div>
         </fieldset>
         <button class="nhsuk-button">Continue</button>
