@@ -132,7 +132,7 @@ NHS login - Check your answers before you continue
             Their email address:
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data.contactEmailAddress or 'example@gmail.com' }}
+            {{ data.contactEmailAddress or '{{ data.firstName or 'Bob' }}.{{ data.lastName or 'Smith' }}@gmail.com' }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="../add-delegate/delegate-email?summaryReturn=yes">
