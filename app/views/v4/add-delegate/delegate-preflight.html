@@ -43,6 +43,25 @@
 
       <p>You must have the person’s permission to use their information.</p>
 
+      Adding someone to <b>{{ data.service or 'stepWell' }}</b> means they will be able to act on your behalf and see your information within <strong>{{ data.service or 'stepWell' }}</strong>. 
+
+      <p><b>{{ data.service or 'stepWell' }}</b> features they will be able to access on your behalf:
+  <!-- dynamic content from the service -->
+    <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>book appointments</li>
+          <li>order repeat prescriptions</li>
+    </ul>
+    </p>
+<br>
+
+        <p><b>{{ data.service or 'stepWell' }}</b> features they will not be able to access on your behalf:
+ <!-- dynamic content from the service -->
+    <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>medical records</li>
+    </ul>
+    </p>
+<br>
+
       {{ button({
         "text": "Continue",
         "href": "delegate-name"
