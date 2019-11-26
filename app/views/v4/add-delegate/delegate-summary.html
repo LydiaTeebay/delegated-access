@@ -146,7 +146,7 @@ NHS login - Check your answers before you continue
       <p>You are allowing <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> to enter your <strong>{{ data.service or 'stepWell' }}</strong> account. 
       This means they can act on your behalf and see your information within <strong>{{ data.service or 'stepWell' }}</strong>. 
 
-      <p><b>{{ data.service or 'stepWell' }}</b> features <b>{{ data.primaryUserFirstName or 'Alice' }}</b> will be able to access on your behalf:
+      <p><b>{{ data.service or 'stepWell' }}</b> features <b>{{ data.firstName or 'Bob' }}</b> will be able to access on your behalf:
   <!-- dynamic content from the service -->
     <ul class="nhsuk-list nhsuk-list--bullet">
           <li>book appointments</li>
@@ -155,7 +155,7 @@ NHS login - Check your answers before you continue
     </p>
 <br>
 
-        <p><b>{{ data.service or 'stepWell' }}</b> features <b>{{ data.primaryUserFirstName or 'Alice' }}</b> will not be able to access on your behalf:
+        <p><b>{{ data.service or 'stepWell' }}</b> features <b>{{ data.firsttName or 'Bob' }}</b> will not be able to access on your behalf:
  <!-- dynamic content from the service -->
     <ul class="nhsuk-list nhsuk-list--bullet">
     <li>medical records</li>
