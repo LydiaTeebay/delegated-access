@@ -13,9 +13,9 @@
 
 <!-- if the user is logging in as another person then display the banner -->
 {% block proxy %}
-  {% if (data.primaryUserFirstName or 'Alice' ) == (data.loggedInUser or 'Bob') %}
+  <!-- {% if (data.primaryUserFirstName or 'Alice' ) == (data.loggedInUser or 'Bob') %}-->
     <div class="proxy">You are acting on behalf of <b>{{ data.primaryUserFirstName or 'Alice' }}</b></div>
-  {% endif %}
+  <!-- {% endif %} -->
 
  <!-- {% if (data.primaryUserFirstName or 'David' ) == (data.loggedInUser or 'David') %}
     <div class="proxy">You are acting on behalf of <b>{{ data.primaryUserFirstName or 'David' }}</b></div>
