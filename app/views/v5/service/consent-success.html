@@ -1,0 +1,77 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+NHS login - You can now act on behalf of {{ data.primaryUserFirstName or 'Alice' }} in {{ data.service or 'stepWell' }}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+{% if emailSent === 'true' %}
+
+  {{ warningCallout({
+    "heading": "Email has been sent",
+    "HTML": "<p>Check the user's email inbox.</p>"
+  }) }}
+  
+   <p><a href="https://delegated-access.herokuapp.com/v4/email/delegate-success">click here to open it</a></p>
+
+{% endif %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>
+        You can now act on behalf of {{ data.primaryUserFirstName or 'Alice' }} in {{ data.service or 'stepWell' }}
+      </h1>
+
+
+<p><b>{{ data.service or 'stepWell' }}</b> features you can access on behalf of <b>{{ data.primaryUserFirstName or 'Alice' }}</b> include:
+  <!-- dynamic content from the service -->
+    <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>book appointments</li>
+          <li>order repeat prescriptions</li>
+    </ul>
+    </p>
+<br>
+
+<p><b>{{ data.service or 'stepWell' }}</b> features you cannot access on behalf of <b>{{ data.primaryUserFirstName or 'Alice' }}</b> include:
+ <!-- dynamic content from the service -->
+    <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>medical records</li>
+    </ul>
+    </p>
+<br>
+ <!-- commenting these out for UR purposes 
+ <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+          Why are some of these features not available?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>To access these features, you will need to contact {{ data.primaryUserFirstName or 'Alice' }} directly. 
+          A clinician may need to review the request, which can take <b>up to 7 days</b>.</p>
+        </div>
+      </details>
+-->
+
+      <p>If at any time you would like to cancel this, <a href="">contact us</a>.</p>
+
+      <a href="../login/login-as-v3" role="button" draggable="false" class="nhsuk-button">
+        Continue to {{ data.service or 'stepWell' }}
+      </a>
+    </div>  
+
+  </div>
+{% endblock %}

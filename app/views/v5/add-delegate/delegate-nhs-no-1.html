@@ -1,0 +1,77 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+NHS login - Tell us if you know {{ data.firstName or 'Bob' }}'s NHS number
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+          {% if data.summaryReturn === 'yes' %}
+      <div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="delegate-summary">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Back to: Check your answers before you continue</a>
+</div>
+<br>
+
+      {% else %}
+      <div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="delegate-relationship">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+        Back to: Select {{ data.firstName or 'Bob' }}'s relationship to you</a>
+</div>
+<br>
+
+      {% endif %}
+
+      <form action="delegate-nhs-no-1" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Do you know {{ data.firstName or 'Bob' }}'s NHS number?
+            </h1>
+          </legend>
+          <span class="nhsuk-hint nhsuk-u-margin-bottom-2">
+            This is a 10 digit number, like 485 777 3456
+          </span>
+
+            <p>It will be easier for us to find {{ data.firstName or 'Bob' }} if you tell us their NHS number. If not, we can use their date of birth.</p>
+          
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="hasNHSNumber" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  Yes
+                </label>
+            </div>
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="hasNHSNumber" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    No
+                  </label>
+            </div>
+          </div>       
+        </fieldset>
+      </div>
+      <button class="nhsuk-button">Continue</button>
+      </form>
+    </div>  
+  </div>
+{% endblock %}

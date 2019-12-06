@@ -1,0 +1,42 @@
+{% extends '../layouts/layout-email.html' %}
+
+{% block pageTitle %}
+{{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }} has invited you to act on their behalf within {{ data.service or 'stepWell' }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <p><h1 class="nhsuk-fieldset__legend--l">
+        {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }} has invited you to act on their behalf in {{ data.service or 'stepWell' }}
+      </h1>
+      
+      <p>If you accept the invite, you will be able to:
+        <!-- dynamic content from the service -->
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>book appointments</li>
+            <li>order repeat prescriptions</li>
+          </ul>
+      </p>
+
+      <p>To respond to the invite, you must log in with NHS login.</p>
+      <p>If you do not have an NHS login, you must:
+          <ul class="nhsuk-list nhsuk-list--number">
+            <li><a href="https://delegated-access-nhslogin.herokuapp.com/create-account/v18/start?service=myHealth&serviceName=myHealth&returnUrl=https://delegated-access.herokuapp.com/v3/service/consent&">set up an NHS login</a></li>
+            <li>prove who you are with photo I.D.</li>
+            <li>wait to be verified</li>
+            <li>respond to the invite</li>
+          </ul>
+      
+      <p><a href="https://nhs-cid.herokuapp.com/create-account/v17/start?service=myHealth&serviceName=myHealth&returnUrl=https://delegated-access.herokuapp.com/v3/service/consent&" class="nhsuk-button">Respond to invite</a>
+      
+      <p>If you do not want to accept {{ data.primaryUserFirstName or 'Alice' }}'s invite, please ignore this email.</p>
+
+      <p>This invite will expire in 7 days.</p>
+
+      <p><a href="#">Contact us</a> if you do not know this person or you think this may be an error.</p>
+    </div>
+  </div>
+
+{% endblock %}

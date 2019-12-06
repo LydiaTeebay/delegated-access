@@ -1,0 +1,80 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  NHS login - Tell us who you want to add
+
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+      {% if data.summaryReturn === 'yes' %}
+        <form action="delegate-summary" method="get">
+            <div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="delegate-summary">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Back to: Check your answers before you continue</a>
+</div>
+<br>
+
+      {% else %}
+        <form action="delegate-relationship" method="get">
+            <div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="delegate-preflight">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Back to: Allow someone to enter {{ data.service or 'stepWell' }} on your behalf</a>
+</div>
+<br>
+      {% endif %}
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Tell us who you want to add
+            </h1>
+          </legend>
+          <!--<span class="nhsuk-hint" id="example-hint">
+            You will find this information in a passport or on a driving licence.
+          </span>-->
+
+          <!-- value="{{ data['firstName'] }}" -->
+          <!-- value="{{ data['lastName'] }}" -->
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="firstName">
+              First name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="firstName" name="firstName" type="text">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="lastName">
+              Last name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="lastName" name="lastName" type="text">
+          </div>
+        </fieldset>
+        <button class="nhsuk-button">Continue</button>
+        <!--
+        <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="delegate-relationship">
+          Continue
+        </a>
+        -->
+      </form>
+    </div>  
+  </div>
+{% endblock %}

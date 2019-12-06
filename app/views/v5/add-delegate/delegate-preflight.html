@@ -1,0 +1,77 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  NHS login - Allow someone to enter {{data.service or 'stepWell'}} on your behalf
+{% endblock %}
+
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="../service/select-single-service">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Back to: Choose a service to add someone to</a>
+</div>
+<br>
+
+      <!-- Change the page title here -->
+      <h1>Allow someone to enter {{ data.service or 'stepWell' }} on your behalf</h1>
+      <h2>Before you start</h2>
+     
+      <p>To allow someone else to act on your behalf, you will need to tell us:</p>
+      <ul>
+        <li>their full name</li>
+        <li>your relationship to the person</li>
+        <li>their date of birth</li>
+        <li>their email address</li>
+      </ul>
+
+      <p>You must have the person’s permission to use their information.</p>
+
+      <p>Adding someone to <b>{{ data.service or 'stepWell' }}</b> means they will be able to act on your behalf and see your information within <strong>{{ data.service or 'stepWell' }}</strong>. </p>
+
+      <p><b>{{ data.service or 'stepWell' }}</b> features they will be able to access on your behalf:
+  <!-- dynamic content from the service -->
+    <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>book appointments</li>
+          <li>order repeat prescriptions</li>
+    </ul>
+    </p>
+<br>
+
+        <p><b>{{ data.service or 'stepWell' }}</b> features they will not be able to access on your behalf:
+ <!-- dynamic content from the service -->
+    <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>medical records</li>
+    </ul>
+    </p>
+<br>
+
+      {{ button({
+        "text": "Continue",
+        "href": "delegate-name"
+      }) }}
+
+      <!-- NOT MVP -->
+      <!--
+      <p><a href="/add-delegate/delegate-list">See who can enter {{ data.service or 'stepWell' }} on your behalf.</a></p>
+      -->
+    </div>  
+
+  </div>
+{% endblock %}
