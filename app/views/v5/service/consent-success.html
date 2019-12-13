@@ -35,36 +35,11 @@ NHS login - You can now act on behalf of {{ data.primaryUserFirstName or 'Alice'
         You can now act on behalf of {{ data.primaryUserFirstName or 'Alice' }} in {{ data.service or 'stepWell' }}
       </h1>
 
+      <p>You can now enter stepWell and act {{ data.primaryUserFirstName or 'Alice' }}'s behalf at any time.</p>
 
-<p><b>{{ data.service or 'stepWell' }}</b> features you can access on behalf of <b>{{ data.primaryUserFirstName or 'Alice' }}</b> include:
-  <!-- dynamic content from the service -->
-    <ul class="nhsuk-list nhsuk-list--bullet">
-          <li>book appointments</li>
-          <li>order repeat prescriptions</li>
-    </ul>
-    </p>
-<br>
+    <p>Visit <b>www.stepwell.com</b> and log in with your NHS login details. You can then choose to act as {{ data.primaryUserFirstName or 'Alice' }} in your {{ data.service or 'stepWell' }} account management area.</p>
 
-<p><b>{{ data.service or 'stepWell' }}</b> features you cannot access on behalf of <b>{{ data.primaryUserFirstName or 'Alice' }}</b> include:
- <!-- dynamic content from the service -->
-    <ul class="nhsuk-list nhsuk-list--bullet">
-    <li>medical records</li>
-    </ul>
-    </p>
-<br>
- <!-- commenting these out for UR purposes 
- <details class="nhsuk-details">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-          Why are some of these features not available?
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <p>To access these features, you will need to contact {{ data.primaryUserFirstName or 'Alice' }} directly. 
-          A clinician may need to review the request, which can take <b>up to 7 days</b>.</p>
-        </div>
-      </details>
--->
+    <p>We will email you this link so that you can visit {{ data.service or 'stepWell' }} in the future.</p>
 
       <p>If at any time you would like to cancel this, <a href="">contact us</a>.</p>
 

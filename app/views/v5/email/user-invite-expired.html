@@ -11,8 +11,7 @@
       <h1 class="nhsuk-fieldset__legend--l">
       {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} has not responded to your invite in time
       </h1>
-      <p>It has been more than 7 days since you sent the invite and there has been no response. You will need to send {{ data.firstName or 'Bob' }} another invite if you would like to try again.</p>
-
+      <p>It has been more than 7 days since you sent the invite and {{ data.firstName or 'Bob' }} has not replied. You will need to send {{ data.firstName or 'Bob' }} another invite if you would like to try again.</p>
     </div>
 
   </div>
