@@ -149,7 +149,7 @@ NHS login - Check your answers before you continue
       <p>You can cancel this at any time on your NHS login settings page.</p>
 
       <p>Once you submit these details, we will send an email to <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.contactEmailAddress or 'example@gmail.com' }}</strong> with a secure link.
-      They will need to open this link within 7 days to be able to confirm they agree to enter <b>{{ data.service }}</b> and act on your behalf.</p>
+      They will need to open this link within 7 days to be able to enter <b>{{ data.service or 'stepWell' }}</b> and act on your behalf.</p>
 
       <p>Please check your details are correct before submitting.</p>
 
