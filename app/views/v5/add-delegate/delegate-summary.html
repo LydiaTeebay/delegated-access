@@ -137,13 +137,13 @@ NHS login - Check your answers before you continue
       <p>You are allowing <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> to enter your <strong>{{ data.service or 'stepWell' }}</strong> account. 
       This means they can act on your behalf and see your information within <strong>{{ data.service or 'stepWell' }}</strong>. 
 
-      <p>On your behalf, <b>{{ data.firstName or 'Bob' }}</b> will be able to:
+      <p>On your behalf, <b>{{ data.firstName or 'Bob' }}</b> will be able to:</p>
   <!-- dynamic content from the service -->
     <ul class="nhsuk-list nhsuk-list--bullet">
           <li>book your appointments</li>
           <li>order your repeat prescriptions</li>
     </ul>
-    <b>{{ data.firstName or 'Bob' }}</b> will not be able to see your medical records.
+    <p><b>{{ data.firstName or 'Bob' }}</b> will not be able to see your medical records.
     </p>
 
       <p>You can cancel this at any time on your NHS login settings page.</p>
