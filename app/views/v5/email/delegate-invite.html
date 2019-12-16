@@ -15,10 +15,11 @@
       <p>If you accept the invite, you will be able to:
         <!-- dynamic content from the service -->
           <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>book appointments</li>
-            <li>order repeat prescriptions</li>
+            <li>book {{ data.primaryUserFirstName or 'Alice' }}'s appointments</li>
+            <li>order {{ data.primaryUserFirstName or 'Alice' }}'s repeat prescriptions</li>
           </ul>
       </p>
+
 
       <p>To respond to the invite, you must log in with NHS login.</p>
       <p>If you do not have an NHS login, you must:

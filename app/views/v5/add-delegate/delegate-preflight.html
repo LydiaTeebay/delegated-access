@@ -34,7 +34,7 @@
       <h2>Before you start</h2>
      
       <p>To allow someone else to act on your behalf, you will need to tell us:</p>
-      <ul>
+      <ul class="nhsuk-list nhsuk-list--bullet">
         <li>their full name</li>
         <li>your relationship to the person</li>
         <li>their date of birth</li>
@@ -45,20 +45,13 @@
 
       <p>Adding someone to <b>{{ data.service or 'stepWell' }}</b> means they will be able to act on your behalf and see your information within <strong>{{ data.service or 'stepWell' }}</strong>. </p>
 
-      <p><b>{{ data.service or 'stepWell' }}</b> features they will be able to access on your behalf:
+      <p>On your behalf, they will be able to:
   <!-- dynamic content from the service -->
     <ul class="nhsuk-list nhsuk-list--bullet">
-          <li>book appointments</li>
-          <li>order repeat prescriptions</li>
+          <li>book your appointments</li>
+          <li>order your repeat prescriptions</li>
     </ul>
-    </p>
-<br>
-
-        <p><b>{{ data.service or 'stepWell' }}</b> features they will not be able to access on your behalf:
- <!-- dynamic content from the service -->
-    <ul class="nhsuk-list nhsuk-list--bullet">
-    <li>medical records</li>
-    </ul>
+    They will not be able to see your medical records.
     </p>
 <br>
 
