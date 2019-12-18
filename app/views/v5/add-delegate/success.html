@@ -25,7 +25,9 @@
       </h1>
 
       <p>We have sent an invite to <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.firstName or 'Bob' }}.{{ data.lastName or 'Smith' }}@gmail.com</strong> with a secure link that will expire within 7 days.
-      Bob must follow this link to respond to your invite. If Bob does not respond within 7 days, you will need to send them another invite.</p>
+      {{ data.firstName or 'Bob' }} must follow this link to respond to your invite.</p>
+      
+      <p>If {{ data.firstName or 'Bob' }} does not respond within 7 days, you will need to send them another invite.</p>
 
       <p>Go back to your <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index-delegates-added">NHS login settings</a> if you want to add someone else to act on your behalf.</p>
 <br>
