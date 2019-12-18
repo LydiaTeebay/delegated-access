@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-    NHS login - Email has been sent
+    NHS login - Invite has been sent
     {% endblock %}
 
 <!-- Your page content goes inside the content block -->
@@ -21,14 +21,14 @@
     
       <!-- Change the page title here -->
       <h1>
-        Email has been sent
+        Invite has been sent
       </h1>
 
-      <p>We have sent an email to <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.firstName or 'Bob' }}.{{ data.lastName or 'Smith' }}@gmail.com</strong> with a secure link that will expire within 7 days.<br>
-      <br>
-      <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index-delegates-added" role="button" draggable="false" class="nhsuk-button">
-      Manage your NHS login
-      </a>
+      <p>We have sent an invite to <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.firstName or 'Bob' }}.{{ data.lastName or 'Smith' }}@gmail.com</strong> with a secure link that will expire within 7 days.
+      Bob must follow this link to respond to your invite. If Bob does not respond within 7 days, you will need to send them another invite.</p>
+
+      <p>Go back to your <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index-delegates-added">NHS login settings</a> if you want to add someone else to act on your behalf.</p>
+<br>
 <!--
       <a href="../email/user-security">View email sent to {{ data.primaryUserFirstName or 'Alice' }}</a><br>
       <a href="../email/delegate-invite">View email sent to {{ data.firstName or 'Bob' }}</a>
