@@ -145,9 +145,7 @@ NHS login - Check your answers before you continue
     </ul>
     <p><b>{{ data.firstName or 'Bob' }}</b> will not be able to see your medical records.
     </p>
-
-      <p>You can cancel this at any time on your NHS login settings page.</p>
-
+    
       <p>Once you submit these details, we will send an email to <strong>{{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }}</strong> at <strong>{{ data.contactEmailAddress or 'example@gmail.com' }}</strong> with a secure link.
       They will need to open this link within 7 days to be able to enter <b>{{ data.service or 'stepWell' }}</b> and act on your behalf.</p>
 
