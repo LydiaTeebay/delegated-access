@@ -1,7 +1,7 @@
 {% extends '../layouts/layout-email.html' %}
 
 {% block pageTitle %}
-You have been added to {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}’s NHS login
+      How to enter {{ data.service or 'stepWell' }} on {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s behalf
 {% endblock %}
 
 {% block content %}
@@ -9,12 +9,14 @@ You have been added to {{ data.primaryUserFirstName or 'Alice' }} {{ data.primar
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-      You have been added to {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}’s NHS login as their <b>{{ data.relationship or 'carer' }}</b>
+            How to enter {{ data.service or 'stepWell' }} on {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s behalf
       </h1>
 
-<!-- add in info about account management if they will see the names there -->
+      <p>You can now act on {{ data.primaryUserFirstName or 'Alice' }}'s behalf as their <b>{{ data.relationship or 'carer' }}</b> in <a href="#">{{ data.service or 'stepWell' }}</a>.</p>
 
-      <p><a href="">Contact us</a> to cancel this at any time.</p>      
+    <p>To do this, visit <b><a href="#">www.stepwell.com</a></b> and log in using your NHS login details. You can then choose to act as {{ data.primaryUserFirstName or 'Alice' }}.</p>
+
+    <p>You can cancel this at any time in your <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index-delegates-added">NHS login settings</a>.</p>
 
       
     </div>
