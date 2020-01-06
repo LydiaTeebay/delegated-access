@@ -136,7 +136,7 @@ router.post('/*/add-delegate/delegate-relationship', function(req, res) {
 router.get('/v4/primary-user-details-and-relationship', function (req, res) {
     var emailSent = req.query.emailSent
     console.log('render', req.query.emailSent)
-    res.render('/*/primary-user-details-and-relationship', {emailSent: emailSent}, function(err,html) {
+    res.render('/v4/primary-user-details-and-relationship', {emailSent: emailSent}, function(err,html) {
         res.send(html)
     })
 })
