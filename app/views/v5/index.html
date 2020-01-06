@@ -40,7 +40,7 @@
 
 <br>
 
-      <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index?primaryUserFirstName=Alice&primaryUserLastName=Smith&version=5">Add a delegate (skipping the login journey)</a><br><br>
+      <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index?primaryUserFirstName=Alice&primaryUserLastName=Smith&version=v5">Add a delegate (skipping the login journey)</a><br><br>
       <a href="service/select-single-service">Add a delegate (skipping the login and NHS login settings journeys)</a></br></br>
 
 
@@ -50,7 +50,7 @@
 
       <h3>NHS login settings</h3>
       <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index?version=v5">No delegates added</a><br><br>
-      <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index-delegates-added?version=5">Delegates added (basic)</a><br><br>
+      <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index-delegates-added?version=v5">Delegates added (basic)</a><br><br>
       <a href="">Primary users and delegates added (all singing, all dancing)</a><br><br>
 
 
@@ -58,10 +58,9 @@
 
       <h2>Delegate</h2>
       <p>
-        Bob has been invited to act on behalf of Alice as a delegate within a service<br>
-        Bob has not yet agreed to consent<br>
-        Bob may or may not have an NHS login account already<br>
-        Journey starts with Bob receiving an email inviting him to be a delegate
+        Bob has been invited to act on behalf of Alice as a delegate within a service.<br>
+        We do not know if Bob has an NHS login already.<br>
+        The journey starts with Bob receiving an email inviting him to be a delegate.
       </p>
       {{ button({
         "text": "Accept invite flow",
