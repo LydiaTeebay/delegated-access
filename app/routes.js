@@ -133,7 +133,7 @@ router.post('/*/add-delegate/delegate-relationship', function(req, res) {
 
 // Take user details and send the invite email
 
-router.get('/*/primary-user-details-and-relationship', function (req, res) {
+router.get('/v4/primary-user-details-and-relationship', function (req, res) {
     var emailSent = req.query.emailSent
     console.log('render', req.query.emailSent)
     res.render('/*/primary-user-details-and-relationship', {emailSent: emailSent}, function(err,html) {
@@ -143,7 +143,7 @@ router.get('/*/primary-user-details-and-relationship', function (req, res) {
 
 // The URL here needs to match the URL of the page that the user is on
 // when they type in their email address 
-router.post('/*/primary-user-details-and-relationship', function (req, res) {
+router.post('/v4/primary-user-details-and-relationship', function (req, res) {
 
     notify.sendEmail(
       // this long string is the template ID, copy it from the template
@@ -166,23 +166,23 @@ router.post('/*/primary-user-details-and-relationship', function (req, res) {
   
     // This is the URL the users will be redirected to once the email
     // has been sent
-    res.redirect('/*/primary-user-details-and-relationship?emailSent=true');
+    res.redirect('/v4/primary-user-details-and-relationship?emailSent=true');
   
   })
 
   // Send an email after accepting the invite
 
-router.get('/*/service/consent', function (req, res) {
+router.get('/v4/service/consent', function (req, res) {
     var emailSent = req.query.emailSent
     console.log('render', req.query.emailSent)
-    res.render('/*/service/consent', {emailSent: emailSent}, function(err,html) {
+    res.render('/v4/service/consent', {emailSent: emailSent}, function(err,html) {
         res.send(html)
     })
 })
 
 // The URL here needs to match the URL of the page that the user is on
 // when they type in their email address
-router.post('/*/service/consent', function (req, res) {
+router.post('/v4/service/consent', function (req, res) {
     console.log (req.body)
 
     notify.sendEmail(
@@ -207,7 +207,7 @@ router.post('/*/service/consent', function (req, res) {
   
     // This is the URL the users will be redirected to once the email
     // has been sent
-    res.redirect('/*/service/consent-success?emailSent=true');
+    res.redirect('/v4/service/consent-success?emailSent=true');
   
   })
 
