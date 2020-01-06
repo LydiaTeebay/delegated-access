@@ -30,8 +30,8 @@
       <h2>Primary user</h2>
 
       <p>
-        Alice has an NHS login account and wants to add a delegate for a service<br>
-        Journey starts with Alice adding a delegate.
+        Alice has an NHS login account and wants to add a delegate for a service.<br>
+        The journey starts with Alice logging in to the service, then she will need to go to her NHS login settings in order to add a delegate.
       </p>
       {{ button({
         "text": "Add delegate flow",
@@ -40,15 +40,17 @@
 
 <br>
 
-      <a href="service/select-single-service">Add a delegate (without login and account management journey)</a></br></br>
+      <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index?primaryUserFirstName=Alice&primaryUserLastName=Smith">Add a delegate (skipping the login journey)</a><br><br>
+      <a href="service/select-single-service">Add a delegate (skipping the login and NHS login settings journeys)</a></br></br>
+
 
       <h3>Emails</h3>
       <a href="email/user-security">Security</a></br></br>
       <a href="email/user-success">Success</a><br><br>
 
       <h3>NHS login settings</h3>
-      <a href="">No delegates added</a><br><br>
-      <a href="">Delegates added (basic)</a><br><br>
+      <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index?primaryUserFirstName=Alice&primaryUserLastName=Smith">No delegates added</a><br><br>
+      <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index-delegates-added">Delegates added (basic)</a><br><br>
       <a href="">Primary users and delegates added (all singing, all dancing)</a><br><br>
 
 
