@@ -27,13 +27,13 @@
     "HTML": "<p>Check the user's email inbox.</p>"
   }) }}
   
-   <p><a href="https://delegated-access.herokuapp.com/{{ data.version or 'v5' }}/email/delegate-invite">click here to open it</a></p>
+   <p><a href="https://delegated-access.herokuapp.com/v5/email/delegate-invite">click here to open it</a></p>
 
 {% endif %}
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="{{ thisPage }}" method="post">
+      <!-- <form action="{{ thisPage }}" method="post"> -->
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
