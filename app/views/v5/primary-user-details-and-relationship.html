@@ -27,7 +27,7 @@
     "HTML": "<p>Check the user's email inbox.</p>"
   }) }}
   
-   <p><a href="https://delegated-access.herokuapp.com/v4/email/delegate-invite">click here to open it</a></p>
+   <p><a href="https://delegated-access.herokuapp.com/{{ data.version or 'v5' }}/email/delegate-invite">click here to open it</a></p>
 
 {% endif %}
 
