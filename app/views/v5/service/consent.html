@@ -71,7 +71,7 @@ NHS login - {{ data.primaryUserFirstName or 'Alice' }} has sent you an invite
            <!--  TO TURN EMAILS ON, UNCOMMENT THIS LINE AND COMMENT THE BELOW THEN CHECK ROUTES FILE AND MAKE SURE ITS CORRECT
             <form action="{{ thisPage }}" method="post"> -->
 
-            <form action="service/consent-success" method="get">
+            <form action="consent-success" method="get">
      
                <!--  THESE LINES NEEDS TO BE UNCOMMENTED TO SEND THE EMAILS -->
         {# <fieldset class="nhsuk-fieldset">
