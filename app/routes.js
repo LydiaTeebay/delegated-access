@@ -15,11 +15,11 @@ var NotifyClient = require('notifications-node-client').NotifyClient,
 
     
 // add scenarios here - change session data
-//router.get('/*/alice-nominates-bob', function (req, res) {
-    //req.session.data['hasLogin'] = true;
-//    console.log(getVersion(req.query.version))
-//    res.render(getVersion(req) + '/email/delegate-invite');
-//})
+router.get('/*/alice-nominates-bob', function (req, res) {
+    req.session.data['hasLogin'] = true;
+    console.log(getVersion(req.query.version))
+    res.render(getVersion(req) + '/email/delegate-invite');
+})
 
 router.get('/*/research-flow-bob', function(req, res) {
     req.session.data = {}; // reset the data
@@ -126,17 +126,17 @@ router.post('/*/add-delegate/delegate-relationship', function(req, res) {
     }
 })
 
-////// HAVENT FIGURED OUT A WAY TO KEEP THIS WORKING THROUGHOUT ALL VERSIONS SO HAVE HAD TO MAKE THIS VERSION SPECIFIC AND REPEAT IT //
+////// HAVENT FIGURED OUT A WAY TO KEEP THIS WORKING THROUGHOUT ALL VERSIONS SO HAVE COMMENTED IT OUT SO THE PROTOTYPE STILL WORKS //
 
 
-// V4 Emails  
+/* // V4 Emails  
 
 // Take user details and send the invite email
 
 router.get('/v4/primary-user-details-and-relationship', function (req, res) {
     var emailSent = req.query.emailSent
     console.log('render', req.query.emailSent)
-    res.render('/v4/primary-user-details-and-relationship', {emailSent: emailSent}, function(err,html) {
+    res.render('/v4/primary-user-details-and-relationship', { emailSent: emailSent }, function (err, html) {
         res.send(html)
     })
 })
@@ -146,36 +146,36 @@ router.get('/v4/primary-user-details-and-relationship', function (req, res) {
 router.post('/v4/primary-user-details-and-relationship', function (req, res) {
 
     notify.sendEmail(
-      // this long string is the template ID, copy it from the template
-      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
-      // in your code.
-      '5d6649e3-b6df-4fc5-96e0-af80e3bec737',
-      // `emailAddress` here needs to match the name of the form field in
-      // your HTML page
-      req.body.emailAddress, { 
-          personalisation: {
-          'primaryuserfirstname': req.body.primaryUserFirstName,
-          'primaryuserlastname': req.body.primaryUserLastName 
+        // this long string is the template ID, copy it from the template
+        // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+        // in your code.
+        '5d6649e3-b6df-4fc5-96e0-af80e3bec737',
+        // `emailAddress` here needs to match the name of the form field in
+        // your HTML page
+        req.body.emailAddress, {
+        personalisation: {
+            'primaryuserfirstname': req.body.primaryUserFirstName,
+            'primaryuserlastname': req.body.primaryUserLastName
         },
         reference: ''
-      })
-      .then(response => console.log('response'))
-      .catch(err => console.error('error', err))
+    })
+        .then(response => console.log('response'))
+        .catch(err => console.error('error', err))
 
     console.log(req.body.emailAddress)
-  
+
     // This is the URL the users will be redirected to once the email
     // has been sent
     res.redirect('/v4/primary-user-details-and-relationship?emailSent=true');
-  
-  })
 
-  // Send an email after accepting the invite
+})
+
+// Send an email after accepting the invite
 
 router.get('/v4/service/consent', function (req, res) {
     var emailSent = req.query.emailSent
     console.log('render', req.query.emailSent)
-    res.render('/v4/service/consent', {emailSent: emailSent}, function(err,html) {
+    res.render('/v4/service/consent', { emailSent: emailSent }, function (err, html) {
         res.send(html)
     })
 })
@@ -183,34 +183,34 @@ router.get('/v4/service/consent', function (req, res) {
 // The URL here needs to match the URL of the page that the user is on
 // when they type in their email address
 router.post('/v4/service/consent', function (req, res) {
-    console.log (req.body)
+    console.log(req.body)
 
     notify.sendEmail(
-      // this long string is the template ID, copy it from the template
-      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
-      // in your code.
-      'aa5440eb-1d3c-4d31-8b32-973df5119c40',
-      // `emailAddress` here needs to match the name of the form field in
-      // your HTML page
-      req.body.emailAddress, { 
-          personalisation: {
-          'primaryuserfirstname': req.body.primaryUserFirstName,
-          'primaryuserlastname': req.body.primaryUserLastName,
-          'relationship': req.body.relationship
+        // this long string is the template ID, copy it from the template
+        // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+        // in your code.
+        'aa5440eb-1d3c-4d31-8b32-973df5119c40',
+        // `emailAddress` here needs to match the name of the form field in
+        // your HTML page
+        req.body.emailAddress, {
+        personalisation: {
+            'primaryuserfirstname': req.body.primaryUserFirstName,
+            'primaryuserlastname': req.body.primaryUserLastName,
+            'relationship': req.body.relationship
         },
         reference: ''
-      })
-      .then(response => console.log('response'))
-      .catch(err => console.error('err'))
+    })
+        .then(response => console.log('response'))
+        .catch(err => console.error('err'))
 
     console.log(req.body.emailAddress)
-  
+
     // This is the URL the users will be redirected to once the email
     // has been sent
     res.redirect('/v4/service/consent-success?emailSent=true');
-  
-  })
 
+})
+ */
 
 
   

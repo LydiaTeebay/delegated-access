@@ -33,7 +33,12 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <!-- <form action="{{ thisPage }}" method="post"> -->
+
+      <!--  TO TURN EMAILS ON, UNCOMMENT THIS LINE AND COMMENT THE BELOW THEN CHECK ROUTES FILE AND MAKE SURE ITS CORRECT
+            <form action="{{ thisPage }}" method="post"> -->
+
+            <form action="email/delegate-invite" method="get">
+
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
@@ -53,7 +58,8 @@
             <input class="nhsuk-input nhsuk-u-width-three-quarters" id="primaryUserLastName" name="primaryUserLastName" value="{{ data['primaryUserLastName'] }}" type="text">
           </div>
 
-          <input id="email" name="emailAddress" value="crawford.h.2019@gmail.com" type="hidden"> 
+          <!--  THIS LINE NEEDS TO BE UNCOMMENTED TO SEND THE EMAILS 
+                <input id="email" name="emailAddress" value="crawford.h.2019@gmail.com" type="hidden"> -->
 
           <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="my-autocomplete">Relationship of delegate</label>
