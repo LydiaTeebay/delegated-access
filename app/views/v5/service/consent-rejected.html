@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-NHS login - You have rejected {{ data.primaryUserFirstName or 'Alice' }}'s invite
+NHS login - You have rejected {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -43,7 +43,7 @@ NHS login - You have rejected {{ data.primaryUserFirstName or 'Alice' }}'s invit
       You have rejected {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
       </h1>  
 
-        <p>You will not be able to act on behalf of {{ data.primaryUserFirstName or 'Alice' }} in {{ data.service or 'stepWell' }}.</p>
+        <p>This means you will not be able to act on behalf of {{ data.primaryUserFirstName or 'Alice' }} in {{ data.service or 'stepWell' }}.</p>
         <p>{{ data.primaryUserFirstName or 'Alice' }} will be notified of your decision.</p>
     </div>
 </div>
