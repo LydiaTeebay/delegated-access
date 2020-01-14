@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-NHS login - You have rejected {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
+NHS login - You have declined {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -31,8 +31,7 @@ NHS login - You have rejected {{ data.primaryUserFirstName or 'Alice' }} {{ data
     "heading": "Email has been sent",
     "HTML": "<p>Check the user's email inbox.</p>"
   }) }}
-  MAKE A NEW EMAIL HERE - 
-   <p><a href="https://delegated-access.herokuapp.com/v4/email/delegate-success">click here to open it</a></p>
+   <p><a href="https://delegated-access.herokuapp.com/v5/email/delegate-declined">click here to open it</a></p>
 
 {% endif %}
 
@@ -40,7 +39,7 @@ NHS login - You have rejected {{ data.primaryUserFirstName or 'Alice' }} {{ data
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>
-      You have rejected {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
+      You have declined {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
       </h1>  
 
         <p>This means you will not be able to act on behalf of {{ data.primaryUserFirstName or 'Alice' }} in {{ data.service or 'stepWell' }}.</p>

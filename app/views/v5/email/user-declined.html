@@ -1,0 +1,22 @@
+{% extends '../layouts/layout-email.html' %}
+
+{% block pageTitle %}
+        {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} has declined your invite
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+      {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} has declined your invite to act on your behalf
+      </h1>
+
+      <p>This means {{ data.firstName or 'Bob' }} {{data.lastName or 'Smith' }} will not be able to act on your behalf of in {{ data.service or 'stepWell' }}.</p>
+      
+      <p>Visit your <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index-delegates-added">NHS login settings</a> to see who is able to act on your behalf, or to add someone else.</p>
+    
+    </div>
+  </div>
+
+{% endblock %}
