@@ -1,7 +1,7 @@
 {% extends '../layouts/layout-email.html' %}
 
 {% block pageTitle %}
-NHS login - You have declined {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
+You have declined {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
 {% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@ NHS login - You have declined {{ data.primaryUserFirstName or 'Alice' }} {{ data
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-fieldset__legend--l">
-NHS login - You have declined {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
+You have declined {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s invite
       </h1>
 
       <p>This means you will not be able to act on behalf of <b>{{ data.primaryUserFirstName or 'Alice' }}</b> in <b>{{ data.service or 'stepWell' }}</b>.</p>
