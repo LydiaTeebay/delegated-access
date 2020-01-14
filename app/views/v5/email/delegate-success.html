@@ -12,9 +12,9 @@
             How to enter {{ data.service or 'stepWell' }} on {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}'s behalf
       </h1>
 
-      <p>You can now act on {{ data.primaryUserFirstName or 'Alice' }}'s behalf as their <b>{{ data.relationship or 'carer' }}</b> in <a href="#">{{ data.service or 'stepWell' }}</a>.</p>
+      <p>You can now act on <b>{{ data.primaryUserFirstName or 'Alice' }}'s</b> behalf as their <b>{{ data.relationship or 'carer' }}</b> in <b><a href="#">{{ data.service or 'stepWell' }}</a></b>.</p>
 
-    <p>To do this, visit <b><a href="#">www.stepwell.com</a></b> and log in using your NHS login details. You can then choose to act as {{ data.primaryUserFirstName or 'Alice' }}.</p>
+    <p>To do this, visit <b><a href="#">www.stepwell.com</a></b> and log in using your NHS login details. You can then choose to act as <b>{{ data.primaryUserFirstName or 'Alice' }}</b>.</p>
 
     <p>You can cancel this at any time in your <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index-delegates-added">NHS login settings</a>.</p>
 

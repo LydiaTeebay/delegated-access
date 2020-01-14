@@ -12,7 +12,7 @@
       {{ data.firstName or 'Bob' }} {{ data.lastName or 'Smith' }} has declined your invite to act on your behalf
       </h1>
 
-      <p>This means {{ data.firstName or 'Bob' }} {{data.lastName or 'Smith' }} will not be able to act on your behalf of in {{ data.service or 'stepWell' }}.</p>
+      <p>This means <b>{{ data.firstName or 'Bob' }}</b> will not be able to act on your behalf of in <b>{{ data.service or 'stepWell' }}</b>.</p>
       
       <p>Visit your <a href="http://manage-nhs-login.herokuapp.com/account/v3d/index-delegates-added">NHS login settings</a> to see who is able to act on your behalf, or to add someone else.</p>
     
