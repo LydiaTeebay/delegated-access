@@ -9,6 +9,10 @@
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
 
+@import 'patterns/panel';
+@import 'patterns/panel-group';
+@import 'patterns/search';
+
 // taken from manage nhs login
 
 h1, h2, h3, h4, h5, h6, p, a {

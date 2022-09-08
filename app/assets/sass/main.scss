@@ -3,11 +3,16 @@
 
 // Components that are not in the NHS.UK frontend library
 @import 'components/panel-confirmation';
+@import 'components/list-border';
 @import 'components/related-nav';
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
+
+@import 'patterns/panel';
+@import 'patterns/panel-group';
+@import 'patterns/search';
 
 // taken from manage nhs login
 
@@ -78,12 +83,21 @@
   }
 */
 
-  .autocomplete__input {
-	  &:focus {
-		box-shadow: 0 0 0 4px #ffb81C;
-		outline: 4px solid transparent;
-		outline-offset: 4px;
-		border: 2px solid black;
-	  }
-
+.autocomplete__input {
+  &:focus {
+	box-shadow: 0 0 0 4px #ffb81C;
+	outline: 4px solid transparent;
+	outline-offset: 4px;
+	border: 2px solid black;
   }
+
+}
+.nhsuk-header--transactional .nhsuk-header__transactional-service-name {
+	float: left;
+	padding-left: 20px;
+	padding-top: 23px;
+}
+.email-width .nhsuk-header__container,
+.nhsuk-header__container {
+	padding: 0;
+}
